@@ -10,10 +10,19 @@
     <!-- FontAwesome Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
-        body { background-color: #080c14; color: #f3f4f6; font-family: 'Inter', system-ui, sans-serif; }
+        body { 
+            background-color: #05070b; 
+            color: #f3f4f6; 
+            font-family: 'Inter', system-ui, sans-serif; 
+            background-image: 
+                radial-gradient(circle at 20% 20%, rgba(220, 38, 38, 0.12) 0%, transparent 40%),
+                radial-gradient(circle at 80% 80%, rgba(185, 28, 28, 0.08) 0%, transparent 40%),
+                linear-gradient(to bottom, #05070b, #0b0f19);
+            background-attachment: fixed;
+        }
         .gradient-text { background: linear-gradient(135deg, #ef4444, #dc2626, #b91c1c); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .glass-card { background: rgba(17, 24, 39, 0.75); backdrop-filter: blur(12px); border: 1px solid rgba(239, 68, 68, 0.2); }
-        .glass-card:hover { border-color: rgba(239, 68, 68, 0.7); transform: translateY(-5px); }
+        .glass-card { background: rgba(13, 18, 30, 0.85); backdrop-filter: blur(16px); border: 1px solid rgba(239, 68, 68, 0.25); box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); }
+        .glass-card:hover { border-color: rgba(239, 68, 68, 0.7); transform: translateY(-5px); box-shadow: 0 12px 40px 0 rgba(220, 38, 38, 0.2); }
     </style>
 </head>
 <body class="flex flex-col min-h-screen selection:bg-red-600 selection:text-white">
@@ -39,7 +48,7 @@
 
     <!-- Hero Section -->
     <section class="pt-36 pb-20 px-6 container mx-auto text-center flex flex-col items-center">
-        <div class="inline-flex items-center gap-2 bg-red-950/80 border border-red-700/50 text-red-400 text-xs px-4 py-1.5 rounded-full font-bold uppercase tracking-widest mb-6">
+        <div class="inline-flex items-center gap-2 bg-red-950/80 border border-red-700/50 text-red-400 text-xs px-4 py-1.5 rounded-full font-bold uppercase tracking-widest mb-6 shadow-lg shadow-red-900/20">
             <i class="fas fa-shield-alt"></i> Professional Game Development Studio
         </div>
         <h1 class="text-4xl md:text-7xl font-black mb-6 leading-tight max-w-4xl">
@@ -57,7 +66,7 @@
             </a>
         </div>
 
-        <!-- Quick Stats Banner (Fully Updated) -->
+        <!-- Quick Stats Banner -->
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4 w-full max-w-4xl mt-6">
             <div class="glass-card p-4 rounded-xl text-center">
                 <i class="fas fa-award text-red-500 text-xl mb-1"></i>
@@ -65,122 +74,3 @@
                 <div class="text-xs text-slate-400">ISO Standard Graphics</div>
             </div>
             <div class="glass-card p-4 rounded-xl text-center">
-                <i class="fas fa-clock text-red-500 text-xl mb-1"></i>
-                <div class="font-bold text-white text-sm">09:00 AM to 06:00 PM</div>
-                <div class="text-xs text-slate-400">Office Timings</div>
-            </div>
-            <div class="glass-card p-4 rounded-xl text-center">
-                <i class="fas fa-users text-red-500 text-xl mb-1"></i>
-                <div class="font-bold text-white text-sm">50 Persons Team</div>
-                <div class="text-xs text-slate-400">Expert Developers</div>
-            </div>
-            <div class="glass-card p-4 rounded-xl text-center">
-                <i class="fas fa-lightbulb text-red-500 text-xl mb-1"></i>
-                <div class="font-bold text-white text-sm">Custom Solutions</div>
-                <div class="text-xs text-slate-400">Unity & SDK Tailored</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Games & Video Trailers Section -->
-    <section id="games" class="py-20 bg-slate-950/60 border-t border-red-950/40">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-5xl font-extrabold mb-4">Featured Game Trailer</h2>
-                <p class="text-slate-400 max-w-xl mx-auto">Watch real gameplay and excellent environment design from our racing titles.</p>
-            </div>
-
-            <div class="max-w-3xl mx-auto glass-card rounded-2xl overflow-hidden p-4 border border-red-600/30 shadow-2xl">
-                <div class="relative aspect-video bg-slate-900 rounded-xl overflow-hidden">
-                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/l7EynldIeHg" title="Real Racing Car Exelent environment" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-                <div class="p-6 text-center">
-                    <span class="text-xs font-bold text-red-500 uppercase tracking-widest bg-red-950/80 px-3 py-1 rounded-full border border-red-800">3D Racing Simulation</span>
-                    <h3 class="text-2xl font-bold mt-3 mb-2">Real Racing Car - Excellent Environment</h3>
-                    <p class="text-slate-400 text-sm mb-6">Experience high-speed drifting, off-road tracks, and next-gen graphic simulations on Android.</p>
-                    <a href="https://play.google.com/store/apps/developer?id=Bluewire+Tech" target="_blank" class="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white font-bold px-6 py-3 rounded-xl transition shadow-lg shadow-red-600/30">
-                        <i class="fab fa-google-play"></i> View Play Console Games
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="py-20 container mx-auto px-6">
-        <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-5xl font-extrabold mb-4">Our Core Expertise</h2>
-            <p class="text-slate-400 max-w-xl mx-auto">Comprehensive game development and design solutions for mobile platforms.</p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="glass-card p-8 rounded-2xl text-center transition">
-                <div class="w-16 h-16 bg-red-950/80 border border-red-600/40 rounded-2xl flex items-center justify-center mx-auto mb-6 text-red-500 text-2xl">
-                    <i class="fas fa-gamepad"></i>
-                </div>
-                <h3 class="text-xl font-bold mb-2">3D Game Development</h3>
-                <p class="text-slate-400 text-sm">Immersive 3D environments, realistic driving physics, and engaging gameplay loops.</p>
-            </div>
-            <div class="glass-card p-8 rounded-2xl text-center transition">
-                <div class="w-16 h-16 bg-red-950/80 border border-red-600/40 rounded-2xl flex items-center justify-center mx-auto mb-6 text-red-500 text-2xl">
-                    <i class="fas fa-paint-brush"></i>
-                </div>
-                <h3 class="text-xl font-bold mb-2">Graphic Designing</h3>
-                <p class="text-slate-400 text-sm">Stunning promotional posters, branding materials, store screenshots, and icons.</p>
-            </div>
-            <div class="glass-card p-8 rounded-2xl text-center transition">
-                <div class="w-16 h-16 bg-red-950/80 border border-red-600/40 rounded-2xl flex items-center justify-center mx-auto mb-6 text-red-500 text-2xl">
-                    <i class="fas fa-cube"></i>
-                </div>
-                <h3 class="text-xl font-bold mb-2">3D Modeling & Animation</h3>
-                <p class="text-slate-400 text-sm">Detailed vehicle assets, characters, props, and smooth rigged animations.</p>
-            </div>
-            <div class="glass-card p-8 rounded-2xl text-center transition">
-                <div class="w-16 h-16 bg-red-950/80 border border-red-600/40 rounded-2xl flex items-center justify-center mx-auto mb-6 text-red-500 text-2xl">
-                    <i class="fas fa-mobile-alt"></i>
-                </div>
-                <h3 class="text-xl font-bold mb-2">Mobile Game Development</h3>
-                <p class="text-slate-400 text-sm">Optimized builds for Android Google Play Console with seamless SDK integration.</p>
-            </div>
-            <div class="glass-card p-8 rounded-2xl text-center transition">
-                <div class="w-16 h-16 bg-red-950/80 border border-red-600/40 rounded-2xl flex items-center justify-center mx-auto mb-6 text-red-500 text-2xl">
-                    <i class="fas fa-laptop-code"></i>
-                </div>
-                <h3 class="text-xl font-bold mb-2">Game UI/UX Design</h3>
-                <p class="text-slate-400 text-sm">Intuitive menus, HUDs, interactive layouts, and user-friendly navigation flows.</p>
-            </div>
-            <div class="glass-card p-8 rounded-2xl text-center transition">
-                <div class="w-16 h-16 bg-red-950/80 border border-red-600/40 rounded-2xl flex items-center justify-center mx-auto mb-6 text-red-500 text-2xl">
-                    <i class="fas fa-code"></i>
-                </div>
-                <h3 class="text-xl font-bold mb-2">Game Programming</h3>
-                <p class="text-slate-400 text-sm">Clean Unity C# scripting, performance optimization, and bug-free mechanics.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- CEO / Leadership Section -->
-    <section id="about" class="py-20 container mx-auto px-6 max-w-4xl">
-        <div class="glass-card p-8 md:p-12 rounded-3xl flex flex-col md:flex-row items-center gap-8 border border-red-600/30 shadow-2xl">
-            <img src="https://ui-avatars.com/api/?name=Ahmad+Imtiaz&background=dc2626&color=fff&size=250" 
-                 alt="Ahmad Imtiaz - CEO" 
-                 class="w-36 h-36 rounded-2xl object-cover border-2 border-red-500 shadow-lg shadow-red-600/30">
-            <div class="text-center md:text-left">
-                <span class="text-xs font-bold text-red-500 uppercase tracking-widest bg-red-950/80 px-3 py-1 rounded-full border border-red-800">Executive Leadership</span>
-                <h3 class="text-3xl font-black mt-3 mb-2">Ahmad Imtiaz</h3>
-                <p class="text-red-400 font-semibold mb-4">CEO & Founder, GameVerse Studio</p>
-                <p class="text-slate-400 text-sm leading-relaxed mb-6">
-                    Directing overall studio operations, game design strategy, and mobile publishing with our 50-person expert team (Office Timings: 09:00 AM to 06:00 PM). Committed to delivering top-tier gaming experiences on Google Play.
-                </p>
-                <div class="flex justify-center md:justify-start gap-4 text-lg">
-                    <a href="tel:03090503003" class="text-slate-400 hover:text-red-500 transition" title="Phone"><i class="fas fa-phone-alt"></i></a>
-                    <a href="mailto:hrgameverse@gmail.com" class="text-slate-400 hover:text-red-500 transition" title="Email"><i class="fas fa-envelope"></i></a>
-                    <a href="https://play.google.com/store/apps/developer?id=Bluewire+Tech" target="_blank" class="text-slate-400 hover:text-red-500 transition" title="Google Play Console"><i class="fab fa-google-play"></i></a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer & Contact Details -->
-    <footer id="contact" class="bg-slate-950 border-t border-red-950/60 mt-auto py-16">
-        <div class="container mx-auto px-6 grid grid-cols
