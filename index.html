@@ -35,7 +35,7 @@
             </div>
             <a href="https://play.google.com/store/apps/developer?id=Bluewire+Tech" target="_blank" rel="noopener noreferrer" 
                class="bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs uppercase px-5 py-2.5 rounded-xl transition shadow-md shadow-blue-600/20 flex items-center gap-2">
-               <i class="fab fa-google-play"></i> Play Console
+               <i class="fab fa-google-play"></i> Dev Portal
             </a>
         </div>
     </nav>
@@ -45,7 +45,7 @@
         <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
                 <span class="bg-blue-600/30 text-blue-400 border border-blue-500/30 text-xs px-3.5 py-1.5 rounded-full font-bold uppercase tracking-widest inline-block mb-6">
-                    Featured 1M+ Downloads
+                    Featured Game Release
                 </span>
                 <h1 class="text-4xl md:text-6xl font-black mb-6 leading-tight">
                     MORE THAN <span class="text-blue-500">TWO.</span> MORE THAN <span class="text-blue-500">EVER.</span>
@@ -57,8 +57,8 @@
                     <a href="#games" class="bg-blue-600 hover:bg-blue-700 text-white font-bold px-8 py-3.5 rounded-xl shadow-lg shadow-blue-600/30 transition flex items-center gap-2">
                         <i class="fas fa-play"></i> Explore Games
                     </a>
-                    <a href="https://play.google.com/store/apps/developer?id=Bluewire+Tech" target="_blank" class="bg-slate-800 hover:bg-slate-700 text-white font-semibold px-8 py-3.5 rounded-xl transition border border-slate-700 flex items-center gap-2">
-                        <i class="fab fa-google-play text-blue-400"></i> View All on Play Store
+                    <a href="tel:03090503003" class="bg-slate-800 hover:bg-slate-700 text-white font-semibold px-8 py-3.5 rounded-xl transition border border-slate-700">
+                        <i class="fas fa-phone-alt mr-2 text-blue-400"></i> 03090503003
                     </a>
                 </div>
             </div>
@@ -70,139 +70,205 @@
         </div>
     </section>
 
-    <!-- GD Exclusive Games / Interactive Pagination Section -->
+    <!-- GD Exclusive Games / Interactive Panels Section -->
     <section id="games" class="py-16 container mx-auto px-6">
         <div class="flex justify-between items-center mb-10">
             <div>
-                <h2 class="text-2xl md:text-3xl font-black text-slate-900">GameVerse Exclusive Games (1M+ Downloads)</h2>
-                <p class="text-slate-500 text-sm mt-1">Click pagination buttons (01, 02, 03) to explore different game panels.</p>
+                <h2 class="text-2xl md:text-3xl font-black text-slate-900">GameVerse Exclusive Games</h2>
+                <p class="text-slate-500 text-sm mt-1">Play and discover top published games from our development portfolio.</p>
             </div>
-            <!-- Interactive Pagination Buttons -->
             <div class="flex gap-2">
-                <button onclick="switchPanel(1)" id="btn-1" class="w-9 h-9 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-sm cursor-pointer shadow-md">01</button>
-                <button onclick="switchPanel(2)" id="btn-2" class="w-9 h-9 rounded-full bg-slate-200 text-slate-700 flex items-center justify-center font-bold text-sm cursor-pointer hover:bg-blue-600 hover:text-white transition">02</button>
-                <button onclick="switchPanel(3)" id="btn-3" class="w-9 h-9 rounded-full bg-slate-200 text-slate-700 flex items-center justify-center font-bold text-sm cursor-pointer hover:bg-blue-600 hover:text-white transition">03</button>
+                <button onclick="switchTab(1)" id="btn-1" class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-sm cursor-pointer shadow-md">01</button>
+                <button onclick="switchTab(2)" id="btn-2" class="w-8 h-8 rounded-full bg-slate-200 text-slate-700 flex items-center justify-center font-bold text-sm cursor-pointer hover:bg-blue-600 hover:text-white transition">02</button>
+                <button onclick="switchTab(3)" id="btn-3" class="w-8 h-8 rounded-full bg-slate-200 text-slate-700 flex items-center justify-center font-bold text-sm cursor-pointer hover:bg-blue-600 hover:text-white transition">03</button>
             </div>
         </div>
 
         <!-- Panel 1 -->
         <div id="panel-1" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-            <a href="https://play.google.com/store/apps/developer?id=Bluewire+Tech" target="_blank" class="game-card bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm block">
-                <div class="aspect-[4/3] bg-slate-100 overflow-hidden relative">
-                    <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?w=500&auto=format&fit=crop&q=60" alt="Real Racing Car" class="w-full h-full object-cover">
-                    <span class="absolute top-2 right-2 bg-blue-600 text-white text-[10px] font-bold px-2 py-1 rounded-md">1M+ DL</span>
-                </div>
-                <div class="p-4">
-                    <h3 class="font-bold text-slate-900 text-base">Real Racing Car 3D</h3>
-                    <p class="text-xs text-slate-500 mt-1">GameVerse Studio</p>
-                </div>
-            </a>
-            <a href="https://play.google.com/store/apps/developer?id=Bluewire+Tech" target="_blank" class="game-card bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm block">
+            <a href="https://play.google.com/store/apps/details?id=com.ti.gangster.crime.city.mafia.games.miami.crime.simulator" target="_blank" class="game-card bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm block">
                 <div class="aspect-[4/3] bg-slate-100 overflow-hidden relative">
                     <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=500&auto=format&fit=crop&q=60" alt="Miami Mafia" class="w-full h-full object-cover">
-                    <span class="absolute top-2 right-2 bg-blue-600 text-white text-[10px] font-bold px-2 py-1 rounded-md">1M+ DL</span>
                 </div>
                 <div class="p-4">
                     <h3 class="font-bold text-slate-900 text-base">Miami Mafia Simulator</h3>
-                    <p class="text-xs text-slate-500 mt-1">GameVerse Studio</p>
+                    <p class="text-xs text-slate-500 mt-1">Aerie Solutions 2022</p>
                 </div>
             </a>
-            <a href="https://play.google.com/store/apps/developer?id=Bluewire+Tech" target="_blank" class="game-card bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm block">
+            <a href="https://play.google.com/store/apps/developer?id=Aerie+Solutions+2022" target="_blank" class="game-card bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm block">
+                <div class="aspect-[4/3] bg-slate-100 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?w=500&auto=format&fit=crop&q=60" alt="Real Racing Car" class="w-full h-full object-cover">
+                </div>
+                <div class="p-4">
+                    <h3 class="font-bold text-slate-900 text-base">Real Racing Car 3D</h3>
+                    <p class="text-xs text-slate-500 mt-1">Aerie Solutions 2022</p>
+                </div>
+            </a>
+            <a href="https://play.google.com/store/apps/developer?id=Aerie+Solutions+2022" target="_blank" class="game-card bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm block">
                 <div class="aspect-[4/3] bg-slate-100 overflow-hidden relative">
                     <img src="https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=500&auto=format&fit=crop&q=60" alt="Highway Bus Simulator" class="w-full h-full object-cover">
-                    <span class="absolute top-2 right-2 bg-blue-600 text-white text-[10px] font-bold px-2 py-1 rounded-md">1M+ DL</span>
                 </div>
                 <div class="p-4">
                     <h3 class="font-bold text-slate-900 text-base">Highway Bus Simulator</h3>
-                    <p class="text-xs text-slate-500 mt-1">GameVerse Studio</p>
+                    <p class="text-xs text-slate-500 mt-1">Aerie Solutions 2022</p>
                 </div>
             </a>
-            <a href="https://play.google.com/store/apps/developer?id=Bluewire+Tech" target="_blank" class="game-card bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm block">
+            <a href="https://play.google.com/store/apps/developer?id=Aerie+Solutions+2022" target="_blank" class="game-card bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm block">
                 <div class="aspect-[4/3] bg-slate-100 overflow-hidden relative">
-                    <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=500&auto=format&fit=crop&q=60" alt="Police Patrol" class="w-full h-full object-cover">
-                    <span class="absolute top-2 right-2 bg-blue-600 text-white text-[10px] font-bold px-2 py-1 rounded-md">1M+ DL</span>
+                    <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=500&auto=format&fit=crop&q=60" alt="Police Car Driving" class="w-full h-full object-cover">
                 </div>
                 <div class="p-4">
                     <h3 class="font-bold text-slate-900 text-base">Police Car Driving 3D</h3>
-                    <p class="text-xs text-slate-500 mt-1">GameVerse Studio</p>
+                    <p class="text-xs text-slate-500 mt-1">Aerie Solutions 2022</p>
                 </div>
             </a>
         </div>
 
         <!-- Panel 2 -->
-        <div id="panel-2" class="hidden grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-            <a href="https://play.google.com/store/apps/developer?id=Bluewire+Tech" target="_blank" class="game-card bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm block">
+        <div id="panel-2" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 hidden">
+            <a href="https://play.google.com/store/apps/developer?id=CoreOne+Games" target="_blank" class="game-card bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm block">
                 <div class="aspect-[4/3] bg-slate-100 overflow-hidden relative">
-                    <img src="https://images.unsplash.com/photo-1560253023-3ec5d502959f?w=500&auto=format&fit=crop&q=60" alt="Gangster 3D" class="w-full h-full object-cover">
-                    <span class="absolute top-2 right-2 bg-purple-600 text-white text-[10px] font-bold px-2 py-1 rounded-md">5M+ DL</span>
+                    <img src="https://images.unsplash.com/photo-1560253023-3ec5d502959f?w=500&auto=format&fit=crop&q=60" alt="CoreOne Game 1" class="w-full h-full object-cover">
                 </div>
                 <div class="p-4">
-                    <h3 class="font-bold text-slate-900 text-base">Real Vegas Gangster 3D</h3>
-                    <p class="text-xs text-slate-500 mt-1">GameVerse Studio</p>
+                    <h3 class="font-bold text-slate-900 text-base">Cyber Action 3D</h3>
+                    <p class="text-xs text-slate-500 mt-1">CoreOne Games</p>
                 </div>
             </a>
-            <a href="https://play.google.com/store/apps/developer?id=Bluewire+Tech" target="_blank" class="game-card bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm block">
+            <a href="https://play.google.com/store/apps/developer?id=CoreOne+Games" target="_blank" class="game-card bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm block">
                 <div class="aspect-[4/3] bg-slate-100 overflow-hidden relative">
-                    <img src="https://images.unsplash.com/photo-1579373903781-fd5c0c30c4cd?w=500&auto=format&fit=crop&q=60" alt="Car Drift" class="w-full h-full object-cover">
-                    <span class="absolute top-2 right-2 bg-purple-600 text-white text-[10px] font-bold px-2 py-1 rounded-md">1M+ DL</span>
+                    <img src="https://images.unsplash.com/photo-1612287233202-b51b36619dfc?w=500&auto=format&fit=crop&q=60" alt="CoreOne Game 2" class="w-full h-full object-cover">
                 </div>
                 <div class="p-4">
-                    <h3 class="font-bold text-slate-900 text-base">Extreme Car Drifting</h3>
-                    <p class="text-xs text-slate-500 mt-1">GameVerse Studio</p>
+                    <h3 class="font-bold text-slate-900 text-base">Stunt Master Arena</h3>
+                    <p class="text-xs text-slate-500 mt-1">CoreOne Games</p>
                 </div>
             </a>
-            <a href="https://play.google.com/store/apps/developer?id=Bluewire+Tech" target="_blank" class="game-card bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm block">
+            <a href="https://play.google.com/store/apps/developer?id=CoreOne+Games" target="_blank" class="game-card bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm block">
                 <div class="aspect-[4/3] bg-slate-100 overflow-hidden relative">
-                    <img src="https://images.unsplash.com/photo-1612287233202-b51b36619dfc?w=500&auto=format&fit=crop&q=60" alt="Offroad Truck" class="w-full h-full object-cover">
-                    <span class="absolute top-2 right-2 bg-purple-600 text-white text-[10px] font-bold px-2 py-1 rounded-md">2M+ DL</span>
+                    <img src="https://images.unsplash.com/photo-1579373903781-fd5c0c30c4cd?w=500&auto=format&fit=crop&q=60" alt="CoreOne Game 3" class="w-full h-full object-cover">
                 </div>
                 <div class="p-4">
-                    <h3 class="font-bold text-slate-900 text-base">Offroad Mountain Truck</h3>
-                    <p class="text-xs text-slate-500 mt-1">GameVerse Studio</p>
+                    <h3 class="font-bold text-slate-900 text-base">Speed Drifters Pro</h3>
+                    <p class="text-xs text-slate-500 mt-1">CoreOne Games</p>
                 </div>
             </a>
-            <a href="https://play.google.com/store/apps/developer?id=Bluewire+Tech" target="_blank" class="game-card bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm block">
+            <a href="https://play.google.com/store/apps/developer?id=CoreOne+Games" target="_blank" class="game-card bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm block">
                 <div class="aspect-[4/3] bg-slate-100 overflow-hidden relative">
-                    <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=500&auto=format&fit=crop&q=60" alt="City Ambulance" class="w-full h-full object-cover">
-                    <span class="absolute top-2 right-2 bg-purple-600 text-white text-[10px] font-bold px-2 py-1 rounded-md">1M+ DL</span>
+                    <img src="https://images.unsplash.com/photo-1534423861386-85a16f5d13fd?w=500&auto=format&fit=crop&q=60" alt="CoreOne Game 4" class="w-full h-full object-cover">
                 </div>
                 <div class="p-4">
-                    <h3 class="font-bold text-slate-900 text-base">City Ambulance Rescue</h3>
-                    <p class="text-xs text-slate-500 mt-1">GameVerse Studio</p>
+                    <h3 class="font-bold text-slate-900 text-base">Urban Crime Fighter</h3>
+                    <p class="text-xs text-slate-500 mt-1">CoreOne Games</p>
                 </div>
             </a>
         </div>
 
         <!-- Panel 3 -->
-        <div id="panel-3" class="hidden grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+        <div id="panel-3" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 hidden">
             <a href="https://play.google.com/store/apps/developer?id=Bluewire+Tech" target="_blank" class="game-card bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm block">
                 <div class="aspect-[4/3] bg-slate-100 overflow-hidden relative">
-                    <img src="https://images.unsplash.com/photo-1542751110-97427bbecf20?w=500&auto=format&fit=crop&q=60" alt="Bike Stunt" class="w-full h-full object-cover">
-                    <span class="absolute top-2 right-2 bg-emerald-600 text-white text-[10px] font-bold px-2 py-1 rounded-md">3M+ DL</span>
+                    <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=500&auto=format&fit=crop&q=60" alt="Bluewire Game 1" class="w-full h-full object-cover">
                 </div>
                 <div class="p-4">
-                    <h3 class="font-bold text-slate-900 text-base">Moto Bike Stunt Master</h3>
-                    <p class="text-xs text-slate-500 mt-1">GameVerse Studio</p>
+                    <h3 class="font-bold text-slate-900 text-base">Bluewire Racing Elite</h3>
+                    <p class="text-xs text-slate-500 mt-1">Bluewire Tech</p>
                 </div>
             </a>
             <a href="https://play.google.com/store/apps/developer?id=Bluewire+Tech" target="_blank" class="game-card bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm block">
                 <div class="aspect-[4/3] bg-slate-100 overflow-hidden relative">
-                    <img src="https://images.unsplash.com/photo-1534423861386-85a16f5d13fd?w=500&auto=format&fit=crop&q=60" alt="Jungle Sniper" class="w-full h-full object-cover">
-                    <span class="absolute top-2 right-2 bg-emerald-600 text-white text-[10px] font-bold px-2 py-1 rounded-md">1M+ DL</span>
+                    <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?w=500&auto=format&fit=crop&q=60" alt="Bluewire Game 2" class="w-full h-full object-cover">
                 </div>
                 <div class="p-4">
-                    <h3 class="font-bold text-slate-900 text-base">Jungle Sniper Assassin</h3>
-                    <p class="text-xs text-slate-500 mt-1">GameVerse Studio</p>
+                    <h3 class="font-bold text-slate-900 text-base">Extreme Drift 3D</h3>
+                    <p class="text-xs text-slate-500 mt-1">Bluewire Tech</p>
                 </div>
             </a>
             <a href="https://play.google.com/store/apps/developer?id=Bluewire+Tech" target="_blank" class="game-card bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm block">
                 <div class="aspect-[4/3] bg-slate-100 overflow-hidden relative">
-                    <img src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?w=500&auto=format&fit=crop&q=60" alt="FPS Commando" class="w-full h-full object-cover">
-                    <span class="absolute top-2 right-2 bg-emerald-600 text-white text-[10px] font-bold px-2 py-1 rounded-md">4M+ DL</span>
+                    <img src="https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=500&auto=format&fit=crop&q=60" alt="Bluewire Game 3" class="w-full h-full object-cover">
                 </div>
                 <div class="p-4">
-                    <h3 class="font-bold text-slate-900 text-base">FPS Commando Secret Mission</h3>
-                    <p class="text-xs text-slate-500 mt-1">GameVerse Studio</p>
+                    <h3 class="font-bold text-slate-900 text-base">Offroad Mountain Bus</h3>
+                    <p class="text-xs text-slate-500 mt-1">Bluewire Tech</p>
                 </div>
             </a>
-            <a href="
+            <a href="https://play.google.com/store/apps/developer?id=Bluewire+Tech" target="_blank" class="game-card bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm block">
+                <div class="aspect-[4/3] bg-slate-100 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=500&auto=format&fit=crop&q=60" alt="Bluewire Game 4" class="w-full h-full object-cover">
+                </div>
+                <div class="p-4">
+                    <h3 class="font-bold text-slate-900 text-base">Gangster City Wars</h3>
+                    <p class="text-xs text-slate-500 mt-1">Bluewire Tech</p>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Services & About Info -->
+    <section id="services" class="py-16 bg-slate-100 border-t border-slate-200">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                <div class="text-blue-600 text-2xl mb-4"><i class="fas fa-clock"></i></div>
+                <h4 class="font-bold text-lg mb-2">Office Timings</h4>
+                <p class="text-slate-600 text-sm">09:00 AM to 06:00 PM available for professional coordination and development support.</p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                <div class="text-blue-600 text-2xl mb-4"><i class="fas fa-users"></i></div>
+                <h4 class="font-bold text-lg mb-2">50 Persons Team</h4>
+                <p class="text-slate-600 text-sm">Powered by expert developers, 3D modelers, and professional game designers.</p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                <div class="text-blue-600 text-2xl mb-4"><i class="fas fa-award"></i></div>
+                <h4 class="font-bold text-lg mb-2">High Quality Standards</h4>
+                <p class="text-slate-600 text-sm">ISO standard graphics and smooth Unity programming optimized for Play Console.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-slate-900 text-slate-400 py-12 mt-auto border-t border-slate-800">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 text-sm">
+            <div>
+                <h4 class="text-white font-bold mb-3 text-base">GAMEVERSE STUDIO</h4>
+                <p class="mb-3">Professional mobile game studio led by CEO Ahmad Imtiaz.</p>
+                <p class="text-xs text-slate-500">Pace plaza, Modal Town A, Near Dubai chowk, Bahawalpur City</p>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-3 text-base">Contact Us</h4>
+                <p class="mb-2"><i class="fas fa-phone-alt text-blue-500 mr-2"></i> 03090503003</p>
+                <p><i class="fas fa-envelope text-blue-500 mr-2"></i> hrgameverse@gmail.com</p>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-3 text-base">Play Console</h4>
+                <a href="https://play.google.com/store/apps/developer?id=Bluewire+Tech" target="_blank" class="text-blue-400 hover:underline">
+                    <i class="fab fa-google-play mr-1"></i> View Bluewire Tech Developer Profile
+                </a>
+            </div>
+        </div>
+        <div class="container mx-auto px-6 border-t border-slate-800 pt-6 text-center text-xs text-slate-500">
+            <p>© 2026 GameVerse Studio. All Rights Reserved. CEO: Ahmad Imtiaz</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Tab Switching (01, 02, 03) -->
+    <script>
+        function switchTab(tabNum) {
+            // Hide all panels
+            document.getElementById('panel-1').classList.add('hidden');
+            document.getElementById('panel-2').classList.add('hidden');
+            document.getElementById('panel-3').classList.add('hidden');
+
+            // Reset all buttons style
+            document.getElementById('btn-1').className = 'w-8 h-8 rounded-full bg-slate-200 text-slate-700 flex items-center justify-center font-bold text-sm cursor-pointer hover:bg-blue-600 hover:text-white transition';
+            document.getElementById('btn-2').className = 'w-8 h-8 rounded-full bg-slate-200 text-slate-700 flex items-center justify-center font-bold text-sm cursor-pointer hover:bg-blue-600 hover:text-white transition';
+            document.getElementById('btn-3').className = 'w-8 h-8 rounded-full bg-slate-200 text-slate-700 flex items-center justify-center font-bold text-sm cursor-pointer hover:bg-blue-600 hover:text-white transition';
+
+            // Show selected panel and highlight button
+            document.getElementById('panel-' + tabNum).classList.remove('hidden');
+            document.getElementById('btn-' + tabNum).className = 'w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-sm cursor-pointer shadow-md';
+        }
+    </script>
+
+</body>
+</html>
