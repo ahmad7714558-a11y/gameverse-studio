@@ -11,233 +11,167 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
         body { 
-            background-color: #05070b; 
-            color: #f3f4f6; 
+            background-color: #f8fafc; 
+            color: #1e293b; 
             font-family: 'Inter', system-ui, sans-serif; 
-            background-image: 
-                radial-gradient(circle at 20% 20%, rgba(220, 38, 38, 0.12) 0%, transparent 40%),
-                radial-gradient(circle at 80% 80%, rgba(185, 28, 28, 0.08) 0%, transparent 40%),
-                linear-gradient(to bottom, #05070b, #0b0f19);
-            background-attachment: fixed;
-            <style>
-    body { 
-        background-color: #050b07; 
-        color: #f3f4f6; 
-        font-family: 'Inter', system-ui, sans-serif; 
-        background-image: 
-            radial-gradient(circle at 20% 20%, rgba(16, 185, 129, 0.12) 0%, transparent 40%),
-            radial-gradient(circle at 80% 80%, rgba(5, 150, 105, 0.08) 0%, transparent 40%),
-            linear-gradient(to bottom, #050b07, #061a10);
-        background-attachment: fixed;
-    }
-    .gradient-text { background: linear-gradient(135deg, #34d399, #10b981, #059669); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    .glass-card { background: rgba(13, 27, 20, 0.85); backdrop-filter: blur(16px); border: 1px solid rgba(16, 185, 129, 0.25); box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); }
-    .glass-card:hover { border-color: rgba(16, 185, 129, 0.7); transform: translateY(-5px); box-shadow: 0 12px 40px 0 rgba(16, 185, 129, 0.2); }
-</style>
         }
-        .gradient-text { background: linear-gradient(135deg, #ef4444, #dc2626, #b91c1c); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .glass-card { background: rgba(13, 18, 30, 0.85); backdrop-filter: blur(16px); border: 1px solid rgba(239, 68, 68, 0.25); box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); }
-        .glass-card:hover { border-color: rgba(239, 68, 68, 0.7); transform: translateY(-5px); box-shadow: 0 12px 40px 0 rgba(220, 38, 38, 0.2); }
+        .game-card { transition: all 0.3s ease; }
+        .game-card:hover { transform: translateY(-6px); box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1); }
     </style>
 </head>
-<body class="flex flex-col min-h-screen selection:bg-red-600 selection:text-white">
+<body class="flex flex-col min-h-screen selection:bg-blue-600 selection:text-white">
 
-    <!-- Navbar -->
-    <nav class="fixed top-0 left-0 w-full z-50 glass-card border-b border-red-950/50">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-black tracking-wider text-white flex items-center gap-2">
-                <span class="text-red-500"><i class="fas fa-gamepad"></i></span> Game<span class="text-red-500">Verse</span>
+    <!-- Navbar (Like GameDistribution) -->
+    <nav class="fixed top-0 left-0 w-full z-50 bg-white border-b border-slate-200 shadow-sm">
+        <div class="container mx-auto px-6 py-3.5 flex justify-between items-center">
+            <a href="#" class="text-xl font-black tracking-tight text-slate-900 flex items-center gap-2">
+                <span class="bg-blue-600 text-white p-2 rounded-xl"><i class="fas fa-gamepad"></i></span> Game<span class="text-blue-600">Verse</span>
             </a>
-            <div class="hidden md:flex space-x-8 text-slate-300 font-semibold text-sm">
-                <a href="#services" class="hover:text-red-400 transition">Services</a>
-                <a href="#games" class="hover:text-red-400 transition">Games & Trailers</a>
-                <a href="#about" class="hover:text-red-400 transition">About CEO</a>
-                <a href="#contact" class="hover:text-red-400 transition">Contact</a>
+            <div class="hidden md:flex space-x-8 text-slate-600 font-semibold text-sm">
+                <a href="#games" class="hover:text-blue-600 transition">Games</a>
+                <a href="#about" class="hover:text-blue-600 transition">About CEO</a>
+                <a href="#services" class="hover:text-blue-600 transition">Services</a>
+                <a href="#contact" class="hover:text-blue-600 transition">Contact</a>
             </div>
             <a href="https://play.google.com/store/apps/developer?id=Bluewire+Tech" target="_blank" rel="noopener noreferrer" 
-               class="bg-red-600 hover:bg-red-700 text-white font-bold text-xs uppercase px-5 py-2.5 rounded-full transition shadow-lg shadow-red-600/30 flex items-center gap-2">
-               <i class="fab fa-google-play"></i> Play Console
+               class="bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs uppercase px-5 py-2.5 rounded-xl transition shadow-md shadow-blue-600/20 flex items-center gap-2">
+               <i class="fab fa-google-play"></i> Dev Portal
             </a>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="pt-36 pb-20 px-6 container mx-auto text-center flex flex-col items-center">
-        <div class="inline-flex items-center gap-2 bg-red-950/80 border border-red-700/50 text-red-400 text-xs px-4 py-1.5 rounded-full font-bold uppercase tracking-widest mb-6 shadow-lg shadow-red-900/20">
-            <i class="fas fa-shield-alt"></i> Professional Game Development Studio
-        </div>
-        <h1 class="text-4xl md:text-7xl font-black mb-6 leading-tight max-w-4xl">
-            Building Next-Gen <span class="text-red-500">Mobile Games</span> & 3D Experiences
-        </h1>
-        <p class="text-slate-400 text-base md:text-xl max-w-2xl mb-8 leading-relaxed">
-            Led by CEO <strong>Ahmad Imtiaz</strong>. Backed by a professional team of 50 experts, specializing in high-quality 3D game development, UI/UX, and robust game programming.
-        </p>
-        <div class="flex flex-wrap gap-4 justify-center mb-12">
-            <a href="#games" class="bg-red-600 hover:bg-red-700 text-white font-bold px-8 py-3.5 rounded-xl shadow-lg shadow-red-600/30 transition flex items-center gap-3">
-                <i class="fas fa-play-circle text-lg"></i> Watch Game Trailers
-            </a>
-            <a href="tel:03090503003" class="glass-card hover:bg-slate-800/80 text-white font-semibold px-8 py-3.5 rounded-xl transition flex items-center gap-3">
-                <i class="fas fa-phone-alt text-red-400"></i> 03090503003
-            </a>
-        </div>
-
-        <!-- Quick Stats Banner -->
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 w-full max-w-4xl mt-6">
-            <div class="glass-card p-4 rounded-xl text-center">
-                <i class="fas fa-award text-red-500 text-xl mb-1"></i>
-                <div class="font-bold text-white text-sm">High Quality</div>
-                <div class="text-xs text-slate-400">ISO Standard Graphics</div>
-            </div>
-            <div class="glass-card p-4 rounded-xl text-center">
-                <i class="fas fa-clock text-red-500 text-xl mb-1"></i>
-                <div class="font-bold text-white text-sm">09:00 AM to 06:00 PM</div>
-                <div class="text-xs text-slate-400">Office Timings</div>
-            </div>
-            <div class="glass-card p-4 rounded-xl text-center">
-                <i class="fas fa-users text-red-500 text-xl mb-1"></i>
-                <div class="font-bold text-white text-sm">50 Persons Team</div>
-                <div class="text-xs text-slate-400">Expert Developers</div>
-            </div>
-            <div class="glass-card p-4 rounded-xl text-center">
-                <i class="fas fa-lightbulb text-red-500 text-xl mb-1"></i>
-                <div class="font-bold text-white text-sm">Custom Solutions</div>
-                <div class="text-xs text-slate-400">Unity & SDK Tailored</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Games & Video Trailers Section -->
-    <section id="games" class="py-20 bg-slate-950/40 border-t border-red-950/30 backdrop-blur-md">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-5xl font-extrabold mb-4">Featured Game Trailer</h2>
-                <p class="text-slate-400 max-w-xl mx-auto">Watch real gameplay and excellent environment design from our racing titles.</p>
-            </div>
-
-            <div class="max-w-3xl mx-auto glass-card rounded-2xl overflow-hidden p-4 border border-red-600/30 shadow-2xl">
-                <div class="relative aspect-video bg-slate-900 rounded-xl overflow-hidden">
-                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/l7EynldIeHg" title="Real Racing Car Exelent environment" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-                <div class="p-6 text-center">
-                    <span class="text-xs font-bold text-red-500 uppercase tracking-widest bg-red-950/80 px-3 py-1 rounded-full border border-red-800">3D Racing Simulation</span>
-                    <h3 class="text-2xl font-bold mt-3 mb-2">Real Racing Car - Excellent Environment</h3>
-                    <p class="text-slate-400 text-sm mb-6">Experience high-speed drifting, off-road tracks, and next-gen graphic simulations on Android.</p>
-                    <a href="https://play.google.com/store/apps/developer?id=Bluewire+Tech" target="_blank" class="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white font-bold px-6 py-3 rounded-xl transition shadow-lg shadow-red-600/30">
-                        <i class="fab fa-google-play"></i> View Play Console Games
+    <!-- Hero Section (Game Portal Banner style) -->
+    <section class="pt-28 pb-16 px-6 bg-slate-900 text-white relative overflow-hidden">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div>
+                <span class="bg-blue-600/30 text-blue-400 border border-blue-500/30 text-xs px-3.5 py-1.5 rounded-full font-bold uppercase tracking-widest inline-block mb-6">
+                    Featured Game Release
+                </span>
+                <h1 class="text-4xl md:text-6xl font-black mb-6 leading-tight">
+                    MORE THAN <span class="text-blue-500">TWO.</span> MORE THAN <span class="text-blue-500">EVER.</span>
+                </h1>
+                <p class="text-slate-300 text-base md:text-lg mb-8 leading-relaxed">
+                    Explore top-tier mobile racing simulators, 3D action games, and immersive experiences built by GameVerse Studio under CEO <strong>Ahmad Imtiaz</strong>.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#games" class="bg-blue-600 hover:bg-blue-700 text-white font-bold px-8 py-3.5 rounded-xl shadow-lg shadow-blue-600/30 transition flex items-center gap-2">
+                        <i class="fas fa-play"></i> Explore Games
+                    </a>
+                    <a href="tel:03090503003" class="bg-slate-800 hover:bg-slate-700 text-white font-semibold px-8 py-3.5 rounded-xl transition border border-slate-700">
+                        <i class="fas fa-phone-alt mr-2 text-blue-400"></i> 03090503003
                     </a>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="py-20 container mx-auto px-6">
-        <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-5xl font-extrabold mb-4">Our Core Expertise</h2>
-            <p class="text-slate-400 max-w-xl mx-auto">Comprehensive game development and design solutions for mobile platforms.</p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="glass-card p-8 rounded-2xl text-center transition">
-                <div class="w-16 h-16 bg-red-950/80 border border-red-600/40 rounded-2xl flex items-center justify-center mx-auto mb-6 text-red-500 text-2xl shadow-lg shadow-red-900/30">
-                    <i class="fas fa-gamepad"></i>
-                </div>
-                <h3 class="text-xl font-bold mb-2">3D Game Development</h3>
-                <p class="text-slate-400 text-sm">Immersive 3D environments, realistic driving physics, and engaging gameplay loops.</p>
-            </div>
-            <div class="glass-card p-8 rounded-2xl text-center transition">
-                <div class="w-16 h-16 bg-red-950/80 border border-red-600/40 rounded-2xl flex items-center justify-center mx-auto mb-6 text-red-500 text-2xl shadow-lg shadow-red-900/30">
-                    <i class="fas fa-paint-brush"></i>
-                </div>
-                <h3 class="text-xl font-bold mb-2">Graphic Designing</h3>
-                <p class="text-slate-400 text-sm">Stunning promotional posters, branding materials, store screenshots, and icons.</p>
-            </div>
-            <div class="glass-card p-8 rounded-2xl text-center transition">
-                <div class="w-16 h-16 bg-red-950/80 border border-red-600/40 rounded-2xl flex items-center justify-center mx-auto mb-6 text-red-500 text-2xl shadow-lg shadow-red-900/30">
-                    <i class="fas fa-cube"></i>
-                </div>
-                <h3 class="text-xl font-bold mb-2">3D Modeling & Animation</h3>
-                <p class="text-slate-400 text-sm">Detailed vehicle assets, characters, props, and smooth rigged animations.</p>
-            </div>
-            <div class="glass-card p-8 rounded-2xl text-center transition">
-                <div class="w-16 h-16 bg-red-950/80 border border-red-600/40 rounded-2xl flex items-center justify-center mx-auto mb-6 text-red-500 text-2xl shadow-lg shadow-red-900/30">
-                    <i class="fas fa-mobile-alt"></i>
-                </div>
-                <h3 class="text-xl font-bold mb-2">Mobile Game Development</h3>
-                <p class="text-slate-400 text-sm">Optimized builds for Android Google Play Console with seamless SDK integration.</p>
-            </div>
-            <div class="glass-card p-8 rounded-2xl text-center transition">
-                <div class="w-16 h-16 bg-red-950/80 border border-red-600/40 rounded-2xl flex items-center justify-center mx-auto mb-6 text-red-500 text-2xl shadow-lg shadow-red-900/30">
-                    <i class="fas fa-laptop-code"></i>
-                </div>
-                <h3 class="text-xl font-bold mb-2">Game UI/UX Design</h3>
-                <p class="text-slate-400 text-sm">Intuitive menus, HUDs, interactive layouts, and user-friendly navigation flows.</p>
-            </div>
-            <div class="glass-card p-8 rounded-2xl text-center transition">
-                <div class="w-16 h-16 bg-red-950/80 border border-red-600/40 rounded-2xl flex items-center justify-center mx-auto mb-6 text-red-500 text-2xl shadow-lg shadow-red-900/30">
-                    <i class="fas fa-code"></i>
-                </div>
-                <h3 class="text-xl font-bold mb-2">Game Programming</h3>
-                <p class="text-slate-400 text-sm">Clean Unity C# scripting, performance optimization, and bug-free mechanics.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- CEO / Leadership Section -->
-    <section id="about" class="py-20 container mx-auto px-6 max-w-4xl">
-        <div class="glass-card p-8 md:p-12 rounded-3xl flex flex-col md:flex-row items-center gap-8 border border-red-600/30 shadow-2xl">
-            <img src="https://ui-avatars.com/api/?name=Ahmad+Imtiaz&background=dc2626&color=fff&size=250" 
-                 alt="Ahmad Imtiaz - CEO" 
-                 class="w-36 h-36 rounded-2xl object-cover border-2 border-red-500 shadow-lg shadow-red-600/30">
-            <div class="text-center md:text-left">
-                <span class="text-xs font-bold text-red-500 uppercase tracking-widest bg-red-950/80 px-3 py-1 rounded-full border border-red-800">Executive Leadership</span>
-                <h3 class="text-3xl font-black mt-3 mb-2">Ahmad Imtiaz</h3>
-                <p class="text-red-400 font-semibold mb-4">CEO & Founder, GameVerse Studio</p>
-                <p class="text-slate-400 text-sm leading-relaxed mb-6">
-                    Directing overall studio operations, game design strategy, and mobile publishing with our 50-person expert team (Office Timings: 09:00 AM to 06:00 PM). Committed to delivering top-tier gaming experiences on Google Play.
-                </p>
-                <div class="flex justify-center md:justify-start gap-4 text-lg">
-                    <a href="tel:03090503003" class="text-slate-400 hover:text-red-500 transition" title="Phone"><i class="fas fa-phone-alt"></i></a>
-                    <a href="mailto:hrgameverse@gmail.com" class="text-slate-400 hover:text-red-500 transition" title="Email"><i class="fas fa-envelope"></i></a>
-                    <a href="https://play.google.com/store/apps/developer?id=Bluewire+Tech" target="_blank" class="text-slate-400 hover:text-red-500 transition" title="Google Play Console"><i class="fab fa-google-play"></i></a>
+            <div class="relative bg-gradient-to-tr from-blue-600/20 to-purple-600/20 p-4 rounded-3xl border border-slate-800 shadow-2xl">
+                <div class="aspect-video rounded-2xl overflow-hidden bg-slate-950 flex items-center justify-center relative">
+                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/l7EynldIeHg" title="Real Racing Car Trailer" frameborder="0" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer & Contact Details -->
-    <footer id="contact" class="bg-slate-950/80 border-t border-red-950/60 mt-auto py-16 backdrop-blur-lg">
-        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10 mb-12 text-slate-400 text-sm">
+    <!-- GD Exclusive Games / Portal Grid Section -->
+    <section id="games" class="py-16 container mx-auto px-6">
+        <div class="flex justify-between items-center mb-10">
             <div>
-                <a href="#" class="text-xl font-black text-white mb-4 inline-block">GAME<span class="text-red-500">VERSE</span></a>
-                <p class="leading-relaxed mb-4">Professional mobile game studio powered by 50 professional team members. Office timing: 09:00 AM to 06:00 PM.</p>
-                <div class="text-xs text-slate-500 font-semibold">
-                    CEO: <span class="text-white">Ahmad Imtiaz</span>
+                <h2 class="text-2xl md:text-3xl font-black text-slate-900">GameVerse Exclusive Games</h2>
+                <p class="text-slate-500 text-sm mt-1">Play and discover top published games from our development portfolio.</p>
+            </div>
+            <div class="flex gap-2">
+                <span class="w-8 h-8 rounded-full bg-slate-200 flex items-center justify-center font-bold text-sm cursor-pointer hover:bg-blue-600 hover:text-white transition">01</span>
+                <span class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-sm cursor-pointer">02</span>
+                <span class="w-8 h-8 rounded-full bg-slate-200 flex items-center justify-center font-bold text-sm cursor-pointer hover:bg-blue-600 hover:text-white transition">03</span>
+            </div>
+        </div>
+
+        <!-- Games Grid (Like GameDistribution Catalog) -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+            <!-- Game 1 -->
+            <div class="game-card bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm">
+                <div class="aspect-[4/3] bg-slate-100 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?w=500&auto=format&fit=crop&q=60" alt="Real Racing Car" class="w-full h-full object-cover">
+                </div>
+                <div class="p-4">
+                    <h3 class="font-bold text-slate-900 text-base">Real Racing Car 3D</h3>
+                    <p class="text-xs text-slate-500 mt-1">GameVerse Studio</p>
                 </div>
             </div>
+            <!-- Game 2 -->
+            <div class="game-card bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm">
+                <div class="aspect-[4/3] bg-slate-100 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=500&auto=format&fit=crop&q=60" alt="Miami Mafia" class="w-full h-full object-cover">
+                </div>
+                <div class="p-4">
+                    <h3 class="font-bold text-slate-900 text-base">Miami Mafia Simulator</h3>
+                    <p class="text-xs text-slate-500 mt-1">GameVerse Studio</p>
+                </div>
+            </div>
+            <!-- Game 3 -->
+            <div class="game-card bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm">
+                <div class="aspect-[4/3] bg-slate-100 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=500&auto=format&fit=crop&q=60" alt="Highway Bus Simulator" class="w-full h-full object-cover">
+                </div>
+                <div class="p-4">
+                    <h3 class="font-bold text-slate-900 text-base">Highway Bus Simulator</h3>
+                    <p class="text-xs text-slate-500 mt-1">GameVerse Studio</p>
+                </div>
+            </div>
+            <!-- Game 4 -->
+            <div class="game-card bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm">
+                <div class="aspect-[4/3] bg-slate-100 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=500&auto=format&fit=crop&q=60" alt="Police Patrol" class="w-full h-full object-cover">
+                </div>
+                <div class="p-4">
+                    <h3 class="font-bold text-slate-900 text-base">Police Car Driving 3D</h3>
+                    <p class="text-xs text-slate-500 mt-1">GameVerse Studio</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services & About Info -->
+    <section id="services" class="py-16 bg-slate-100 border-t border-slate-200">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                <div class="text-blue-600 text-2xl mb-4"><i class="fas fa-clock"></i></div>
+                <h4 class="font-bold text-lg mb-2">Office Timings</h4>
+                <p class="text-slate-600 text-sm">09:00 AM to 06:00 PM available for professional coordination and development support.</p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                <div class="text-blue-600 text-2xl mb-4"><i class="fas fa-users"></i></div>
+                <h4 class="font-bold text-lg mb-2">50 Persons Team</h4>
+                <p class="text-slate-600 text-sm">Powered by expert developers, 3D modelers, and professional game designers.</p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                <div class="text-blue-600 text-2xl mb-4"><i class="fas fa-award"></i></div>
+                <h4 class="font-bold text-lg mb-2">High Quality Standards</h4>
+                <p class="text-slate-600 text-sm">ISO standard graphics and smooth Unity programming optimized for Play Console.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-slate-900 text-slate-400 py-12 mt-auto border-t border-slate-800">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 text-sm">
             <div>
-                <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-wider border-l-2 border-red-600 pl-2">Contact Information</h4>
-                <ul class="space-y-3">
-                    <li><a href="tel:03090503003" class="hover:text-red-400 transition flex items-center gap-3"><i class="fas fa-phone-alt text-red-500"></i> 03090503003</a></li>
-                    <li><a href="mailto:hrgameverse@gmail.com" class="hover:text-red-400 transition flex items-center gap-3"><i class="fas fa-envelope text-red-500"></i> hrgameverse@gmail.com</a></li>
-                    <li><a href="https://play.google.com/store/apps/developer?id=Bluewire+Tech" target="_blank" class="hover:text-red-400 transition flex items-center gap-3"><i class="fab fa-google-play text-green-500"></i> Play Console Developer Profile</a></li>
-                </ul>
+                <h4 class="text-white font-bold mb-3 text-base">GAMEVERSE STUDIO</h4>
+                <p class="mb-3">Professional mobile game studio led by CEO Ahmad Imtiaz.</p>
+                <p class="text-xs text-slate-500">Pace plaza, Modal Town A, Near Dubai chowk, Bahawalpur City</p>
             </div>
             <div>
-                <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-wider border-l-2 border-red-600 pl-2">Office Address</h4>
-                <p class="leading-relaxed mb-4 flex items-start gap-3">
-                    <i class="fas fa-map-marker-alt text-red-500 mt-1"></i>
-                    <span>Pace plaza, Modal Town A, Near Dubai chowk, Bahawalpur City</span>
-                </p>
-                <a href="/app-ads.txt" class="text-xs bg-red-950/60 hover:bg-red-900 text-red-400 px-4 py-2 rounded-lg border border-red-800 inline-block transition">
-                    <i class="fas fa-file-code mr-1"></i> View app-ads.txt
+                <h4 class="text-white font-bold mb-3 text-base">Contact Us</h4>
+                <p class="mb-2"><i class="fas fa-phone-alt text-blue-500 mr-2"></i> 03090503003</p>
+                <p><i class="fas fa-envelope text-blue-500 mr-2"></i> hrgameverse@gmail.com</p>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-3 text-base">Play Console</h4>
+                <a href="https://play.google.com/store/apps/developer?id=Bluewire+Tech" target="_blank" class="text-blue-400 hover:underline">
+                    <i class="fab fa-google-play mr-1"></i> View Bluewire Tech Developer Profile
                 </a>
             </div>
         </div>
-
-        <div class="container mx-auto px-6 border-t border-red-950/40 pt-6 text-center text-xs text-slate-500">
-            <p>Managed & Developed under GameVerse Studio | CEO: <strong>Ahmad Imtiaz</strong></p>
-            <p class="mt-1">© 2026 GameVerse. All Rights Reserved.</p>
+        <div class="container mx-auto px-6 border-t border-slate-800 pt-6 text-center text-xs text-slate-500">
+            <p>© 2026 GameVerse Studio. All Rights Reserved. CEO: Ahmad Imtiaz</p>
         </div>
     </footer>
 
