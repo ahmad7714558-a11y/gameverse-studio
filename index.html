@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GameVerse Studio | 3D Game & Mobile Development</title>
-    <meta name="description" content="Official website of GameVerse Studio. CEO Ahmad Imtiaz. Professional mobile game development, 3D modeling, UI/UX design, and game programming.">
+    <title>GameVerse | 3D Game & Mobile Development</title>
+    <meta name="description" content="Official website of GameVerse. CEO Ahmad Imtiaz. Professional mobile game development, 3D modeling, UI/UX design, and game programming.">
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome Icons -->
@@ -16,7 +16,8 @@
             font-family: 'Inter', system-ui, sans-serif; 
         }
         .hero-banner {
-            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #7f1d1d 100%);
+            background-color: #0b0f19;
+            background-image: radial-gradient(circle at 80% 20%, rgba(220, 38, 38, 0.12) 0%, transparent 40%);
         }
         .game-card { transition: all 0.3s ease; }
         .game-card:hover { transform: translateY(-6px); box-shadow: 0 20px 25px -5px rgba(239, 68, 68, 0.2); }
@@ -26,10 +27,10 @@
 </head>
 <body class="flex flex-col min-h-screen selection:bg-red-600 selection:text-white">
 
-    <!-- Navbar (White Clean Style) -->
+    <!-- Navbar -->
     <nav class="fixed top-0 left-0 w-full z-50 bg-white border-b border-slate-200 shadow-sm">
         <div class="container mx-auto px-6 py-3.5 flex justify-between items-center">
-            <!-- GameVerse Logo (No space, Red GV Badge) -->
+            <!-- GameVerse Logo -->
             <a href="#" class="text-2xl font-black tracking-tight text-slate-900 flex items-center gap-2">
                 <span class="red-gradient-btn text-white px-3 py-1 rounded-xl shadow-md flex items-center gap-1 text-base">
                     <i class="fas fa-gamepad"></i> GV
@@ -49,37 +50,38 @@
         </div>
     </nav>
 
-    <!-- Hero Section (Dark Blue to Red Gradient Flex Banner) -->
+    <!-- Hero Section -->
     <section class="pt-28 pb-16 px-6 hero-banner text-white relative overflow-hidden">
         <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
-                <span class="bg-red-600/30 text-red-400 border border-red-500/30 text-xs px-3.5 py-1.5 rounded-full font-bold uppercase tracking-widest inline-block mb-6">
-                    Featured Game Release
+                <span class="bg-red-600/20 text-red-400 border border-red-500/30 text-xs px-3.5 py-1.5 rounded-full font-bold uppercase tracking-widest inline-block mb-4">
+                    Leading Mobile Game Publisher
                 </span>
-                <h1 class="text-4xl md:text-6xl font-black mb-6 leading-tight">
-                    MORE THAN <span class="text-red-500">TWO.</span> MORE THAN <span class="text-red-500">EVER.</span>
+                <h1 class="text-4xl md:text-6xl font-black mb-4 leading-tight tracking-tight uppercase text-white">
+                    GAME<span class="text-red-500">VERSE</span>
                 </h1>
-                <p class="text-slate-300 text-base md:text-lg mb-8 leading-relaxed">
-                    Explore top-tier mobile racing simulators, 3D action games, and immersive experiences built by <strong>GameVerse Studio</strong> under CEO <strong>Ahmad Imtiaz</strong>.
+                <p class="text-slate-300 text-base md:text-lg mb-8 leading-relaxed font-normal">
+                    Next-Gen 3D Mobile Games & Immersive Racing Simulators. Built by professional game developers, 3D artists, and software engineers.
                 </p>
                 <div class="flex flex-wrap gap-4">
                     <a href="#games" class="red-gradient-btn text-white font-bold px-8 py-3.5 rounded-xl shadow-lg shadow-red-600/30 transition flex items-center gap-2">
                         <i class="fas fa-play"></i> Explore Games
                     </a>
-                    <a href="tel:03090503003" class="bg-slate-800/80 hover:bg-slate-700 text-white font-semibold px-8 py-3.5 rounded-xl transition border border-slate-700">
+                    <a href="tel:03090503003" class="bg-slate-900 hover:bg-slate-800 text-white font-semibold px-8 py-3.5 rounded-xl transition border border-slate-700">
                         <i class="fas fa-phone-alt mr-2 text-red-400"></i> 03090503003
                     </a>
                 </div>
             </div>
-            <div class="relative bg-slate-950/60 p-4 rounded-3xl border border-red-900/40 shadow-2xl">
-                <div class="aspect-video rounded-2xl overflow-hidden bg-slate-950 flex items-center justify-center relative">
+            <!-- Clean Video Container Frame -->
+            <div class="relative bg-slate-900/90 p-2.5 rounded-3xl border border-slate-700/80 shadow-2xl">
+                <div class="aspect-video rounded-2xl overflow-hidden bg-black flex items-center justify-center relative">
                     <iframe class="w-full h-full" src="https://www.youtube.com/embed/l7EynldIeHg" title="Real Racing Car Trailer" frameborder="0" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- GameVerse Exclusive Games Section (Clean White Background) -->
+    <!-- GameVerse Exclusive Games Section -->
     <section id="games" class="py-16 container mx-auto px-6">
         <div class="flex justify-between items-center mb-10">
             <div>
@@ -239,8 +241,8 @@
     <footer id="contact" class="bg-slate-900 text-slate-400 py-12 mt-auto border-t border-slate-800">
         <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 text-sm">
             <div>
-                <h4 class="text-white font-bold mb-3 text-base">GAMEVERSE STUDIO</h4>
-                <p class="mb-3 text-slate-400">Professional mobile game studio led by CEO Ahmad Imtiaz.</p>
+                <h4 class="text-white font-bold mb-3 text-base">GAMEVERSE</h4>
+                <p class="mb-3 text-slate-400">Professional mobile game development led by CEO Ahmad Imtiaz.</p>
                 <p class="text-xs text-slate-500">Pace plaza, Modal Town A, Near Dubai chowk, Bahawalpur City</p>
             </div>
             <div>
@@ -250,21 +252,21 @@
             </div>
             <div>
                 <h4 class="text-white font-bold mb-3 text-base">Play Console Profiles</h4>
-                <div class="flex flex-col gap-1 text-xs">
-                    <a href="https://play.google.com/store/apps/developer?id=Aerie+Solutions+2022" target="_blank" class="text-red-400 hover:underline">
+                <div class="flex flex-col gap-1.5 text-xs">
+                    <a href="https://play.google.com/store/apps/developer?id=Aerie+Solutions+2022" target="_blank" class="text-blue-400 hover:text-blue-300 transition hover:underline">
                         <i class="fab fa-google-play mr-1"></i> Aerie Solutions 2022
                     </a>
-                    <a href="https://play.google.com/store/apps/developer?id=CoreOne+Games" target="_blank" class="text-red-400 hover:underline">
+                    <a href="https://play.google.com/store/apps/developer?id=CoreOne+Games" target="_blank" class="text-blue-400 hover:text-blue-300 transition hover:underline">
                         <i class="fab fa-google-play mr-1"></i> CoreOne Games
                     </a>
-                    <a href="https://play.google.com/store/apps/developer?id=Bluewire+Tech" target="_blank" class="text-red-400 hover:underline">
+                    <a href="https://play.google.com/store/apps/developer?id=Bluewire+Tech" target="_blank" class="text-blue-400 hover:text-blue-300 transition hover:underline">
                         <i class="fab fa-google-play mr-1"></i> Bluewire Tech
                     </a>
                 </div>
             </div>
         </div>
         <div class="container mx-auto px-6 border-t border-slate-800 pt-6 text-center text-xs text-slate-500">
-            <p>© 2026 GameVerse Studio. All Rights Reserved. CEO: Ahmad Imtiaz</p>
+            <p>© 2026 GameVerse. All Rights Reserved. CEO: Ahmad Imtiaz</p>
         </div>
     </footer>
 
