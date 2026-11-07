@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GameVerse | Professional B2B Game Publishing & FAQ Hub</title>
-    <meta name="description" content="Official website of GameVerse. CEO Ahmad Imtiaz. Professional mobile game development, white-label gaming solutions, and complete FAQ support.">
+    <title>GameVerse | Professional B2B Game Publishing & Developer Portal</title>
+    <meta name="description" content="Official website of GameVerse. CEO Ahmad Imtiaz. Professional mobile game development, white-label gaming solutions, and complete interactive publishing portal.">
     <!-- Custom Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23ef4444'/%3E%3Cstop offset='50%25' stop-color='%23f97316'/%3E%3Cstop offset='100%25' stop-color='%233b82f6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='50' cy='50' r='48' fill='url(%23grad)'/%3E%3Ctext x='50' y='65' font-size='42' font-weight='900' font-family='Arial, sans-serif' fill='%23ffffff' text-anchor='middle'%3EGV%3C/text%3E%3C/svg%3E">
     <!-- Tailwind CSS -->
@@ -67,7 +67,7 @@
                     </div>
                 </div>
 
-                <a href="#dev-panel" class="hover:text-blue-600 transition">Dev Panel</a>
+                <a href="#dev-faq" class="hover:text-blue-600 transition">Dev Panel</a>
                 <a href="#about" class="hover:text-blue-600 transition">About</a>
             </div>
             <div class="flex items-center gap-3">
@@ -115,31 +115,33 @@
                 <div class="w-12 h-12 rounded-2xl bg-blue-600 text-white flex items-center justify-center text-xl font-bold"><i class="fas fa-code"></i></div>
                 <div>
                     <span class="text-blue-600 font-bold text-xs uppercase tracking-widest">Support Center</span>
-                    <h2 class="text-2xl md:text-3xl font-black text-slate-900">Developer FAQ Guide</h2>
+                    <h2 class="text-2xl md:text-3xl font-black text-slate-900">Developer FAQ & Action Hub</h2>
                 </div>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- First Steps -->
                 <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm">
                     <div class="flex items-center gap-3 mb-6">
                         <div class="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold"><i class="fas fa-shoe-prints"></i></div>
                         <h3 class="text-xl font-bold text-slate-900">First Steps</h3>
                     </div>
                     <ul class="space-y-3 text-sm text-slate-700">
-                        <li class="flex items-center gap-2"><i class="fas fa-circle text-xs text-blue-600"></i> <a href="#" onclick="openFaqDetail('Creating an account (Dev)', 'Learn how to set up your developer account on GameVerse portal step by step.')" class="hover:text-blue-600 transition font-medium">Creating an account (Dev)</a></li>
-                        <li class="flex items-center gap-2"><i class="fas fa-circle text-xs text-blue-600"></i> <a href="#" onclick="openFaqDetail('What to do after creating your account', 'Complete your profile setup, verify email credentials, and submit your initial publishing details.')" class="hover:text-blue-600 transition font-medium">What to do once you've created your account</a></li>
+                        <li class="flex items-center gap-2"><i class="fas fa-circle text-xs text-blue-600"></i> <a href="#" onclick="openInteractiveForm('Creating a Developer Account', 'dev_account')" class="hover:text-blue-600 transition font-medium">Creating an account (Dev)</a></li>
+                        <li class="flex items-center gap-2"><i class="fas fa-circle text-xs text-blue-600"></i> <a href="#" onclick="openInteractiveForm('Post-Account Setup Guide', 'profile_setup')" class="hover:text-blue-600 transition font-medium">What to do once you\'ve created your account</a></li>
                     </ul>
                 </div>
 
+                <!-- Getting Started -->
                 <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm">
                     <div class="flex items-center gap-3 mb-6">
                         <div class="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold"><i class="fas fa-rocket"></i></div>
                         <h3 class="text-xl font-bold text-slate-900">Getting Started</h3>
                     </div>
                     <ul class="space-y-3 text-sm text-slate-700">
-                        <li class="flex items-center gap-2"><i class="fas fa-circle text-xs text-blue-600"></i> <a href="#" onclick="openFaqDetail('Dashboard and Account', 'Manage your developer dashboard, review build statistics, and update company configurations.')" class="hover:text-blue-600 transition font-medium">Dashboard and Account</a></li>
-                        <li class="flex items-center gap-2"><i class="fas fa-circle text-xs text-blue-600"></i> <a href="#" onclick="openFaqDetail('Setting up and receiving your payment', 'Configure international payment details, W-8BEN compliance, and payout schedules.')" class="hover:text-blue-600 transition font-medium">Setting up and receiving your payment</a></li>
-                        <li class="flex items-center gap-2"><i class="fas fa-circle text-xs text-blue-600"></i> <a href="#" onclick="openFaqDetail('Submitting your game', 'Upload builds, configure APK/AAB packages, and submit games for QA approval.')" class="hover:text-blue-600 transition font-medium">Submitting your game</a></li>
+                        <li class="flex items-center gap-2"><i class="fas fa-circle text-xs text-blue-600"></i> <a href="#" onclick="openInteractiveForm('Dashboard & Account Configuration', 'dashboard_config')" class="hover:text-blue-600 transition font-medium">Dashboard and Account</a></li>
+                        <li class="flex items-center gap-2"><i class="fas fa-circle text-xs text-blue-600"></i> <a href="#" onclick="openInteractiveForm('Payment & Banking Setup (W-8BEN)', 'payment_setup')" class="hover:text-blue-600 transition font-medium">Setting up and receiving your payment</a></li>
+                        <li class="flex items-center gap-2"><i class="fas fa-circle text-xs text-blue-600"></i> <a href="#" onclick="openInteractiveForm('Submit Your Game Build (APK / AAB)', 'game_submission')" class="hover:text-blue-600 transition font-medium">Submitting your game</a></li>
                     </ul>
                 </div>
             </div>
@@ -153,7 +155,7 @@
                 <div class="w-12 h-12 rounded-2xl bg-indigo-600 text-white flex items-center justify-center text-xl font-bold"><i class="fas fa-bullhorn"></i></div>
                 <div>
                     <span class="text-indigo-600 font-bold text-xs uppercase tracking-widest">Publisher Portal</span>
-                    <h2 class="text-2xl md:text-3xl font-black text-slate-900">Publisher FAQ Guide</h2>
+                    <h2 class="text-2xl md:text-3xl font-black text-slate-900">Publisher FAQ & Onboarding Hub</h2>
                 </div>
             </div>
 
@@ -164,8 +166,8 @@
                         <h3 class="text-xl font-bold text-slate-900">First Steps</h3>
                     </div>
                     <ul class="space-y-3 text-sm text-slate-700">
-                        <li class="flex items-center gap-2"><i class="fas fa-circle text-xs text-indigo-600"></i> <a href="#" onclick="openFaqDetail('Creating an account', 'Register your publisher account with valid corporate credentials.')" class="hover:text-indigo-600 transition font-medium">Creating an account</a></li>
-                        <li class="flex items-center gap-2"><i class="fas fa-circle text-xs text-indigo-600"></i> <a href="#" onclick="openFaqDetail('What to do once you created your account', 'Explore catalog widgets, configure branding, and deploy subdomain links.')" class="hover:text-indigo-600 transition font-medium">What to do once you've created your account</a></li>
+                        <li class="flex items-center gap-2"><i class="fas fa-circle text-xs text-indigo-600"></i> <a href="#" onclick="openInteractiveForm('Publisher Account Registration', 'pub_account')" class="hover:text-indigo-600 transition font-medium">Creating an account</a></li>
+                        <li class="flex items-center gap-2"><i class="fas fa-circle text-xs text-indigo-600"></i> <a href="#" onclick="openInteractiveForm('Publisher Domain & Widget Setup', 'pub_setup')" class="hover:text-indigo-600 transition font-medium">What to do once you\'ve created your account</a></li>
                     </ul>
                 </div>
 
@@ -175,9 +177,9 @@
                         <h3 class="text-xl font-bold text-slate-900">Getting Started</h3>
                     </div>
                     <ul class="space-y-3 text-sm text-slate-700">
-                        <li class="flex items-center gap-2"><i class="fas fa-circle text-xs text-indigo-600"></i> <a href="#" onclick="openFaqDetail('Onboarding process for Publishers', 'Step-by-step verification and legal agreement setup for publishers.')" class="hover:text-indigo-600 transition font-medium">What is GameVerse's onboarding process for Publishers?</a></li>
-                        <li class="flex items-center gap-2"><i class="fas fa-circle text-xs text-indigo-600"></i> <a href="#" onclick="openFaqDetail('Why was my domain rejected?', 'Ensure DNS records and branding guidelines match our compliance rules.')" class="hover:text-indigo-600 transition font-medium">Why was my domain rejected?</a></li>
-                        <li class="flex items-center gap-2"><i class="fas fa-circle text-xs text-indigo-600"></i> <a href="#" onclick="openFaqDetail('Adding ads.txt', 'Host app-ads.txt on your root domain to authenticate ad inventory partners.')" class="hover:text-indigo-600 transition font-medium">Adding ads.txt</a></li>
+                        <li class="flex items-center gap-2"><i class="fas fa-circle text-xs text-indigo-600"></i> <a href="#" onclick="openInteractiveForm('Publisher Onboarding Request', 'pub_onboard')" class="hover:text-indigo-600 transition font-medium">What is GameVerse\'s onboarding process for Publishers?</a></li>
+                        <li class="flex items-center gap-2"><i class="fas fa-circle text-xs text-indigo-600"></i> <a href="#" onclick="openInteractiveForm('Domain Verification & Review Request', 'domain_review')" class="hover:text-indigo-600 transition font-medium">Why was my domain rejected?</a></li>
+                        <li class="flex items-center gap-2"><i class="fas fa-circle text-xs text-indigo-600"></i> <a href="#" onclick="openInteractiveForm('Ads.txt Hosting Configuration', 'ads_txt_config')" class="hover:text-indigo-600 transition font-medium">Adding ads.txt</a></li>
                     </ul>
                 </div>
             </div>
@@ -232,20 +234,40 @@
         </div>
     </section>
 
-    <!-- Interactive FAQ Modal Popup -->
-    <div id="faqModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
-        <div class="bg-white rounded-3xl max-w-lg w-full p-8 shadow-2xl border border-slate-200 relative text-center">
-            <button onclick="closeFaqModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 text-xl font-bold cursor-pointer bg-transparent border-none">
+    <!-- Interactive Professional Action Modal (Replaces Simple Alert/Got It) -->
+    <div id="interactiveModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-lg w-full p-8 shadow-2xl border border-slate-200 relative">
+            <button onclick="closeInteractiveModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 text-xl font-bold cursor-pointer bg-transparent border-none">
                 <i class="fas fa-times"></i>
             </button>
-            <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-2xl shadow-sm">
-                <i class="fas fa-info-circle"></i>
+            <div class="text-center mb-6">
+                <div class="w-14 h-14 mx-auto mb-3 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-xl font-bold"><i class="fas fa-file-invoice"></i></div>
+                <h3 id="modalTitle" class="text-2xl font-black text-slate-900"></h3>
+                <p id="modalSubtitle" class="text-slate-500 text-xs mt-1">Complete the required details below to proceed with GameVerse publishing network.</p>
             </div>
-            <h3 id="faqModalTitle" class="text-2xl font-black text-slate-900 mb-2"></h3>
-            <p id="faqModalDesc" class="text-slate-600 text-sm leading-relaxed mb-6"></p>
-            <button onclick="closeFaqModal()" class="gv-btn-primary text-white font-bold px-6 py-2.5 rounded-xl text-sm shadow-md transition cursor-pointer">
-                Got It
-            </button>
+            
+            <!-- Dynamic Form Inside Modal -->
+            <form onsubmit="event.preventDefault(); alert('Your request has been successfully submitted to GameVerse Administration!'); closeInteractiveModal();" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Your Full Name *</label>
+                    <input type="text" required placeholder="Ahmad Imtiaz" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-blue-600">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Business / Corporate Email *</label>
+                    <input type="email" required placeholder="hrgameverse@gmail.com" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-blue-600">
+                </div>
+                <div>
+                    <label id="dynamicLabel" class="block text-xs font-bold text-slate-700 mb-1">Company / App Package Name *</label>
+                    <input type="text" id="dynamicInput" required placeholder="GameVerse Studio / com.gameverse.app" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-blue-600">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Additional Notes / Inquiry Details</label>
+                    <textarea rows="3" placeholder="Enter your specific requirements or queries here..." class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-blue-600"></textarea>
+                </div>
+                <button type="submit" class="w-full gv-btn-primary text-white font-bold py-3 rounded-xl text-sm shadow-md transition cursor-pointer mt-2">
+                    Submit Request to GameVerse
+                </button>
+            </form>
         </div>
     </div>
 
@@ -305,13 +327,29 @@
 
     <!-- JavaScript -->
     <script>
-        function openFaqDetail(title, desc) {
-            document.getElementById('faqModalTitle').innerText = title;
-            document.getElementById('faqModalDesc').innerText = desc;
-            document.getElementById('faqModal').classList.remove('hidden');
+        function openInteractiveForm(title, type) {
+            document.getElementById('modalTitle').innerText = title;
+            const inputLabel = document.getElementById('dynamicLabel');
+            const inputField = document.getElementById('dynamicInput');
+            
+            if (type === 'game_submission') {
+                inputLabel.innerText = 'Game Build URL / APK / AAB Link *';
+                inputField.placeholder = 'https://play.google.com/store/apps/details?id=...';
+            } else if (type === 'payment_setup') {
+                inputLabel.innerText = 'Bank Account / Tax ID (W-8BEN) *';
+                inputField.placeholder = 'Enter IBAN or Tax Identification Number';
+            } else if (type === 'domain_review' || type === 'ads_txt_config') {
+                inputLabel.innerText = 'Website Domain URL *';
+                inputField.placeholder = 'https://yourdomain.com';
+            } else {
+                inputLabel.innerText = 'Company / Organization Name *';
+                inputField.placeholder = 'GameVerse Studio';
+            }
+            
+            document.getElementById('interactiveModal').classList.remove('hidden');
         }
-        function closeFaqModal() {
-            document.getElementById('faqModal').classList.add('hidden');
+        function closeInteractiveModal() {
+            document.getElementById('interactiveModal').classList.add('hidden');
         }
         function openLoginModal() {
             document.getElementById('loginModal').classList.remove('hidden');
