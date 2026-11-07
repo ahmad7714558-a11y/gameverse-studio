@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GameVerse | Professional B2B Game Publishing & Developer Portal</title>
+    <title>GameVerse | Professional B2B Game Publishing & Developer Hub</title>
     <meta name="description" content="Official website of GameVerse. CEO Ahmad Imtiaz. Professional mobile game development, white-label gaming solutions, and complete interactive publishing portal.">
     <!-- Custom Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23ef4444'/%3E%3Cstop offset='50%25' stop-color='%23f97316'/%3E%3Cstop offset='100%25' stop-color='%233b82f6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='50' cy='50' r='48' fill='url(%23grad)'/%3E%3Ctext x='50' y='65' font-size='42' font-weight='900' font-family='Arial, sans-serif' fill='%23ffffff' text-anchor='middle'%3EGV%3C/text%3E%3C/svg%3E">
@@ -28,6 +28,12 @@
             visibility: visible; 
             transform: translateY(0);
         }
+        /* Custom Phone Scroll Animation Simulation */
+        @keyframes floatMockup {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        .animate-float { animation: floatMockup 4s ease-in-out infinite; }
     </style>
 </head>
 <body class="flex flex-col min-h-screen selection:bg-blue-600 selection:text-white">
@@ -54,7 +60,7 @@
                             <h4 class="text-xs font-black text-blue-600 uppercase tracking-wider mb-3"><i class="fas fa-bullhorn mr-1"></i> For Publishers</h4>
                             <ul class="space-y-2 text-xs">
                                 <li><a href="#publisher-faq" class="text-slate-700 hover:text-blue-600 font-bold block">Partnership Models</a><span class="text-slate-400">Discover partnership models</span></li>
-                                <li><a href="#publisher-faq" class="text-slate-700 hover:text-blue-600 font-bold block mt-1">Publisher FAQ</a><span class="text-slate-400">Browse Publisher FAQ Guide</span></li>
+                                <li><a href="#publisher-faq" class="text-slate-700 hover:text-blue-600 font-bold block mt-1">Publisher FAQ & Onboarding</a><span class="text-slate-400">Browse Publisher Guide</span></li>
                             </ul>
                         </div>
                         <div>
@@ -67,7 +73,8 @@
                     </div>
                 </div>
 
-                <a href="#dev-faq" class="hover:text-blue-600 transition">Dev Panel</a>
+                <!-- Fully Functional Dev Panel Button -->
+                <a href="#dev-faq" onclick="openInteractiveForm('Developer Panel & SDK Hub', 'dev_panel')" class="hover:text-blue-600 transition cursor-pointer font-semibold">Dev Panel</a>
                 <a href="#about" class="hover:text-blue-600 transition">About</a>
             </div>
             <div class="flex items-center gap-3">
@@ -78,7 +85,7 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero Section with Animated Interactive Mobile Mockup (Matching Original UI Inspiration) -->
     <section class="pt-32 pb-20 px-6 bg-white border-b border-slate-200">
         <div class="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div class="bg-slate-100 p-8 md:p-12 rounded-3xl border border-slate-200 shadow-sm">
@@ -95,27 +102,50 @@
                     <a href="#games" class="gv-btn-primary text-white font-bold px-8 py-3.5 rounded-xl shadow-lg shadow-blue-600/30 transition flex items-center gap-2">
                         <i class="fas fa-play"></i> Play Now
                     </a>
-                    <a href="#dev-faq" class="bg-white hover:bg-slate-50 text-slate-900 font-semibold px-8 py-3.5 rounded-xl transition border border-slate-300 shadow-sm">
-                        <i class="fas fa-question-circle mr-2 text-blue-600"></i> Explore FAQ Guides
-                    </a>
+                    <button onclick="openInteractiveForm('Developer Partnership Plan', 'dev_panel')" class="bg-white hover:bg-slate-50 text-slate-900 font-semibold px-8 py-3.5 rounded-xl transition border border-slate-300 shadow-sm cursor-pointer">
+                        <i class="fas fa-rocket mr-2 text-blue-600"></i> Developer Plan
+                    </button>
                 </div>
             </div>
-            <div class="relative bg-slate-900 p-3 rounded-3xl border border-slate-800 shadow-2xl">
-                <div class="aspect-video rounded-2xl overflow-hidden bg-black flex items-center justify-center relative">
-                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/l7EynldIeHg" title="GameVerse Trailer" frameborder="0" allowfullscreen></iframe>
+
+            <!-- Animated Mobile Mockup Showcase (Inspired by Original Reference UI) -->
+            <div class="relative bg-gradient-to-br from-blue-900 to-indigo-900 p-8 rounded-3xl shadow-2xl overflow-hidden flex flex-col items-center justify-center text-white">
+                <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#3b82f6_1px,transparent_1px)] [background-size:16px_16px]"></div>
+                <div class="relative z-10 text-center mb-6">
+                    <span class="bg-white/10 text-blue-300 text-xs px-3 py-1 rounded-full font-bold uppercase">Interactive Mobile Portal</span>
+                    <h3 class="text-2xl font-black mt-2">Plug-and-Play Game Section</h3>
+                </div>
+                <!-- Simulated Phone Frame with Scrolling Animation -->
+                <div class="w-[260px] h-[440px] bg-black rounded-[40px] p-3 border-4 border-slate-700 shadow-2xl animate-float relative overflow-hidden">
+                    <div class="w-full h-full bg-slate-900 rounded-[32px] overflow-y-auto p-4 space-y-3">
+                        <div class="bg-blue-600 text-white p-3 rounded-2xl text-xs font-bold text-center">GameVerse Catalog</div>
+                        <div class="bg-white/10 p-2.5 rounded-xl text-xs flex items-center gap-2">
+                            <i class="fas fa-car text-blue-400"></i> Modern Drift Racing 3D
+                        </div>
+                        <div class="bg-white/10 p-2.5 rounded-xl text-xs flex items-center gap-2">
+                            <i class="fas fa-bus text-green-400"></i> Highway Bus Simulator
+                        </div>
+                        <div class="bg-white/10 p-2.5 rounded-xl text-xs flex items-center gap-2">
+                            <i class="fas fa-shield-alt text-yellow-400"></i> Police Car Simulator
+                        </div>
+                        <div class="bg-white/10 p-2.5 rounded-xl text-xs flex items-center gap-2">
+                            <i class="fas fa-mask text-red-400"></i> Miami Mafia Gangster
+                        </div>
+                        <div class="bg-blue-600/40 text-blue-200 p-2.5 rounded-xl text-center text-[10px] font-bold">Scrolls & Integrates Instantly</div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Developer FAQ Hub Section -->
+    <!-- Developer FAQ & Action Hub Section -->
     <section id="dev-faq" class="py-20 bg-slate-50 border-b border-slate-200">
         <div class="container mx-auto px-6">
             <div class="flex items-center gap-3 mb-10">
                 <div class="w-12 h-12 rounded-2xl bg-blue-600 text-white flex items-center justify-center text-xl font-bold"><i class="fas fa-code"></i></div>
                 <div>
                     <span class="text-blue-600 font-bold text-xs uppercase tracking-widest">Support Center</span>
-                    <h2 class="text-2xl md:text-3xl font-black text-slate-900">Developer FAQ & Action Hub</h2>
+                    <h2 class="text-2xl md:text-3xl font-black text-slate-900">Developer FAQ & Plan Hub</h2>
                 </div>
             </div>
 
@@ -128,15 +158,15 @@
                     </div>
                     <ul class="space-y-3 text-sm text-slate-700">
                         <li class="flex items-center gap-2"><i class="fas fa-circle text-xs text-blue-600"></i> <a href="#" onclick="openInteractiveForm('Creating a Developer Account', 'dev_account')" class="hover:text-blue-600 transition font-medium">Creating an account (Dev)</a></li>
-                        <li class="flex items-center gap-2"><i class="fas fa-circle text-xs text-blue-600"></i> <a href="#" onclick="openInteractiveForm('Post-Account Setup Guide', 'profile_setup')" class="hover:text-blue-600 transition font-medium">What to do once you\'ve created your account</a></li>
+                        <li class="flex items-center gap-2"><i class="fas fa-circle text-xs text-blue-600"></i> <a href="#" onclick="openInteractiveForm('Post-Account Setup Guide', 'profile_setup')" class="hover:text-blue-600 transition font-medium">What to do once you've created your account</a></li>
                     </ul>
                 </div>
 
-                <!-- Getting Started -->
+                <!-- Getting Started / Developer Plan -->
                 <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm">
                     <div class="flex items-center gap-3 mb-6">
                         <div class="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold"><i class="fas fa-rocket"></i></div>
-                        <h3 class="text-xl font-bold text-slate-900">Getting Started</h3>
+                        <h3 class="text-xl font-bold text-slate-900">Getting Started & Developer Plan</h3>
                     </div>
                     <ul class="space-y-3 text-sm text-slate-700">
                         <li class="flex items-center gap-2"><i class="fas fa-circle text-xs text-blue-600"></i> <a href="#" onclick="openInteractiveForm('Dashboard & Account Configuration', 'dashboard_config')" class="hover:text-blue-600 transition font-medium">Dashboard and Account</a></li>
@@ -167,7 +197,7 @@
                     </div>
                     <ul class="space-y-3 text-sm text-slate-700">
                         <li class="flex items-center gap-2"><i class="fas fa-circle text-xs text-indigo-600"></i> <a href="#" onclick="openInteractiveForm('Publisher Account Registration', 'pub_account')" class="hover:text-indigo-600 transition font-medium">Creating an account</a></li>
-                        <li class="flex items-center gap-2"><i class="fas fa-circle text-xs text-indigo-600"></i> <a href="#" onclick="openInteractiveForm('Publisher Domain & Widget Setup', 'pub_setup')" class="hover:text-indigo-600 transition font-medium">What to do once you\'ve created your account</a></li>
+                        <li class="flex items-center gap-2"><i class="fas fa-circle text-xs text-indigo-600"></i> <a href="#" onclick="openInteractiveForm('Publisher Domain & Widget Setup', 'pub_setup')" class="hover:text-indigo-600 transition font-medium">What to do once you've created your account</a></li>
                     </ul>
                 </div>
 
@@ -177,7 +207,7 @@
                         <h3 class="text-xl font-bold text-slate-900">Getting Started</h3>
                     </div>
                     <ul class="space-y-3 text-sm text-slate-700">
-                        <li class="flex items-center gap-2"><i class="fas fa-circle text-xs text-indigo-600"></i> <a href="#" onclick="openInteractiveForm('Publisher Onboarding Request', 'pub_onboard')" class="hover:text-indigo-600 transition font-medium">What is GameVerse\'s onboarding process for Publishers?</a></li>
+                        <li class="flex items-center gap-2"><i class="fas fa-circle text-xs text-indigo-600"></i> <a href="#" onclick="openInteractiveForm('Publisher Onboarding Request', 'pub_onboard')" class="hover:text-indigo-600 transition font-medium">What is GameVerse's onboarding process for Publishers?</a></li>
                         <li class="flex items-center gap-2"><i class="fas fa-circle text-xs text-indigo-600"></i> <a href="#" onclick="openInteractiveForm('Domain Verification & Review Request', 'domain_review')" class="hover:text-indigo-600 transition font-medium">Why was my domain rejected?</a></li>
                         <li class="flex items-center gap-2"><i class="fas fa-circle text-xs text-indigo-600"></i> <a href="#" onclick="openInteractiveForm('Ads.txt Hosting Configuration', 'ads_txt_config')" class="hover:text-indigo-600 transition font-medium">Adding ads.txt</a></li>
                     </ul>
@@ -234,7 +264,7 @@
         </div>
     </section>
 
-    <!-- Interactive Professional Action Modal (Replaces Simple Alert/Got It) -->
+    <!-- Interactive Professional Action Modal -->
     <div id="interactiveModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
         <div class="bg-white rounded-3xl max-w-lg w-full p-8 shadow-2xl border border-slate-200 relative">
             <button onclick="closeInteractiveModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 text-xl font-bold cursor-pointer bg-transparent border-none">
@@ -246,7 +276,6 @@
                 <p id="modalSubtitle" class="text-slate-500 text-xs mt-1">Complete the required details below to proceed with GameVerse publishing network.</p>
             </div>
             
-            <!-- Dynamic Form Inside Modal -->
             <form onsubmit="event.preventDefault(); alert('Your request has been successfully submitted to GameVerse Administration!'); closeInteractiveModal();" class="space-y-4">
                 <div>
                     <label class="block text-xs font-bold text-slate-700 mb-1">Your Full Name *</label>
@@ -332,7 +361,7 @@
             const inputLabel = document.getElementById('dynamicLabel');
             const inputField = document.getElementById('dynamicInput');
             
-            if (type === 'game_submission') {
+            if (type === 'game_submission' || type === 'dev_panel') {
                 inputLabel.innerText = 'Game Build URL / APK / AAB Link *';
                 inputField.placeholder = 'https://play.google.com/store/apps/details?id=...';
             } else if (type === 'payment_setup') {
