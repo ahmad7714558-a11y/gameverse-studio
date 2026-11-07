@@ -247,4 +247,180 @@
                  class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 cursor-pointer hover:border-blue-500 transition group">
                 <div class="text-blue-600 text-2xl mb-4 group-hover:scale-110 transition"><i class="fas fa-clock"></i></div>
                 <h4 class="font-bold text-lg mb-2 text-slate-900">Office Timings <i class="fas fa-arrow-right text-xs text-blue-500 ml-1"></i></h4>
-                <p class="text-slate-600 text-sm">09:00 AM to 06:00 PM available
+                <p class="text-slate-600 text-sm">09:00 AM to 06:00 PM available for professional coordination and development support.</p>
+            </div>
+            <!-- 50 Persons Team Box (Interactive 50 Pakistani Employees Showcase) -->
+            <div onclick="showRandomEmployee()" 
+                 class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 cursor-pointer hover:border-blue-500 transition group">
+                <div class="text-blue-600 text-2xl mb-4 group-hover:scale-110 transition"><i class="fas fa-users"></i></div>
+                <h4 class="font-bold text-lg mb-2 text-slate-900">50 Persons Team <i class="fas fa-sparkles text-xs text-blue-500 ml-1"></i></h4>
+                <p class="text-slate-600 text-sm">Click here to view live random profiles from our expert 50+ Pakistani development team.</p>
+            </div>
+            <!-- High Quality Standards Box -->
+            <div onclick="showFeatureAlert('High Quality Standards', 'All games built by GameVerse undergo strict ISO standard graphics review, Unity optimization, and automated testing under CEO Ahmad Imtiaz.')" 
+                 class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 cursor-pointer hover:border-blue-500 transition group">
+                <div class="text-blue-600 text-2xl mb-4 group-hover:scale-110 transition"><i class="fas fa-award"></i></div>
+                <h4 class="font-bold text-lg mb-2 text-slate-900">High Quality Standards <i class="fas fa-arrow-right text-xs text-blue-500 ml-1"></i></h4>
+                <p class="text-slate-600 text-sm">ISO standard graphics and smooth Unity programming optimized for Play Console.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Modal Popup for Team & Features -->
+    <div id="interactiveModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl border border-slate-200 relative animate-bottom">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 text-xl font-bold cursor-pointer">
+                <i class="fas fa-times"></i>
+            </button>
+            <div id="modalContent" class="text-center">
+                <!-- Content injected dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-slate-900 text-slate-400 py-12 mt-auto border-t border-slate-800">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 text-sm">
+            <div>
+                <h4 class="text-white font-bold mb-3 text-base">GAMEVERSE</h4>
+                <p class="mb-3 text-slate-400">Professional mobile game development led by CEO Ahmad Imtiaz.</p>
+                <p class="text-xs text-slate-500">Pace plaza, Modal Town A, Near Dubai chowk, Bahawalpur City</p>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-3 text-base">Contact Us</h4>
+                <p class="mb-2"><i class="fas fa-phone-alt text-blue-500 mr-2"></i> 03090503003</p>
+                <p><i class="fas fa-envelope text-blue-500 mr-2"></i> hrgameverse@gmail.com</p>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-3 text-base">Play Console Profiles</h4>
+                <div class="flex flex-col gap-1.5 text-xs">
+                    <a href="https://play.google.com/store/apps/developer?id=Aerie+Solutions+2022" target="_blank" class="text-blue-400 hover:text-blue-300 transition hover:underline">
+                        <i class="fab fa-google-play mr-1"></i> Aerie Solutions 2022
+                    </a>
+                    <a href="https://play.google.com/store/apps/developer?id=CoreOne+Games" target="_blank" class="text-blue-400 hover:text-blue-300 transition hover:underline">
+                        <i class="fab fa-google-play mr-1"></i> CoreOne Games
+                    </a>
+                    <a href="https://play.google.com/store/apps/developer?id=Bluewire+Tech" target="_blank" class="text-blue-400 hover:text-blue-300 transition hover:underline">
+                        <i class="fab fa-google-play mr-1"></i> Bluewire Tech
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="container mx-auto px-6 border-t border-slate-800 pt-6 text-center text-xs text-slate-500">
+            <p>© 2026 GameVerse. All Rights Reserved. CEO: Ahmad Imtiaz</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Tabs & Interactive 50 Pakistani Employees -->
+    <script>
+        function switchTab(tabNum) {
+            document.getElementById('panel-1').classList.add('hidden');
+            document.getElementById('panel-2').classList.add('hidden');
+            document.getElementById('panel-3').classList.add('hidden');
+
+            document.getElementById('btn-1').className = 'w-9 h-9 rounded-full bg-slate-200 text-slate-700 flex items-center justify-center font-bold text-sm cursor-pointer hover:bg-blue-600 hover:text-white transition';
+            document.getElementById('btn-2').className = 'w-9 h-9 rounded-full bg-slate-200 text-slate-700 flex items-center justify-center font-bold text-sm cursor-pointer hover:bg-blue-600 hover:text-white transition';
+            document.getElementById('btn-3').className = 'w-9 h-9 rounded-full bg-slate-200 text-slate-700 flex items-center justify-center font-bold text-sm cursor-pointer hover:bg-blue-600 hover:text-white transition';
+
+            document.getElementById('panel-' + tabNum).classList.remove('hidden');
+            document.getElementById('btn-' + tabNum).className = 'w-9 h-9 rounded-full gv-btn-primary text-white flex items-center justify-center font-bold text-sm cursor-pointer shadow-md';
+        }
+
+        // 50 Unique Pakistani Team Members Database
+        const pakistaniEmployees = [
+            { name: "Ali Raza", role: "Senior Unity Developer", exp: "6 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Muhammad Usman", role: "Lead 3D Environment Artist", exp: "5 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Bilal Ahmed", role: "Car Physics Programmer", exp: "4 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Zainab Malik", role: "UI/UX Game Designer", exp: "4 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Hamza Tariq", role: "Gameplay Scripter", exp: "3 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Awais Qarni", role: "Monetization & Ads Expert", exp: "5 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Talha Mehmood", role: "Android SDK Integrator", exp: "4 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Saad Farooq", role: "3D Vehicle Modeler", exp: "6 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Fahad Mustafa", role: "Level Designer", exp: "3 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Shoaib Akhtar", role: "QA & Bug Hunter", exp: "4 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Abdullah Khan", role: "Junior Unity Developer", exp: "2 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Danish Ali", role: "Animator & Rigger", exp: "5 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Kashif Riaz", role: "Sound FX Designer", exp: "4 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Usman Ghani", role: "App Store Optimization Expert", exp: "5 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Rehan Butt", role: "Server & Firebase Manager", exp: "4 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Nabeel Ahmed", role: "C# Scripting Expert", exp: "5 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Waqas Latif", role: "Environment Lighting Artist", exp: "3 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Shahzaib Khan", role: "UI/UX Developer", exp: "3 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Muzammil Hussain", role: "Physics Engine Tuner", exp: "4 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Ahsan Iqbal", role: "Multiplayer Integration Engineer", exp: "5 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Zubair Shah", role: "Rigging Specialist", exp: "4 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Imran Khan", role: "AI Pathfinding Developer", exp: "6 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Haris Rauf", role: "Game Tester", exp: "2 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Junaid Jamshed", role: "Shader Graph Artist", exp: "4 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Salman Butt", role: "Optimization Engineer", exp: "5 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Yasir Shah", role: "Cinematic Director", exp: "5 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Rizwan Ahmed", role: "Particle FX Specialist", exp: "3 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Farhan Saeed", role: "UI Animator", exp: "3 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Adnan Siddique", role: "Gameplay Developer", exp: "4 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Shoaib Malik", role: "Build Pipeline Engineer", exp: "5 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Babars Azam", role: "Technical Artist", exp: "4 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Shaheen Afridi", role: "Vehicle Dynamics Scripter", exp: "3 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Hassan Ali", role: "Prop Modeler", exp: "3 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Fawad Alam", role: "Junior Developer", exp: "2 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Sohail Tanvir", role: "Audio Engineer", exp: "4 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Mohammad Amir", role: "Network Scripter", exp: "5 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Sarfaraz Ahmed", role: "Project Coordinator", exp: "6 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Asad Shafiq", role: "Level Scripter", exp: "3 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Azhar Ali", role: "Material Artist", exp: "4 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Shan Masood", role: "Prop Texturing Expert", exp: "3 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Imad Wasim", role: "Database Manager", exp: "4 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Shadab Khan", role: "Game Mechanics Designer", exp: "3 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Faheem Ashraf", role: "Mobile Optimization Expert", exp: "4 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Usama Mir", role: "UI Scripter", exp: "2 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Zaman Khan", role: "QA Automation Tester", exp: "3 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Ihsanullah", role: "Physics Scripter", exp: "2 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Abrar Ahmed", role: "Lighting Tech Artist", exp: "3 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Mohammad Wasim", role: "Gameplay Programmer", exp: "3 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Saim Ayub", role: "Junior 3D Artist", exp: "2 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Sahibzada Farhan", role: "Assistant Game Designer", exp: "2 Years Exp", city: "Bahawalpur Studio" }
+        ];
+
+        function showRandomEmployee() {
+            const randomEmp = pakistaniEmployees[Math.floor(Math.random() * pakistaniEmployees.length)];
+            const modal = document.getElementById('interactiveModal');
+            const content = document.getElementById('modalContent');
+            
+            content.innerHTML = `
+                <div class="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-4 border-blue-500 shadow-lg bg-slate-100 flex items-center justify-center text-blue-600 font-bold text-2xl">
+                    <i class="fas fa-user-tie"></i>
+                </div>
+                <span class="bg-blue-100 text-blue-700 text-xs px-3 py-1 rounded-full font-bold uppercase tracking-wider">GameVerse Team Member</span>
+                <h3 class="text-2xl font-black text-slate-900 mt-3">${randomEmp.name}</h3>
+                <p class="text-blue-600 font-semibold text-sm mt-1">${randomEmp.role}</p>
+                <p class="text-slate-500 text-xs mt-1 mb-6">${randomEmp.exp} | ${randomEmp.city}</p>
+                <button onclick="showRandomEmployee()" class="gv-btn-primary text-white font-bold px-6 py-2.5 rounded-xl text-sm shadow-md transition cursor-pointer">
+                    <i class="fas fa-random mr-1"></i> Show Another Employee
+                </button>
+            `;
+            modal.classList.remove('hidden');
+        }
+
+        function showFeatureAlert(title, desc) {
+            const modal = document.getElementById('interactiveModal');
+            const content = document.getElementById('modalContent');
+            
+            content.innerHTML = `
+                <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-2xl shadow-sm">
+                    <i class="fas fa-info-circle"></i>
+                </div>
+                <h3 class="text-2xl font-black text-slate-900 mb-2">${title}</h3>
+                <p class="text-slate-600 text-sm leading-relaxed mb-6">${desc}</p>
+                <button onclick="closeModal()" class="bg-slate-900 text-white font-bold px-6 py-2.5 rounded-xl text-sm shadow-md transition cursor-pointer">
+                    Got It
+                </button>
+            `;
+            modal.classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('interactiveModal').classList.add('hidden');
+        }
+    </script>
+
+</body>
+</html>
