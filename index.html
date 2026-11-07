@@ -18,7 +18,6 @@
             font-family: 'Inter', system-ui, sans-serif; 
             overflow-x: hidden;
         }
-        /* Smooth Slide-in Animations from outside screen */
         @keyframes slideFromLeft {
             0% { opacity: 0; transform: translateX(-120px); }
             100% { opacity: 1; transform: translateX(0); }
@@ -43,38 +42,37 @@
 </head>
 <body class="flex flex-col min-h-screen selection:bg-blue-600 selection:text-white">
 
-    <!-- Top Navigation Bar (GameDistribution Style) -->
+    <!-- Top Navigation Bar -->
     <nav class="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <!-- GameVerse Logo -->
+            <!-- Logo -->
             <a href="#" class="text-2xl font-black tracking-tight text-slate-900 flex items-center gap-2">
                 <span class="gv-btn-primary text-white px-3 py-1 rounded-xl shadow-md flex items-center gap-1 text-base">
                     <i class="fas fa-gamepad"></i> GV
                 </span>
                 <span class="tracking-wide">Game<span class="text-blue-600">Verse</span></span>
             </a>
-            <!-- Menu Links -->
+            <!-- Interactive Menu Links -->
             <div class="hidden lg:flex space-x-8 text-slate-600 font-semibold text-sm">
                 <a href="#games" class="hover:text-blue-600 transition">Games</a>
-                <a href="#business" class="hover:text-blue-600 transition">For Business</a>
-                <a href="#services" class="hover:text-blue-600 transition">About Studio</a>
+                <button onclick="openBusinessModal()" class="hover:text-blue-600 transition cursor-pointer bg-transparent border-none font-semibold text-slate-600">For Business</button>
+                <button onclick="openAboutModal()" class="hover:text-blue-600 transition cursor-pointer bg-transparent border-none font-semibold text-slate-600">About Studio</button>
                 <a href="#contact" class="hover:text-blue-600 transition">Contact</a>
             </div>
             <!-- Right Portal Button -->
-            <a href="https://play.google.com/store/apps/developer?id=Bluewire+Tech" target="_blank" rel="noopener noreferrer" 
-               class="gv-btn-primary text-white font-bold text-xs uppercase px-5 py-2.5 rounded-xl transition shadow-md shadow-blue-600/20 flex items-center gap-2">
+            <button onclick="openDevPanelModal()" class="gv-btn-primary text-white font-bold text-xs uppercase px-5 py-2.5 rounded-xl transition shadow-md shadow-blue-600/20 flex items-center gap-2 cursor-pointer border-none">
                <i class="fab fa-google-play"></i> Dev Portal
-            </a>
+            </button>
         </div>
     </nav>
 
-    <!-- Hero Section (GameDistribution Modern White/Clean B2B Layout) -->
+    <!-- Hero Section -->
     <section class="pt-32 pb-20 px-6 bg-white relative overflow-hidden border-b border-slate-200">
         <div class="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <!-- Left Text Box -->
             <div class="bg-slate-100 p-8 md:p-12 rounded-3xl border border-slate-200 shadow-sm animate-left">
                 <span class="bg-blue-100 text-blue-700 text-xs px-3.5 py-1.5 rounded-full font-bold uppercase tracking-widest inline-block mb-4">
-                    Global B2B Game Retailer & Publisher
+                    Global B2B Game Retailer & Publisher[cite: 18]
                 </span>
                 <h1 class="text-4xl md:text-6xl font-black mb-4 leading-tight tracking-tight text-slate-900 uppercase">
                     MORE THAN <span class="text-blue-600">TWO.</span><br>MORE THAN <span class="text-blue-600">EVER.</span>
@@ -86,12 +84,12 @@
                     <a href="#games" class="gv-btn-primary text-white font-bold px-8 py-3.5 rounded-xl shadow-lg shadow-blue-600/30 transition flex items-center gap-2">
                         <i class="fas fa-play"></i> Play Now
                     </a>
-                    <a href="tel:03090503003" class="bg-white hover:bg-slate-50 text-slate-900 font-semibold px-8 py-3.5 rounded-xl transition border border-slate-300 shadow-sm">
-                        <i class="fas fa-phone-alt mr-2 text-blue-600"></i> 03090503003
-                    </a>
+                    <button onclick="openBusinessModal()" class="bg-white hover:bg-slate-50 text-slate-900 font-semibold px-8 py-3.5 rounded-xl transition border border-slate-300 shadow-sm cursor-pointer">
+                        <i class="fas fa-briefcase mr-2 text-blue-600"></i> Business Solutions
+                    </button>
                 </div>
             </div>
-            <!-- Right Video / 3D Showcase Box -->
+            <!-- Right Video Showcase Box -->
             <div class="relative bg-slate-900 p-3 rounded-3xl border border-slate-800 shadow-2xl animate-right">
                 <div class="aspect-video rounded-2xl overflow-hidden bg-black flex items-center justify-center relative">
                     <iframe class="w-full h-full" src="https://www.youtube.com/embed/l7EynldIeHg" title="GameVerse Trailer" frameborder="0" allowfullscreen></iframe>
@@ -100,7 +98,7 @@
         </div>
     </section>
 
-    <!-- GameVerse Exclusive Games Section (Pagination / Tabs Style) -->
+    <!-- GameVerse Exclusive Games Section -->
     <section id="games" class="py-16 container mx-auto px-6">
         <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 gap-4">
             <div>
@@ -122,7 +120,7 @@
         <div id="panel-1" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 animate-bottom">
             <a href="https://play.google.com/store/apps/details?id=com.as.vegas.crime.game.maimi.gangster.simulator" target="_blank" class="game-card bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm block">
                 <div class="aspect-[4/3] bg-slate-100 overflow-hidden relative">
-                    <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800&auto=format&fit=crop&q=80" alt="Vice City Crime Simulator Game" class="w-full h-full object-cover">
+                    <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800&auto=format&fit=crop&q=80" alt="Vice City Crime Simulator" class="w-full h-full object-cover">
                 </div>
                 <div class="p-4">
                     <h3 class="font-bold text-slate-900 text-base">Vice City Crime Simulator</h3>
@@ -249,7 +247,7 @@
                 <h4 class="font-bold text-lg mb-2 text-slate-900">Office Timings <i class="fas fa-arrow-right text-xs text-blue-500 ml-1"></i></h4>
                 <p class="text-slate-600 text-sm">09:00 AM to 06:00 PM available for professional coordination and development support.</p>
             </div>
-            <!-- 50 Persons Team Box (Interactive 50 Pakistani Employees Showcase) -->
+            <!-- 50 Persons Team Box -->
             <div onclick="showRandomEmployee()" 
                  class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 cursor-pointer hover:border-blue-500 transition group">
                 <div class="text-blue-600 text-2xl mb-4 group-hover:scale-110 transition"><i class="fas fa-users"></i></div>
@@ -266,13 +264,13 @@
         </div>
     </section>
 
-    <!-- Interactive Modal Popup for Team & Features -->
+    <!-- Interactive Modal Popup -->
     <div id="interactiveModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
-        <div class="bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl border border-slate-200 relative animate-bottom">
+        <div class="bg-white rounded-3xl max-w-lg w-full p-8 shadow-2xl border border-slate-200 relative animate-bottom">
             <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 text-xl font-bold cursor-pointer">
                 <i class="fas fa-times"></i>
             </button>
-            <div id="modalContent" class="text-center">
+            <div id="modalContent">
                 <!-- Content injected dynamically -->
             </div>
         </div>
@@ -311,7 +309,7 @@
         </div>
     </footer>
 
-    <!-- JavaScript for Tabs & Interactive 50 Pakistani Employees -->
+    <!-- JavaScript for Fully Interactive Functionality -->
     <script>
         function switchTab(tabNum) {
             document.getElementById('panel-1').classList.add('hidden');
@@ -324,6 +322,83 @@
 
             document.getElementById('panel-' + tabNum).classList.remove('hidden');
             document.getElementById('btn-' + tabNum).className = 'w-9 h-9 rounded-full gv-btn-primary text-white flex items-center justify-center font-bold text-sm cursor-pointer shadow-md';
+        }
+
+        // For Business Interactive Modal (GameDistribution Style)
+        function openBusinessModal() {
+            const modal = document.getElementById('interactiveModal');
+            const content = document.getElementById('modalContent');
+            
+            content.innerHTML = `
+                <div class="text-center">
+                    <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-2xl shadow-sm">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3 class="text-2xl font-black text-slate-900 mb-2">GameVerse For Business</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-6">Discover our B2B partnership models, direct game integration solutions, and hybrid monetization frameworks designed for global mobile game publishers.</p>
+                    <div class="grid grid-cols-2 gap-4 text-left mb-6">
+                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                            <h4 class="font-bold text-slate-900 text-sm mb-1"><i class="fas fa-network-wired text-blue-600 mr-1"></i> Direct Integration</h4>
+                            <p class="text-xs text-slate-500">Seamless SDK connection across Google Play Console profiles.</p>
+                        </div>
+                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                            <h4 class="font-bold text-slate-900 text-sm mb-1"><i class="fas fa-chart-line text-blue-600 mr-1"></i> Monetization</h4>
+                            <p class="text-xs text-slate-500">Optimized ad revenue through Mintegral, TikTok & AdMob.</p>
+                        </div>
+                    </div>
+                    <button onclick="closeModal()" class="gv-btn-primary text-white font-bold px-6 py-2.5 rounded-xl text-sm shadow-md transition cursor-pointer">
+                        Close & Explore
+                    </button>
+                </div>
+            `;
+            modal.classList.remove('hidden');
+        }
+
+        // About Studio Modal
+        function openAboutModal() {
+            const modal = document.getElementById('interactiveModal');
+            const content = document.getElementById('modalContent');
+            
+            content.innerHTML = `
+                <div class="text-center">
+                    <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-2xl shadow-sm">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3 class="text-2xl font-black text-slate-900 mb-2">About GameVerse Studio</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-6">Led by CEO Ahmad Imtiaz from Bahawalpur City (Pace Plaza, Modal Town A), GameVerse operates state-of-the-art mobile game development with a dedicated team of 50+ Pakistani experts.</p>
+                    <button onclick="closeModal()" class="gv-btn-primary text-white font-bold px-6 py-2.5 rounded-xl text-sm shadow-md transition cursor-pointer">
+                        Got It
+                    </button>
+                </div>
+            `;
+            modal.classList.remove('hidden');
+        }
+
+        // Dev Portal Modal
+        function openDevPanelModal() {
+            const modal = document.getElementById('interactiveModal');
+            const content = document.getElementById('modalContent');
+            
+            content.innerHTML = `
+                <div>
+                    <h3 class="text-2xl font-black text-slate-900 mb-1">Developer Panel</h3>
+                    <p class="text-slate-500 text-xs mb-6">Publish your games with GameVerse Network or access our Play Console developer portals.</p>
+                    <div class="space-y-4 text-left">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Developer Name *</label>
+                            <input type="text" placeholder="Ahmad Imtiaz" class="w-full px-4 py-2 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-blue-600">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Email Address *</label>
+                            <input type="email" placeholder="hrgameverse@gmail.com" class="w-full px-4 py-2 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-blue-600">
+                        </div>
+                        <button onclick="alert('Developer registration submitted successfully! We will contact you soon.'); closeModal();" class="w-full gv-btn-primary text-white font-bold py-3 rounded-xl text-sm shadow-md transition cursor-pointer mt-2">
+                            Submit Registration
+                        </button>
+                    </div>
+                </div>
+            `;
+            modal.classList.remove('hidden');
         }
 
         // 50 Unique Pakistani Team Members Database
@@ -386,16 +461,18 @@
             const content = document.getElementById('modalContent');
             
             content.innerHTML = `
-                <div class="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-4 border-blue-500 shadow-lg bg-slate-100 flex items-center justify-center text-blue-600 font-bold text-2xl">
-                    <i class="fas fa-user-tie"></i>
+                <div class="text-center">
+                    <div class="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-4 border-blue-500 shadow-lg bg-slate-100 flex items-center justify-center text-blue-600 font-bold text-2xl">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <span class="bg-blue-100 text-blue-700 text-xs px-3 py-1 rounded-full font-bold uppercase tracking-wider">GameVerse Team Member</span>
+                    <h3 class="text-2xl font-black text-slate-900 mt-3">${randomEmp.name}</h3>
+                    <p class="text-blue-600 font-semibold text-sm mt-1">${randomEmp.role}</p>
+                    <p class="text-slate-500 text-xs mt-1 mb-6">${randomEmp.exp} | ${randomEmp.city}</p>
+                    <button onclick="showRandomEmployee()" class="gv-btn-primary text-white font-bold px-6 py-2.5 rounded-xl text-sm shadow-md transition cursor-pointer">
+                        <i class="fas fa-random mr-1"></i> Show Another Employee
+                    </button>
                 </div>
-                <span class="bg-blue-100 text-blue-700 text-xs px-3 py-1 rounded-full font-bold uppercase tracking-wider">GameVerse Team Member</span>
-                <h3 class="text-2xl font-black text-slate-900 mt-3">${randomEmp.name}</h3>
-                <p class="text-blue-600 font-semibold text-sm mt-1">${randomEmp.role}</p>
-                <p class="text-slate-500 text-xs mt-1 mb-6">${randomEmp.exp} | ${randomEmp.city}</p>
-                <button onclick="showRandomEmployee()" class="gv-btn-primary text-white font-bold px-6 py-2.5 rounded-xl text-sm shadow-md transition cursor-pointer">
-                    <i class="fas fa-random mr-1"></i> Show Another Employee
-                </button>
             `;
             modal.classList.remove('hidden');
         }
@@ -405,14 +482,16 @@
             const content = document.getElementById('modalContent');
             
             content.innerHTML = `
-                <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-2xl shadow-sm">
-                    <i class="fas fa-info-circle"></i>
+                <div class="text-center">
+                    <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-2xl shadow-sm">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                    <h3 class="text-2xl font-black text-slate-900 mb-2">${title}</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-6">${desc}</p>
+                    <button onclick="closeModal()" class="bg-slate-900 text-white font-bold px-6 py-2.5 rounded-xl text-sm shadow-md transition cursor-pointer">
+                        Got It
+                    </button>
                 </div>
-                <h3 class="text-2xl font-black text-slate-900 mb-2">${title}</h3>
-                <p class="text-slate-600 text-sm leading-relaxed mb-6">${desc}</p>
-                <button onclick="closeModal()" class="bg-slate-900 text-white font-bold px-6 py-2.5 rounded-xl text-sm shadow-md transition cursor-pointer">
-                    Got It
-                </button>
             `;
             modal.classList.remove('hidden');
         }
