@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GameVerse | Professional B2B Game Publishing & Development Platform</title>
-    <meta name="description" content="Official website of GameVerse. CEO Ahmad Imtiaz. Professional mobile game development, 3D modeling, UI/UX design, and B2B publishing.">
+    <title>GameVerse | White Label Gaming Solution & B2B Publishing</title>
+    <meta name="description" content="Official website of GameVerse. CEO Ahmad Imtiaz. Professional mobile game development, white-label gaming solutions, and B2B publishing.">
     <!-- Custom Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23ef4444'/%3E%3Cstop offset='50%25' stop-color='%23f97316'/%3E%3Cstop offset='100%25' stop-color='%233b82f6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='50' cy='50' r='48' fill='url(%23grad)'/%3E%3Ctext x='50' y='65' font-size='42' font-weight='900' font-family='Arial, sans-serif' fill='%23ffffff' text-anchor='middle'%3EGV%3C/text%3E%3C/svg%3E">
     <!-- Tailwind CSS -->
@@ -17,11 +17,13 @@
         .gv-btn-primary:hover { background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%); }
         .game-card { transition: all 0.3s ease; }
         .game-card:hover { transform: translateY(-6px); box-shadow: 0 20px 25px -5px rgba(59, 130, 246, 0.15); }
+        .dropdown-menu { display: none; }
+        .group:hover .dropdown-menu { display: block; }
     </style>
 </head>
 <body class="flex flex-col min-h-screen selection:bg-blue-600 selection:text-white">
 
-    <!-- Top Navigation Bar (GameDistribution Style) -->
+    <!-- Top Navigation Bar -->
     <nav class="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#" class="text-2xl font-black tracking-tight text-slate-900 flex items-center gap-2">
@@ -30,151 +32,231 @@
                 </span>
                 <span class="tracking-wide">Game<span class="text-blue-600">Verse</span></span>
             </a>
-            <div class="hidden lg:flex space-x-8 text-slate-600 font-semibold text-sm">
+            <div class="hidden lg:flex space-x-8 text-slate-600 font-semibold text-sm items-center">
                 <a href="#games" class="hover:text-blue-600 transition">Games</a>
-                <a href="#business" class="hover:text-blue-600 transition">For Business</a>
+                
+                <!-- For Business Dropdown -->
+                <div class="relative group py-2">
+                    <button class="hover:text-blue-600 transition flex items-center gap-1 cursor-pointer bg-transparent border-none font-semibold text-slate-600">
+                        For Business <i class="fas fa-chevron-down text-xs"></i>
+                    </button>
+                    <div class="dropdown-menu absolute top-full left-0 w-[600px] bg-white rounded-2xl shadow-2xl border border-slate-200 p-6 grid grid-cols-2 gap-6 z-50">
+                        <div>
+                            <h4 class="text-xs font-black text-blue-600 uppercase tracking-wider mb-3"><i class="fas fa-bullhorn mr-1"></i> For Publishers</h4>
+                            <ul class="space-y-2 text-xs">
+                                <li><a href="#benefits" class="text-slate-700 hover:text-blue-600 font-bold block">Partnership Models</a><span class="text-slate-400">Discover partnership models</span>[cite: 18]</li>
+                                <li><a href="#benefits" class="text-slate-700 hover:text-blue-600 font-bold block mt-1">Direct Game Integration</a><span class="text-slate-400">Simple efficiency of integration</span>[cite: 18]</li>
+                                <li><a href="#white-label" class="text-slate-700 hover:text-blue-600 font-bold block mt-1">White Label Gaming Solution</a><span class="text-slate-400">Made-to-measure solutions</span>[cite: 18]</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-xs font-black text-blue-600 uppercase tracking-wider mb-3"><i class="fas fa-code mr-1"></i> For Developers</h4>
+                            <ul class="space-y-2 text-xs">
+                                <li><a href="#dev-panel" class="text-slate-700 hover:text-blue-600 font-bold block">Partnership</a><span class="text-slate-400">Expand your reach globally</span>[cite: 18]</li>
+                                <li><a href="#dev-panel" class="text-slate-700 hover:text-blue-600 font-bold block mt-1">Quality Guidelines</a><span class="text-slate-400">Publish quickly and efficiently</span>[cite: 18]</li>
+                                <li><a href="#faqs" class="text-slate-700 hover:text-blue-600 font-bold block mt-1">Developer FAQ</a><span class="text-slate-400">All questions answered</span>[cite: 18]</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
                 <a href="#dev-panel" class="hover:text-blue-600 transition">Dev Panel</a>
                 <a href="#about" class="hover:text-blue-600 transition">About</a>
             </div>
             <div class="flex items-center gap-3">
-                <button onclick="openLoginModal()" class="text-slate-700 hover:text-blue-600 font-bold text-xs uppercase px-4 py-2 rounded-xl border border-slate-300 transition cursor-pointer">
+                <button onclick="openLoginModal()" class="gv-btn-primary text-white font-bold text-xs uppercase px-5 py-2.5 rounded-xl transition shadow-md shadow-blue-600/20 cursor-pointer">
                     <i class="fas fa-user mr-1"></i> Login / Register
                 </button>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="pt-32 pb-20 px-6 bg-white border-b border-slate-200">
-        <div class="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div class="bg-slate-100 p-8 md:p-12 rounded-3xl border border-slate-200 shadow-sm">
-                <span class="bg-blue-100 text-blue-700 text-xs px-3.5 py-1.5 rounded-full font-bold uppercase tracking-widest inline-block mb-4">
-                    Global B2B Game Retailer & Publisher[cite: 18]
-                </span>
-                <h1 class="text-4xl md:text-6xl font-black mb-4 leading-tight tracking-tight text-slate-900 uppercase">
-                    MORE THAN <span class="text-blue-600">TWO.</span><br>MORE THAN <span class="text-blue-600">EVER.</span>
-                </h1>
-                <p class="text-slate-600 text-base md:text-lg mb-8 leading-relaxed">
-                    Explore top-tier mobile racing simulators, 3D action games, and immersive experiences built by GameVerse Studio under CEO Ahmad Imtiaz.
-                </p>
-                <div class="flex flex-wrap gap-4">
-                    <a href="#games" class="gv-btn-primary text-white font-bold px-8 py-3.5 rounded-xl shadow-lg shadow-blue-600/30 transition flex items-center gap-2">
-                        <i class="fas fa-play"></i> Play Now
-                    </a>
-                    <a href="#business" class="bg-white hover:bg-slate-50 text-slate-900 font-semibold px-8 py-3.5 rounded-xl transition border border-slate-300 shadow-sm">
-                        <i class="fas fa-briefcase mr-2 text-blue-600"></i> For Business
-                    </a>
-                </div>
-            </div>
-            <div class="relative bg-slate-900 p-3 rounded-3xl border border-slate-800 shadow-2xl">
-                <div class="aspect-video rounded-2xl overflow-hidden bg-black flex items-center justify-center relative">
-                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/l7EynldIeHg" title="GameVerse Trailer" frameborder="0" allowfullscreen></iframe>
+    <!-- White Label Gaming Solution Hero Section (Exact Match to Reference) -->
+    <section id="white-label" class="pt-32 pb-20 px-6 bg-white border-b border-slate-200">
+        <div class="container mx-auto">
+            <div class="bg-gradient-to-r from-blue-900 via-indigo-900 to-slate-900 rounded-3xl p-8 md:p-16 text-white relative overflow-hidden shadow-2xl">
+                <div class="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <span class="bg-white/10 text-blue-300 border border-white/20 text-xs px-3.5 py-1.5 rounded-full font-bold uppercase tracking-widest inline-block mb-4">
+                            White Label Gaming Solution
+                        </span>
+                        <h1 class="text-4xl md:text-6xl font-black mb-6 leading-tight tracking-tight uppercase">
+                            White Label <span class="text-blue-400">Gaming Solution</span>
+                        </h1>
+                        <p class="text-slate-200 text-base md:text-lg mb-8 leading-relaxed">
+                            Plug-and-play gaming page integrated on your custom domain[cite: 27, 30]. Boost user engagement and expand revenue potential instantly[cite: 28].
+                        </p>
+                        <div class="flex flex-wrap gap-6 items-center">
+                            <a href="#register-form" class="gv-btn-primary text-white font-bold px-8 py-3.5 rounded-xl shadow-lg transition flex items-center gap-2">
+                                Contact Us <i class="fas fa-arrow-right"></i>
+                            </a>
+                            <div class="flex gap-6 text-sm font-bold text-slate-300">
+                                <div><span class="text-2xl text-white font-black block">21K+</span> games[cite: 27]</div>
+                                <div><span class="text-2xl text-white font-black block">10+</span> years in gaming[cite: 27]</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20 shadow-xl">
+                        <h3 class="font-bold text-xl mb-4 text-white">Plug-and-play gaming page[cite: 27]</h3>
+                        <p class="text-slate-300 text-sm mb-6">Fully customized gaming portal for your brand under GameVerse framework, managed by CEO Ahmad Imtiaz.</p>
+                        <div class="aspect-video rounded-xl overflow-hidden bg-black/40 flex items-center justify-center border border-white/10">
+                            <iframe class="w-full h-full" src="https://www.youtube.com/embed/l7EynldIeHg" title="GameVerse Trailer" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- For Business Section (Exact GameDistribution Style) -->
-    <section id="business" class="py-20 bg-slate-50 border-b border-slate-200">
+    <!-- The Benefits Section -->
+    <section id="benefits" class="py-20 bg-slate-50 border-b border-slate-200">
         <div class="container mx-auto px-6">
             <div class="max-w-3xl mb-12">
-                <span class="text-blue-600 font-bold text-xs uppercase tracking-widest">B2B Solutions</span>
-                <h2 class="text-3xl md:text-4xl font-black text-slate-900 mt-1 mb-3">For Publishers & Developers</h2>
-                <p class="text-slate-600 text-base">We provide complete digital monetization frameworks, white-label gaming solutions, and direct game integration[cite: 15, 19].</p>
+                <span class="text-blue-600 font-bold text-xs uppercase tracking-widest">Advantages</span>
+                <h2 class="text-3xl md:text-4xl font-black text-slate-900 mt-1 mb-3">The Benefits[cite: 29]</h2>
+                <p class="text-slate-600 text-base">Of a gaming page on your domain[cite: 29]. Maximize retention and unlock fresh revenue streams.</p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm">
-                    <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center text-xl mb-6 font-bold"><i class="fas fa-handshake"></i></div>
-                    <h3 class="font-bold text-xl text-slate-900 mb-2">Partnership Models</h3>
-                    <p class="text-slate-600 text-sm mb-4">Discover GameVerse partnership models designed to expand your game reach globally[cite: 15, 16].</p>
-                    <a href="#dev-panel" class="text-blue-600 font-bold text-sm hover:underline">Learn More <i class="fas fa-arrow-right ml-1"></i></a>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                    <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center text-xl mb-4 font-bold"><i class="fas fa-clock"></i></div>
+                    <h3 class="font-bold text-lg text-slate-900 mb-2">Increase user retention[cite: 29]</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed">Keep your audience engaged longer with interactive daily gaming challenges.</p>
                 </div>
-                <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm">
-                    <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center text-xl mb-6 font-bold"><i class="fas fa-code"></i></div>
-                    <h3 class="font-bold text-xl text-slate-900 mb-2">Direct Integration</h3>
-                    <p class="text-slate-600 text-sm mb-4">Experience simple efficiency of direct game integration across multiple Play Console accounts[cite: 15].</p>
-                    <a href="#dev-panel" class="text-blue-600 font-bold text-sm hover:underline">Learn More <i class="fas fa-arrow-right ml-1"></i></a>
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                    <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center text-xl mb-4 font-bold"><i class="fas fa-coins"></i></div>
+                    <h3 class="font-bold text-lg text-slate-900 mb-2">Gain an extra revenue stream at no costs[cite: 29]</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed">Zero setup expenses with automated ad monetization and regular payouts.</p>
                 </div>
-                <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm">
-                    <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center text-xl mb-6 font-bold"><i class="fas fa-coins"></i></div>
-                    <h3 class="font-bold text-xl text-slate-900 mb-2">Monetization Solutions</h3>
-                    <p class="text-slate-600 text-sm mb-4">In-game ads, rewarded ads, hybrid monetization, and on-page display banners[cite: 19].</p>
-                    <a href="#dev-panel" class="text-blue-600 font-bold text-sm hover:underline">Learn More <i class="fas fa-arrow-right ml-1"></i></a>
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                    <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center text-xl mb-4 font-bold"><i class="fas fa-hourglass-half"></i></div>
+                    <h3 class="font-bold text-lg text-slate-900 mb-2">Extend user sessions[cite: 29]</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed">High-performance 3D racing and puzzle games that drive longer visitor interaction.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                    <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center text-xl mb-4 font-bold"><i class="fas fa-users"></i></div>
+                    <h3 class="font-bold text-lg text-slate-900 mb-2">Expand and diversify your audience[cite: 29]</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed">Attract new demographics across multiple international gaming categories.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Developer Panel & Registration Form Section (Exact Reference Match) -->
-    <section id="dev-panel" class="py-20 bg-white border-b border-slate-200">
+    <!-- What You'll Receive Section -->
+    <section class="py-20 bg-white border-b border-slate-200">
         <div class="container mx-auto px-6">
-            <div class="bg-slate-100 rounded-3xl p-8 md:p-12 border border-slate-200 shadow-sm grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div>
-                    <span class="bg-blue-100 text-blue-700 text-xs px-3.5 py-1.5 rounded-full font-bold uppercase tracking-widest inline-block mb-4">Developer Hub</span>
-                    <h2 class="text-3xl md:text-5xl font-black text-slate-900 uppercase mb-4">Developer Panel</h2>
-                    <p class="text-slate-600 text-base mb-6 leading-relaxed">
-                        Would you like to publish your game with the GameVerse Network? Fill in this registration form now to release your game worldwide and share your professional developer experience[cite: 16, 17, 22].
-                    </p>
-                    <div class="flex items-center gap-4 text-slate-500 text-sm">
-                        <div><i class="fas fa-check-circle text-blue-600 mr-1"></i> Global Reach</div>
-                        <div><i class="fas fa-check-circle text-blue-600 mr-1"></i> Instant Analytics</div>
-                        <div><i class="fas fa-check-circle text-blue-600 mr-1"></i> Secure Payouts</div>
-                    </div>
+            <div class="max-w-3xl mb-12">
+                <h2 class="text-3xl md:text-4xl font-black text-slate-900">What You'll Receive[cite: 30]</h2>
+                <p class="text-slate-600 text-base mt-2">Comprehensive publishing tools designed to make your custom gaming portal a success.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200">
+                    <h3 class="text-xl font-bold text-slate-900 mb-2"><i class="fas fa-gamepad text-blue-600 mr-2"></i> Engaging, Curated Game Section[cite: 30]</h3>
+                    <p class="text-slate-600 text-sm">We host and maintain a custom-curated game section with handpicked titles that perfectly match your audience[cite: 30].</p>
                 </div>
+                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200">
+                    <h3 class="text-xl font-bold text-slate-900 mb-2"><i class="fas fa-ad text-blue-600 mr-2"></i> Smart In-Game & Display Monetization[cite: 30]</h3>
+                    <p class="text-slate-600 text-sm">Seamless, non-intrusive in-game video ads and flexible banner layouts optimize your revenue and user experience[cite: 30].</p>
+                </div>
+                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200">
+                    <h3 class="text-xl font-bold text-slate-900 mb-2"><i class="fas fa-globe text-blue-600 mr-2"></i> Localized Content[cite: 30]</h3>
+                    <p class="text-slate-600 text-sm">We deliver localized gaming content tailored to your audience's language and preferences, ensuring relevance across all regions[cite: 30].</p>
+                </div>
+                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200">
+                    <h3 class="text-xl font-bold text-slate-900 mb-2"><i class="fas fa-chart-bar text-blue-600 mr-2"></i> Transparent Analytics & Regular Payouts[cite: 30]</h3>
+                    <p class="text-slate-600 text-sm">Access clear performance analytics and receive reliable, regular payments[cite: 30] directly into your account.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                <!-- Registration Form Box -->
-                <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-md">
-                    <div class="flex justify-between items-center mb-6">
-                        <h3 class="font-bold text-lg text-slate-900">Registration</h3>
-                        <button onclick="openLoginModal()" class="text-xs font-bold text-blue-600 hover:underline">Already have an account? Login</button>
+    <!-- Publishing Partners Section -->
+    <section class="py-16 bg-slate-50 border-b border-slate-200">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-2xl md:text-3xl font-black text-slate-900 mb-8">Our Publishing Partners[cite: 32]</h2>
+            <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-6 items-center opacity-75">
+                <div class="bg-white p-4 rounded-xl border border-slate-200 font-black text-lg tracking-tighter">CNN[cite: 32]</div>
+                <div class="bg-white p-4 rounded-xl border border-slate-200 font-bold text-sm">Hartford Courant[cite: 32]</div>
+                <div class="bg-white p-4 rounded-xl border border-slate-200 font-bold text-red-600 text-sm">YAHOO! JAPAN[cite: 32]</div>
+                <div class="bg-white p-4 rounded-xl border border-slate-200 font-bold text-sm">DAILY NEWS[cite: 32]</div>
+                <div class="bg-white p-4 rounded-xl border border-slate-200 font-bold text-sm">MTN[cite: 32]</div>
+                <div class="bg-white p-4 rounded-xl border border-slate-200 font-bold text-sm">cleveland.com[cite: 32]</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration & Top 6 FAQs Section -->
+    <section id="register-form" class="py-20 bg-white border-b border-slate-200">
+        <div class="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <span class="bg-blue-100 text-blue-700 text-xs px-3.5 py-1.5 rounded-full font-bold uppercase tracking-widest inline-block mb-4">Get Started</span>
+                <h2 class="text-3xl md:text-5xl font-black text-slate-900 uppercase mb-4">Register now to unlock top-performing content[cite: 32, 33]</h2>
+                <p class="text-slate-600 text-base mb-6 leading-relaxed">
+                    If you have further questions, please direct your inquiries to our partnership team at <span class="text-blue-600 font-bold">hrgameverse@gmail.com</span>[cite: 33].
+                </p>
+                <div class="space-y-4 text-sm text-slate-700">
+                    <div class="flex items-center gap-3"><i class="fas fa-check-circle text-blue-600"></i> Seamless Subdomain Integration[cite: 36]</div>
+                    <div class="flex items-center gap-3"><i class="fas fa-check-circle text-blue-600"></i> Localized Games in 20+ Languages[cite: 34]</div>
+                    <div class="flex items-center gap-3"><i class="fas fa-check-circle text-blue-600"></i> Classic Puzzles & Crosswords Available[cite: 35]</div>
+                </div>
+            </div>
+
+            <!-- Registration Form Box -->
+            <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200 shadow-md">
+                <h3 class="font-bold text-xl text-slate-900 mb-6">Partner Registration Form</h3>
+                <form onsubmit="event.preventDefault(); alert('White Label registration submitted successfully! We will contact you soon.');" class="space-y-4">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">First name *[cite: 32, 33]</label>
+                            <input type="text" required placeholder="Ahmad" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm bg-white focus:outline-none focus:border-blue-600">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Last name *[cite: 32, 33]</label>
+                            <input type="text" required placeholder="Imtiaz" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm bg-white focus:outline-none focus:border-blue-600">
+                        </div>
                     </div>
-                    <form onsubmit="event.preventDefault(); alert('Registration submitted successfully! Welcome to GameVerse Network.');" class="space-y-4">
-                        <div class="grid grid-cols-2 gap-4">
-                            <div>
-                                <label class="block text-xs font-bold text-slate-700 mb-1">First name *</label>
-                                <input type="text" required placeholder="Ahmad" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-blue-600">
-                            </div>
-                            <div>
-                                <label class="block text-xs font-bold text-slate-700 mb-1">Last name *</label>
-                                <input type="text" required placeholder="Imtiaz" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-blue-600">
-                            </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-1">Email *[cite: 33]</label>
+                        <input type="email" required placeholder="hrgameverse@gmail.com" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm bg-white focus:outline-none focus:border-blue-600">
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Country *[cite: 33]</label>
+                            <select class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm bg-white focus:outline-none focus:border-blue-600">
+                                <option>Pakistan</option>
+                                <option>United Arab Emirates</option>
+                                <option>United States</option>
+                                <option>United Kingdom</option>
+                            </select>
                         </div>
                         <div>
-                            <label class="block text-xs font-bold text-slate-700 mb-1">Email *</label>
-                            <input type="email" required placeholder="hrgameverse@gmail.com" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-blue-600">
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Company / Account Name *[cite: 33]</label>
+                            <input type="text" required placeholder="GameVerse" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm bg-white focus:outline-none focus:border-blue-600">
                         </div>
-                        <div class="grid grid-cols-2 gap-4">
-                            <div>
-                                <label class="block text-xs font-bold text-slate-700 mb-1">Country *</label>
-                                <select class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm bg-white focus:outline-none focus:border-blue-600">
-                                    <option>Pakistan</option>
-                                    <option>United Arab Emirates</option>
-                                    <option>United States</option>
-                                    <option>United Kingdom</option>
-                                    <option>Other Country</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label class="block text-xs font-bold text-slate-700 mb-1">Company *</label>
-                                <input type="text" required placeholder="GameVerse" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-blue-600">
-                            </div>
-                        </div>
-                        <div>
-                            <label class="block text-xs font-bold text-slate-700 mb-1">Website / Portfolio</label>
-                            <input type="text" placeholder="https://gameverse.com" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-blue-600">
-                        </div>
-                        <div class="text-xs text-slate-500 space-y-2 pt-2">
-                            <label class="flex items-center gap-2 cursor-pointer">
-                                <input type="checkbox" required class="rounded border-slate-300"> I ACCEPT the Developer Terms and Conditions[cite: 23].
-                            </label>
-                            <label class="flex items-center gap-2 cursor-pointer">
-                                <input type="checkbox" required class="rounded border-slate-300"> I ACCEPT the Privacy Policy of GameVerse Connect[cite: 23].
-                            </label>
-                        </div>
-                        <button type="submit" class="w-full gv-btn-primary text-white font-bold py-3 rounded-xl text-sm shadow-md transition cursor-pointer mt-4">
-                            Complete Registration
-                        </button>
-                    </form>
+                    </div>
+                    <button type="submit" class="w-full gv-btn-primary text-white font-bold py-3 rounded-xl text-sm shadow-md transition cursor-pointer mt-4">
+                        Next / Register[cite: 33]
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Top 6 FAQs Section (Exact Match to Reference) -->
+    <section id="faqs" class="py-20 bg-slate-50 border-b border-slate-200">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-black text-slate-900 mb-10 text-center">Top 6 FAQs[cite: 34, 35, 36]</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                    <h4 class="font-bold text-slate-900 text-base mb-2">1. Do you have games in my language?[cite: 34]</h4>
+                    <p class="text-slate-600 text-xs leading-relaxed">We have games localized in several languages including English, Spanish, German, French, Dutch, Turkish, and more[cite: 34].</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                    <h4 class="font-bold text-slate-900 text-base mb-2">2. Do you offer classic games like puzzles?[cite: 35]</h4>
+                    <p class="text-slate-600 text-xs leading-relaxed">Yes! To receive our complete puzzle, crosswords, and sudoku portfolio, contact our partnership team[cite: 35].</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                    <h4 class="font-bold text-slate-900 text-base mb-2">3. How does the game page integration work?[cite: 36]</h4>
+                    <p class="text-slate-600 text-xs leading-relaxed">Integrated like a regular subdomain. We create a customized page, and once approved, you configure the DNS[cite: 36].</p>
                 </div>
             </div>
         </div>
@@ -228,10 +310,10 @@
         </div>
     </section>
 
-    <!-- Login Modal Popup -->
+    <!-- Login Modal -->
     <div id="loginModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
         <div class="bg-white rounded-3xl max-w-md w-full p-8 shadow-2xl border border-slate-200 relative">
-            <button onclick="closeLoginModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 text-xl font-bold cursor-pointer">
+            <button onclick="closeLoginModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 text-xl font-bold cursor-pointer bg-transparent border-none">
                 <i class="fas fa-times"></i>
             </button>
             <div class="text-center mb-6">
@@ -282,7 +364,6 @@
         </div>
     </footer>
 
-    <!-- JavaScript -->
     <script>
         function openLoginModal() {
             document.getElementById('loginModal').classList.remove('hidden');
