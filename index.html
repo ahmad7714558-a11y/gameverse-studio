@@ -27,6 +27,23 @@
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
+        /* Entry Animations */
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-left { animation: slideInLeft 1s ease-out forwards; }
+        .animate-right { animation: slideInRight 1s ease-out forwards; }
+        .animate-up { animation: fadeInUp 1s ease-out forwards; }
+
         .game-card { transition: all 0.3s ease; }
         .game-card:hover { transform: translateY(-6px); box-shadow: 0 20px 25px -5px rgba(239, 68, 68, 0.2); }
         .red-gradient-btn { background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); }
@@ -58,10 +75,10 @@
         </div>
     </nav>
 
-    <!-- Hero Section with Colorful Animated Gradient Background -->
+    <!-- Hero Section with Entry Animations -->
     <section class="pt-28 pb-16 px-6 hero-banner text-white relative overflow-hidden">
         <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative z-10">
-            <div>
+            <div class="animate-left">
                 <span class="bg-black/30 text-red-300 border border-red-400/40 text-xs px-3.5 py-1.5 rounded-full font-bold uppercase tracking-widest inline-block mb-4 shadow-sm">
                     Leading Mobile Game Publisher
                 </span>
@@ -80,8 +97,8 @@
                     </a>
                 </div>
             </div>
-            <!-- Clean Video Container Frame -->
-            <div class="relative bg-black/40 p-3 rounded-3xl border border-white/20 shadow-2xl backdrop-blur-sm">
+            <!-- Video Container with Right Animation -->
+            <div class="relative bg-black/40 p-3 rounded-3xl border border-white/20 shadow-2xl backdrop-blur-sm animate-right">
                 <div class="aspect-video rounded-2xl overflow-hidden bg-black flex items-center justify-center relative">
                     <iframe class="w-full h-full" src="https://www.youtube.com/embed/l7EynldIeHg" title="Real Racing Car Trailer" frameborder="0" allowfullscreen></iframe>
                 </div>
@@ -224,26 +241,44 @@
         </div>
     </section>
 
-    <!-- Services & About Info Section -->
+    <!-- Services & About Info Section with Interactive Buttons -->
     <section id="services" class="py-16 bg-slate-100 border-t border-slate-200">
         <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
-                <div class="text-red-600 text-2xl mb-4"><i class="fas fa-clock"></i></div>
-                <h4 class="font-bold text-lg mb-2 text-slate-900">Office Timings</h4>
+            <!-- Office Timings Box -->
+            <div onclick="showFeatureAlert('Office Timings', 'Available daily from 09:00 AM to 06:00 PM for professional coordination and development support at Pace Plaza, Bahawalpur.')" 
+                 class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 cursor-pointer hover:border-red-500 transition group">
+                <div class="text-red-600 text-2xl mb-4 group-hover:scale-110 transition"><i class="fas fa-clock"></i></div>
+                <h4 class="font-bold text-lg mb-2 text-slate-900">Office Timings <i class="fas fa-arrow-right text-xs text-red-500 ml-1"></i></h4>
                 <p class="text-slate-600 text-sm">09:00 AM to 06:00 PM available for professional coordination and development support.</p>
             </div>
-            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
-                <div class="text-red-600 text-2xl mb-4"><i class="fas fa-users"></i></div>
-                <h4 class="font-bold text-lg mb-2 text-slate-900">50 Persons Team</h4>
-                <p class="text-slate-600 text-sm">Powered by expert developers, 3D modelers, and professional game designers.</p>
+            <!-- 50 Persons Team Box (Interactive Random Employee Showcase) -->
+            <div onclick="showRandomEmployee()" 
+                 class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 cursor-pointer hover:border-red-500 transition group">
+                <div class="text-red-600 text-2xl mb-4 group-hover:scale-110 transition"><i class="fas fa-users"></i></div>
+                <h4 class="font-bold text-lg mb-2 text-slate-900">50 Persons Team <i class="fas fa-sparkles text-xs text-red-500 ml-1"></i></h4>
+                <p class="text-slate-600 text-sm">Click here to view live random profiles from our expert 50+ development team members.</p>
             </div>
-            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
-                <div class="text-red-600 text-2xl mb-4"><i class="fas fa-award"></i></div>
-                <h4 class="font-bold text-lg mb-2 text-slate-900">High Quality Standards</h4>
+            <!-- High Quality Standards Box -->
+            <div onclick="showFeatureAlert('High Quality Standards', 'All games built by GameVerse undergo strict ISO standard graphics review, Unity optimization, and automated testing under CEO Ahmad Imtiaz.')" 
+                 class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 cursor-pointer hover:border-red-500 transition group">
+                <div class="text-red-600 text-2xl mb-4 group-hover:scale-110 transition"><i class="fas fa-award"></i></div>
+                <h4 class="font-bold text-lg mb-2 text-slate-900">High Quality Standards <i class="fas fa-arrow-right text-xs text-red-500 ml-1"></i></h4>
                 <p class="text-slate-600 text-sm">ISO standard graphics and smooth Unity programming optimized for Play Console.</p>
             </div>
         </div>
     </section>
+
+    <!-- Interactive Modal Popup for Team & Features -->
+    <div id="interactiveModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl border border-slate-200 relative animate-up">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 text-xl font-bold cursor-pointer">
+                <i class="fas fa-times"></i>
+            </button>
+            <div id="modalContent" class="text-center">
+                <!-- Content injected dynamically -->
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer id="contact" class="bg-slate-900 text-slate-400 py-12 mt-auto border-t border-slate-800">
@@ -278,7 +313,7 @@
         </div>
     </footer>
 
-    <!-- JavaScript for Tab Switching (01, 02, 03) -->
+    <!-- JavaScript for Tabs & Interactive Features -->
     <script>
         function switchTab(tabNum) {
             document.getElementById('panel-1').classList.add('hidden');
@@ -291,6 +326,56 @@
 
             document.getElementById('panel-' + tabNum).classList.remove('hidden');
             document.getElementById('btn-' + tabNum).className = 'w-8 h-8 rounded-full red-gradient-btn text-white flex items-center justify-center font-bold text-sm cursor-pointer shadow-md';
+        }
+
+        // Random Employee Profiles Array for 50 Team Members
+        const employees = [
+            { name: "Umar Anjum", role: "Lead Unity Developer", exp: "5 Years Experience", avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300&auto=format&fit=crop&q=80" },
+            { name: "Bilal Ahmed", role: "Senior 3D Modeler", exp: "4 Years Experience", avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&auto=format&fit=crop&q=80" },
+            { name: "Usman Tariq", role: "UI/UX Game Designer", exp: "3 Years Experience", avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=300&auto=format&fit=crop&q=80" },
+            { name: "Zainab Malik", role: "Monetization & Ads Expert", exp: "4 Years Experience", avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=300&auto=format&fit=crop&q=80" },
+            { name: "Hamza Ali", role: "Physics & Car Handling Programmer", exp: "6 Years Experience", avatar: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=300&auto=format&fit=crop&q=80" }
+        ];
+
+        function showRandomEmployee() {
+            const randomEmp = employees[Math.floor(Math.random() * employees.length)];
+            const modal = document.getElementById('interactiveModal');
+            const content = document.getElementById('modalContent');
+            
+            content.innerHTML = `
+                <div class="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-4 border-red-500 shadow-lg">
+                    <img src="${randomEmp.avatar}" alt="${randomEmp.name}" class="w-full h-full object-cover">
+                </div>
+                <span class="bg-red-100 text-red-600 text-xs px-3 py-1 rounded-full font-bold uppercase tracking-wider">GameVerse Team (Active)</span>
+                <h3 class="text-2xl font-black text-slate-900 mt-3">${randomEmp.name}</h3>
+                <p class="text-red-600 font-semibold text-sm mt-1">${randomEmp.role}</p>
+                <p class="text-slate-500 text-xs mt-1 mb-6">${randomEmp.exp} | Bahawalpur Studio</p>
+                <button onclick="showRandomEmployee()" class="red-gradient-btn text-white font-bold px-6 py-2.5 rounded-xl text-sm shadow-md transition">
+                    <i class="fas fa-random mr-1"></i> Show Another Employee
+                </button>
+            `;
+            modal.classList.remove('hidden');
+        }
+
+        function showFeatureAlert(title, desc) {
+            const modal = document.getElementById('interactiveModal');
+            const content = document.getElementById('modalContent');
+            
+            content.innerHTML = `
+                <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-red-100 text-red-600 flex items-center justify-center text-2xl shadow-sm">
+                    <i class="fas fa-info-circle"></i>
+                </div>
+                <h3 class="text-2xl font-black text-slate-900 mb-2">${title}</h3>
+                <p class="text-slate-600 text-sm leading-relaxed mb-6">${desc}</p>
+                <button onclick="closeModal()" class="bg-slate-900 text-white font-bold px-6 py-2.5 rounded-xl text-sm shadow-md transition">
+                    Got It
+                </button>
+            `;
+            modal.classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('interactiveModal').classList.add('hidden');
         }
     </script>
 
