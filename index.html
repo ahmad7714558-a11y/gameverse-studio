@@ -16,7 +16,8 @@
             font-family: 'Inter', system-ui, sans-serif; 
         }
         .hero-banner {
-            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #7f1d1d 100%);
+            background-color: #0b0f19;
+            background-image: radial-gradient(circle at 80% 20%, rgba(220, 38, 38, 0.12) 0%, transparent 40%);
         }
         .game-card { transition: all 0.3s ease; }
         .game-card:hover { transform: translateY(-6px); box-shadow: 0 20px 25px -5px rgba(239, 68, 68, 0.2); }
@@ -29,7 +30,7 @@
     <!-- Navbar -->
     <nav class="fixed top-0 left-0 w-full z-50 bg-white border-b border-slate-200 shadow-sm">
         <div class="container mx-auto px-6 py-3.5 flex justify-between items-center">
-            <!-- GameVerse Logo (No Studio) -->
+            <!-- GameVerse Logo -->
             <a href="#" class="text-2xl font-black tracking-tight text-slate-900 flex items-center gap-2">
                 <span class="red-gradient-btn text-white px-3 py-1 rounded-xl shadow-md flex items-center gap-1 text-base">
                     <i class="fas fa-gamepad"></i> GV
@@ -49,31 +50,31 @@
         </div>
     </nav>
 
-    <!-- Hero Section (Only GAMEVERSE & YouTube Video Embed) -->
+    <!-- Hero Section -->
     <section class="pt-28 pb-16 px-6 hero-banner text-white relative overflow-hidden">
         <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
-                <span class="bg-red-600/30 text-red-400 border border-red-500/30 text-xs px-3.5 py-1.5 rounded-full font-bold uppercase tracking-widest inline-block mb-4">
+                <span class="bg-red-600/20 text-red-400 border border-red-500/30 text-xs px-3.5 py-1.5 rounded-full font-bold uppercase tracking-widest inline-block mb-4">
                     Leading Mobile Game Publisher
                 </span>
-                <h1 class="text-4xl md:text-6xl font-black mb-4 leading-tight tracking-tight uppercase">
+                <h1 class="text-4xl md:text-6xl font-black mb-4 leading-tight tracking-tight uppercase text-white">
                     GAME<span class="text-red-500">VERSE</span>
                 </h1>
-                <p class="text-slate-300 text-base md:text-lg mb-8 leading-relaxed">
+                <p class="text-slate-300 text-base md:text-lg mb-8 leading-relaxed font-normal">
                     Next-Gen 3D Mobile Games & Immersive Racing Simulators. Built by professional game developers, 3D artists, and software engineers.
                 </p>
                 <div class="flex flex-wrap gap-4">
                     <a href="#games" class="red-gradient-btn text-white font-bold px-8 py-3.5 rounded-xl shadow-lg shadow-red-600/30 transition flex items-center gap-2">
                         <i class="fas fa-play"></i> Explore Games
                     </a>
-                    <a href="tel:03090503003" class="bg-slate-800/80 hover:bg-slate-700 text-white font-semibold px-8 py-3.5 rounded-xl transition border border-slate-700">
+                    <a href="tel:03090503003" class="bg-slate-900 hover:bg-slate-800 text-white font-semibold px-8 py-3.5 rounded-xl transition border border-slate-700">
                         <i class="fas fa-phone-alt mr-2 text-red-400"></i> 03090503003
                     </a>
                 </div>
             </div>
-            <!-- YouTube Video Embed -->
-            <div class="relative bg-slate-950/60 p-3 rounded-3xl border border-red-900/40 shadow-2xl">
-                <div class="aspect-video rounded-2xl overflow-hidden bg-slate-950 flex items-center justify-center relative">
+            <!-- Clean Video Container Frame -->
+            <div class="relative bg-slate-900/90 p-2.5 rounded-3xl border border-slate-700/80 shadow-2xl">
+                <div class="aspect-video rounded-2xl overflow-hidden bg-black flex items-center justify-center relative">
                     <iframe class="w-full h-full" src="https://www.youtube.com/embed/l7EynldIeHg" title="Real Racing Car Trailer" frameborder="0" allowfullscreen></iframe>
                 </div>
             </div>
@@ -258,7 +259,7 @@
                     <a href="https://play.google.com/store/apps/developer?id=CoreOne+Games" target="_blank" class="text-blue-400 hover:text-blue-300 transition hover:underline">
                         <i class="fab fa-google-play mr-1"></i> CoreOne Games
                     </a>
-                    <a href="https://play.google.com/store/apps/developer?id=Bluewire+Tech" target="_blank" class="text-blue-400 hover:underline">
+                    <a href="https://play.google.com/store/apps/developer?id=Bluewire+Tech" target="_blank" class="text-blue-400 hover:text-blue-300 transition hover:underline">
                         <i class="fab fa-google-play mr-1"></i> Bluewire Tech
                     </a>
                 </div>
