@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GameVerse | Direct Game Integration & Publishing Portal</title>
-    <meta name="description" content="Official website of GameVerse. CEO Ahmad Imtiaz. Professional mobile game development, direct game integration, and iframe embedding solutions.">
+    <title>GameVerse | Professional B2B Gaming & Publishing Portal</title>
+    <meta name="description" content="Official website of GameVerse. CEO Ahmad Imtiaz. Professional mobile game publishing, direct game integration, and white-label gaming solutions.">
     <!-- Custom Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23ef4444'/%3E%3Cstop offset='50%25' stop-color='%23f97316'/%3E%3Cstop offset='100%25' stop-color='%233b82f6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='50' cy='50' r='48' fill='url(%23grad)'/%3E%3Ctext x='50' y='65' font-size='42' font-weight='900' font-family='Arial, sans-serif' fill='%23ffffff' text-anchor='middle'%3EGV%3C/text%3E%3C/svg%3E">
     <!-- Tailwind CSS -->
@@ -28,6 +28,8 @@
             visibility: visible; 
             transform: translateY(0);
         }
+        .page-view { display: none; }
+        .page-view.active { display: block; }
     </style>
 </head>
 <body class="flex flex-col min-h-screen selection:bg-blue-600 selection:text-white">
@@ -35,14 +37,15 @@
     <!-- Top Navigation Bar -->
     <nav class="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-black tracking-tight text-slate-900 flex items-center gap-2">
+            <a href="#" onclick="switchPage('home')" class="text-2xl font-black tracking-tight text-slate-900 flex items-center gap-2 cursor-pointer">
                 <span class="gv-btn-primary text-white px-3 py-1 rounded-xl shadow-md flex items-center gap-1 text-base">
                     <i class="fas fa-gamepad"></i> GV
                 </span>
                 <span class="tracking-wide">Game<span class="text-blue-600">Verse</span></span>
             </a>
             <div class="hidden lg:flex space-x-8 text-slate-600 font-semibold text-sm items-center">
-                <a href="#games" class="hover:text-blue-600 transition">Games</a>
+                <a href="#" onclick="switchPage('home')" class="hover:text-blue-600 transition">Home</a>
+                <a href="#games" class="hover:text-blue-600 transition">Games Portfolio</a>
                 
                 <!-- For Business Dropdown -->
                 <div class="relative group py-2">
@@ -52,20 +55,29 @@
                     <div class="dropdown-menu absolute top-full left-0 w-[600px] bg-white rounded-2xl shadow-2xl border border-slate-200 p-6 grid grid-cols-2 gap-6 z-50">
                         <div>
                             <h4 class="text-xs font-black text-blue-600 uppercase tracking-wider mb-3"><i class="fas fa-bullhorn mr-1"></i> For Publishers</h4>
-                            <ul class="space-y-2 text-xs">
-                                <li><a href="#direct-integration" class="text-slate-700 hover:text-blue-600 font-bold block">Direct Game Integration</a><span class="text-slate-400">Experience simple efficiency</span>[cite: 61]</li>
+                            <ul class="space-y-3 text-xs">
+                                <li>
+                                    <a href="#" onclick="switchPage('partnership')" class="text-slate-700 hover:text-blue-600 font-bold block">Partnership Models</a>
+                                    <span class="text-slate-400">Discover partnership models</span>
+                                </li>
+                                <li>
+                                    <a href="#" onclick="switchPage('direct-integration')" class="text-slate-700 hover:text-blue-600 font-bold block mt-1">Direct Game Integration</a>
+                                    <span class="text-slate-400">Experience simple efficiency</span>
+                                </li>
                             </ul>
                         </div>
                         <div>
                             <h4 class="text-xs font-black text-blue-600 uppercase tracking-wider mb-3"><i class="fas fa-code mr-1"></i> For Developers</h4>
-                            <ul class="space-y-2 text-xs">
-                                <li><a href="#games" class="text-slate-700 hover:text-blue-600 font-bold block">Developer Hub</a><span class="text-slate-400">Publish your games globally</span></li>
+                            <ul class="space-y-3 text-xs">
+                                <li>
+                                    <a href="#" onclick="switchPage('dev-partnership')" class="text-slate-700 hover:text-blue-600 font-bold block">Developer Partnership</a>
+                                    <span class="text-slate-400">Expand your reach globally</span>
+                                </li>
                             </ul>
                         </div>
                     </div>
                 </div>
 
-                <a href="#steps" class="hover:text-blue-600 transition">Integration Steps</a>
                 <a href="#about" class="hover:text-blue-600 transition">About</a>
             </div>
             <div class="flex items-center gap-3">
@@ -76,177 +88,104 @@
         </div>
     </nav>
 
-    <!-- Hero Section: Direct Game Integration (Matching Screenshot 61) -->
-    <section id="direct-integration" class="pt-32 pb-20 px-6 bg-white border-b border-slate-200">
-        <div class="container mx-auto">
-            <div class="bg-gradient-to-r from-blue-900 to-indigo-900 rounded-3xl p-8 md:p-16 text-white shadow-2xl relative overflow-hidden flex flex-col lg:flex-row items-center justify-between gap-8">
-                <div class="max-w-xl">
-                    <span class="bg-white/10 text-blue-300 text-xs px-3.5 py-1.5 rounded-full font-bold uppercase tracking-widest inline-block mb-4">
-                        Publisher Direct Integration
-                    </span>
-                    <h1 class="text-3xl md:text-5xl font-black mb-6 leading-tight uppercase">
-                        Direct Game Integration[cite: 61]
-                    </h1>
-                    <p class="text-slate-300 text-base md:text-lg mb-8">
-                        Experience the simple efficiency of Direct Game Integration led by CEO Ahmad Imtiaz.
-                    </p>
-                    <a href="#register" class="gv-btn-primary text-white font-bold px-8 py-3.5 rounded-xl shadow-lg transition inline-flex items-center gap-2">
-                        <i class="fas fa-rocket"></i> Discover now[cite: 61]
-                    </a>
-                </div>
-                <div class="grid grid-cols-2 gap-4 text-center max-w-sm">
-                    <div class="bg-white/10 p-4 rounded-2xl border border-white/10">
-                        <div class="text-xl font-black text-blue-300">28 minutes</div>
-                        <div class="text-xs text-slate-300 mt-1">average playing session[cite: 61]</div>
-                    </div>
-                    <div class="bg-white/10 p-4 rounded-2xl border border-white/10">
-                        <div class="text-xl font-black text-blue-300">120+</div>
-                        <div class="text-xs text-slate-300 mt-1">new games per month[cite: 61]</div>
-                    </div>
-                    <div class="bg-white/10 p-4 rounded-2xl border border-white/10">
-                        <div class="text-xl font-black text-blue-300">21K+</div>
-                        <div class="text-xs text-slate-300 mt-1">games[cite: 61]</div>
-                    </div>
-                    <div class="bg-white/10 p-4 rounded-2xl border border-white/10">
-                        <div class="text-xl font-black text-blue-300">26</div>
-                        <div class="text-xs text-slate-300 mt-1">different genres[cite: 61]</div>
+    <!-- MAIN HOME PAGE -->
+    <div id="page-home" class="page-view active pt-28">
+        <!-- Hero Section -->
+        <section class="py-16 px-6 bg-white border-b border-slate-200">
+            <div class="container mx-auto">
+                <div class="bg-gradient-to-r from-blue-900 to-indigo-900 rounded-3xl p-8 md:p-16 text-white shadow-2xl relative overflow-hidden">
+                    <div class="max-w-2xl">
+                        <span class="bg-white/10 text-blue-300 text-xs px-3.5 py-1.5 rounded-full font-bold uppercase tracking-widest inline-block mb-4">
+                            Official B2B Gaming Hub
+                        </span>
+                        <h1 class="text-3xl md:text-5xl font-black mb-6 leading-tight uppercase">
+                            Driving Growth and Engagement
+                        </h1>
+                        <p class="text-slate-300 text-base md:text-lg mb-8">
+                            Explore dedicated partnership models, direct game integrations, and developer monetization solutions led by CEO Ahmad Imtiaz.
+                        </p>
+                        <div class="flex flex-wrap gap-4">
+                            <button onclick="switchPage('partnership')" class="gv-btn-primary text-white font-bold px-6 py-3.5 rounded-xl shadow-lg transition cursor-pointer">
+                                Explore For Publishers
+                            </button>
+                            <button onclick="switchPage('dev-partnership')" class="bg-white/15 hover:bg-white/25 text-white font-bold px-6 py-3.5 rounded-xl backdrop-blur-md transition cursor-pointer">
+                                Explore For Developers
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- A Scalable Solution to Meet Your Demands (Matching Screenshots 62 & 63) -->
-    <section class="py-20 bg-slate-50 border-b border-slate-200">
-        <div class="container mx-auto px-6">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <span class="text-blue-600 font-bold text-xs uppercase tracking-widest">Efficiency</span>
-                <h2 class="text-3xl md:text-4xl font-black text-slate-900 mt-1 mb-3">A scalable solution to meet your demands[cite: 62]</h2>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-                <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm">
-                    <div class="w-12 h-12 rounded-2xl bg-blue-100 text-blue-600 flex items-center justify-center text-xl font-bold mb-6"><i class="fas fa-bullseye"></i></div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-2">Reach Your Target Audience(s)[cite: 62]</h3>
+        <!-- Quick Navigation Cards to Separate Pages -->
+        <section class="py-20 bg-slate-50 border-b border-slate-200">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-2xl mx-auto mb-16">
+                    <h2 class="text-3xl font-black text-slate-900">Choose Your Partnership Path</h2>
+                    <p class="text-slate-500 text-sm mt-2">Click below to open dedicated solutions and registration forms.</p>
                 </div>
-                <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm">
-                    <div class="w-12 h-12 rounded-2xl bg-blue-100 text-blue-600 flex items-center justify-center text-xl font-bold mb-6"><i class="fas fa-globe"></i></div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-2">Offer Localized Game Content[cite: 62]</h3>
-                </div>
-                <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm">
-                    <div class="w-12 h-12 rounded-2xl bg-blue-100 text-blue-600 flex items-center justify-center text-xl font-bold mb-6"><i class="fas fa-chart-pie"></i></div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-2">Use Multiple Monetization Models[cite: 62]</h3>
-                    <p class="text-xs text-slate-500 mt-1">*in-game ads or hybrid[cite: 62]</p>
-                </div>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm">
-                    <div class="w-12 h-12 rounded-2xl bg-indigo-100 text-indigo-600 flex items-center justify-center text-xl font-bold mb-6"><i class="fas fa-coins"></i></div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-2">Diversify Your Revenue Streams[cite: 63]</h3>
-                </div>
-                <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm">
-                    <div class="w-12 h-12 rounded-2xl bg-indigo-100 text-indigo-600 flex items-center justify-center text-xl font-bold mb-6"><i class="fas fa-users"></i></div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-2">Enhance User Engagement[cite: 63]</h3>
-                </div>
-                <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm">
-                    <div class="w-12 h-12 rounded-2xl bg-indigo-100 text-indigo-600 flex items-center justify-center text-xl font-bold mb-6"><i class="fas fa-chart-line"></i></div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-2">Improve Website Metrics[cite: 63]</h3>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Engage Audiences Section (Matching Screenshot 63) -->
-    <section class="py-20 bg-white border-b border-slate-200">
-        <div class="container mx-auto px-6">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div>
-                    <span class="text-blue-600 font-bold text-xs uppercase tracking-widest">Seamless Integration</span>
-                    <h2 class="text-3xl md:text-4xl font-black text-slate-900 mt-2 mb-6">Engage audiences</h2>
-                    <ul class="space-y-6 text-sm text-slate-700 font-medium">
-                        <li class="flex items-start gap-3"><i class="fas fa-arrow-right text-blue-600 mt-1"></i> Add instantly playable games with a simple drag and drop[cite: 63].</li>
-                        <li class="flex items-start gap-3"><i class="fas fa-arrow-right text-blue-600 mt-1"></i> Display any game on your site via an <strong>iframe</strong>. No hosting needed[cite: 63].</li>
-                        <li class="flex items-start gap-3"><i class="fas fa-arrow-right text-blue-600 mt-1"></i> Our team provides dedicated account management focused on your success[cite: 63].</li>
-                    </ul>
-                </div>
-                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200 text-center shadow-sm">
-                    <div class="text-4xl font-black text-blue-600 mb-2"><i class="fas fa-laptop-code"></i></div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-2">Instant iframe Embedding</h3>
-                    <p class="text-slate-500 text-xs">Embed high-performance HTML5 games effortlessly.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Get Games Live in 3 Steps (Matching Screenshot 64) -->
-    <section id="steps" class="py-20 bg-slate-50 border-b border-slate-200">
-        <div class="container mx-auto px-6">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <span class="text-blue-600 font-bold text-xs uppercase tracking-widest">Workflow</span>
-                <h2 class="text-3xl font-black text-slate-900 mt-1 mb-2">Get games live in 3 steps[cite: 64]</h2>
-                <div class="flex justify-center gap-2 mt-4 text-xs font-bold">
-                    <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full">Simple[cite: 64]</span>
-                    <span class="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full">Efficient[cite: 64]</span>
-                    <span class="bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full">Lucrative[cite: 64]</span>
-                </div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm relative">
-                    <span class="text-4xl font-black text-slate-200 block mb-3">01</span>
-                    <h3 class="font-bold text-slate-900 text-base mb-2">Step 1</h3>
-                    <p class="text-slate-600 text-xs leading-relaxed">Finish setting up your Publisher Account[cite: 64].</p>
-                </div>
-                <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm relative">
-                    <span class="text-4xl font-black text-slate-200 block mb-3">02</span>
-                    <h3 class="font-bold text-slate-900 text-base mb-2">Step 2</h3>
-                    <p class="text-slate-600 text-xs leading-relaxed">Explore our game catalog. A direct integration link is shown on every game page[cite: 64].</p>
-                </div>
-                <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm relative">
-                    <span class="text-4xl font-black text-slate-200 block mb-3">03</span>
-                    <h3 class="font-bold text-slate-900 text-base mb-2">Step 3</h3>
-                    <p class="text-slate-600 text-xs leading-relaxed">Simply copy and embed this link on your page, and you are ready to go live[cite: 64].</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Publisher Registration Form (Matching Screenshots 65 & 66) -->
-    <section id="register" class="py-20 bg-white border-b border-slate-200">
-        <div class="container mx-auto px-6">
-            <div class="bg-gradient-to-r from-blue-900 to-indigo-900 rounded-3xl p-8 md:p-12 text-white shadow-2xl grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h3 class="text-2xl md:text-3xl font-black mb-4">Partner with GameVerse and easily expand your catalog[cite: 65]</h3>
-                    <p class="text-slate-300 text-sm leading-relaxed mb-6">
-                        Access a unique selection of games to grow your audience and boost user retention instantly[cite: 65].
-                    </p>
-                    <div class="bg-white/10 p-6 rounded-2xl border border-white/10">
-                        <div class="text-xs text-blue-300 font-bold">Official Support Email:</div>
-                        <a href="mailto:hrgameverse@gmail.com" class="text-white font-black text-lg hover:underline">hrgameverse@gmail.com</a>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div onclick="switchPage('partnership')" class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-xl transition cursor-pointer group">
+                        <div class="w-14 h-14 rounded-2xl bg-blue-100 text-blue-600 flex items-center justify-center text-2xl font-bold mb-6 group-hover:bg-blue-600 group-hover:text-white transition">
+                            <i class="fas fa-bullhorn"></i>
+                        </div>
+                        <h3 class="text-2xl font-black text-slate-900 mb-3">For Publishers</h3>
+                        <p class="text-slate-600 text-sm mb-6">Discover partnership models, white-label solutions, and direct game integration options.</p>
+                        <span class="text-blue-600 font-bold text-sm inline-flex items-center gap-2">Open Publisher Portal <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                    <div onclick="switchPage('dev-partnership')" class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-xl transition cursor-pointer group">
+                        <div class="w-14 h-14 rounded-2xl bg-indigo-100 text-indigo-600 flex items-center justify-center text-2xl font-bold mb-6 group-hover:bg-indigo-600 group-hover:text-white transition">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3 class="text-2xl font-black text-slate-900 mb-3">For Developers</h3>
+                        <p class="text-slate-600 text-sm mb-6">Find out how GameVerse helps developers expand reach and maximize CPMs with header bidding.</p>
+                        <span class="text-indigo-600 font-bold text-sm inline-flex items-center gap-2">Open Developer Portal <i class="fas fa-arrow-right"></i></span>
                     </div>
                 </div>
+            </div>
+        </section>
+    </div>
 
-                <div class="bg-white text-slate-900 p-8 rounded-3xl shadow-xl">
-                    <h4 class="text-xl font-black mb-6 text-slate-900">Publisher Registration</h4>
-                    <form onsubmit="event.preventDefault(); alert('Publisher integration request successfully submitted to GameVerse!');" class="space-y-4">
+    <!-- PAGE 1: PARTNERSHIP MODELS -->
+    <div id="page-partnership" class="page-view pt-28">
+        <section class="py-12 px-6 bg-white border-b border-slate-200">
+            <div class="container mx-auto">
+                <button onclick="switchPage('home')" class="text-blue-600 font-bold text-xs uppercase mb-6 inline-flex items-center gap-2 cursor-pointer">
+                    <i class="fas fa-arrow-left"></i> Back to Home
+                </button>
+                <div class="bg-gradient-to-r from-blue-900 to-indigo-900 rounded-3xl p-8 md:p-12 text-white shadow-xl">
+                    <span class="bg-white/10 text-blue-300 text-xs px-3 py-1 rounded-full font-bold uppercase">Publisher Portal</span>
+                    <h1 class="text-3xl md:text-4xl font-black mt-3 mb-4">Discover GameVerse Partnership Models</h1>
+                    <p class="text-slate-300 text-sm max-w-xl">Explore our flexible partnership structures designed to maximize digital publisher revenues and user engagement.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Partnership Registration Form -->
+        <section class="py-20 bg-slate-50">
+            <div class="container mx-auto px-6 max-w-4xl">
+                <div class="bg-white p-8 md:p-12 rounded-3xl border border-slate-200 shadow-xl">
+                    <h2 class="text-2xl font-black text-slate-900 mb-2">Partnership Registration Form</h2>
+                    <p class="text-slate-500 text-xs mb-8">Fill in your business details to join our publisher network.</p>
+                    <form onsubmit="event.preventDefault(); alert('Partnership request submitted successfully!');" class="space-y-4">
                         <div class="grid grid-cols-2 gap-4">
                             <div>
                                 <label class="block text-xs font-bold text-slate-700 mb-1">First name *</label>
-                                <input type="text" required placeholder="Ahmad" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-blue-600">[cite: 65]
+                                <input type="text" required placeholder="Ahmad" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-blue-600">
                             </div>
                             <div>
                                 <label class="block text-xs font-bold text-slate-700 mb-1">Last name *</label>
-                                <input type="text" required placeholder="Imtiaz" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-blue-600">[cite: 65]
+                                <input type="text" required placeholder="Imtiaz" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-blue-600">
                             </div>
                         </div>
                         <div>
                             <label class="block text-xs font-bold text-slate-700 mb-1">Email *</label>
-                            <input type="email" required placeholder="hrgameverse@gmail.com" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-blue-600">[cite: 65]
+                            <input type="email" required placeholder="hrgameverse@gmail.com" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-blue-600">
                         </div>
                         <div class="grid grid-cols-2 gap-4">
                             <div>
                                 <label class="block text-xs font-bold text-slate-700 mb-1">Country *</label>
-                                <select required class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-blue-600 bg-white">[cite: 65]
+                                <select required class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-blue-600 bg-white">
                                     <option value="Pakistan">Pakistan</option>
                                     <option value="United States">United States</option>
                                     <option value="United Kingdom">United Kingdom</option>
@@ -254,171 +193,85 @@
                             </div>
                             <div>
                                 <label class="block text-xs font-bold text-slate-700 mb-1">Company/Account Name *</label>
-                                <input type="text" required placeholder="GameVerse Studio" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-blue-600">[cite: 65]
+                                <input type="text" required placeholder="GameVerse Studio" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-blue-600">
                             </div>
                         </div>
                         <button type="submit" class="w-full gv-btn-primary text-white font-bold py-3.5 rounded-xl text-sm shadow-md transition cursor-pointer mt-4">
-                            Next / Submit Request[cite: 65]
+                            Submit Partnership Request
                         </button>
                     </form>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Publisher Experiences / Testimonials (Matching Screenshots 67, 68, 69) -->
-    <section class="py-20 bg-slate-50 border-b border-slate-200">
-        <div class="container mx-auto px-6 text-center max-w-3xl">
-            <h2 class="text-3xl font-black text-slate-900 mb-12">Publisher Experiences:</h2>
-            <div class="bg-white p-8 md:p-12 rounded-3xl border border-slate-200 shadow-sm relative">
-                <div class="text-blue-600 text-3xl mb-4"><i class="fas fa-quote-left"></i></div>
-                <p class="text-slate-700 text-base md:text-lg leading-relaxed mb-6">
-                    "GameDistribution was part of our strategy from the beginning. They filled the gaps I couldn't solve alone. Adding ever-growing catalog of free-to-play browser games instantly made our platform more engaging. Within the first three months, we saw a 17% increase in average session duration."[cite: 67]
-                </p>
-                <div class="font-bold text-slate-900">Mikko Y.[cite: 67]</div>
-                <div class="text-xs text-slate-500">Director at Rocketjump Media[cite: 67]</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Our Publishers Logos (Matching Screenshot 69) -->
-    <section class="py-16 bg-white border-b border-slate-200">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-2xl font-black text-slate-900 mb-10">Our Publishers</h2>
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 text-xs font-bold text-slate-600 uppercase">
-                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 flex items-center justify-center">Minijuegos</div>
-                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 flex items-center justify-center">Play123</div>
-                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 flex items-center justify-center">Admeen</div>
-                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 flex items-center justify-center">Coolmath Games</div>
-                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 flex items-center justify-center">Spil Games</div>
-                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 flex items-center justify-center">Y8</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Top 3 FAQs (Matching Screenshot 69) -->
-    <section class="py-20 bg-slate-50 border-b border-slate-200">
-        <div class="container mx-auto px-6 max-w-4xl">
-            <h2 class="text-3xl font-black text-slate-900 mb-10 text-center">Top 3 FAQs</h2>
-            <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm space-y-4">
-                <h3 class="font-bold text-slate-900 text-lg flex items-center gap-2"><i class="fas fa-question-circle text-blue-600"></i> What is the business model?</h3>
-                <p class="text-slate-600 text-sm leading-relaxed">
-                    GameVerse offers a revenue share model on in-game advertising and in-game purchase revenue.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Games Portfolio Section -->
-    <section id="games" class="py-16 container mx-auto px-6">
-        <div class="flex justify-between items-center mb-10">
-            <div>
-                <h2 class="text-2xl md:text-3xl font-black text-slate-900">GameVerse Exclusive Catalog</h2>
-                <p class="text-slate-500 text-sm mt-1">Play and test published games from our mobile network portfolio.</p>
-            </div>
-        </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-            <a href="https://play.google.com/store/apps/details?id=com.as.vegas.crime.game.maimi.gangster.simulator" target="_blank" class="game-card bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm block">
-                <div class="aspect-[4/3] bg-slate-100 overflow-hidden relative">
-                    <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800&auto=format&fit=crop&q=80" alt="Vice City Crime Simulator" class="w-full h-full object-cover">
-                </div>
-                <div class="p-4">
-                    <h3 class="font-bold text-slate-900 text-base">Vice City Crime Simulator</h3>
-                    <p class="text-xs text-blue-600 font-semibold mt-1"><i class="fab fa-google-play"></i> Aerie Solutions 2022</p>
-                </div>
-            </a>
-            <a href="https://play.google.com/store/apps/details?id=com.bwt.modern.drift.car.racing.game" target="_blank" class="game-card bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm block">
-                <div class="aspect-[4/3] bg-slate-100 overflow-hidden relative">
-                    <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800&auto=format&fit=crop&q=80" alt="Modern Drift Car 3D Racing" class="w-full h-full object-cover">
-                </div>
-                <div class="p-4">
-                    <h3 class="font-bold text-slate-900 text-base">Modern Drift Car 3D Racing</h3>
-                    <p class="text-xs text-blue-600 font-semibold mt-1"><i class="fab fa-google-play"></i> Bluewire Tech</p>
-                </div>
-            </a>
-            <a href="https://play.google.com/store/apps/details?id=com.as.us.highway.bus.drive.game" target="_blank" class="game-card bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm block">
-                <div class="aspect-[4/3] bg-slate-100 overflow-hidden relative">
-                    <img src="https://images.unsplash.com/photo-1570125909232-eb263c188f7e?w=800&auto=format&fit=crop&q=80" alt="Highway Bus Simulator" class="w-full h-full object-cover">
-                </div>
-                <div class="p-4">
-                    <h3 class="font-bold text-slate-900 text-base">Highway Bus Simulator</h3>
-                    <p class="text-xs text-blue-600 font-semibold mt-1"><i class="fab fa-google-play"></i> Aerie Solutions 2022</p>
-                </div>
-            </a>
-            <a href="https://play.google.com/store/apps/details?id=com.ti.police.Simulator.Car.Game" target="_blank" class="game-card bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm block">
-                <div class="aspect-[4/3] bg-slate-100 overflow-hidden relative">
-                    <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?w=800&auto=format&fit=crop&q=80" alt="Police Simulator Car Game" class="w-full h-full object-cover">
-                </div>
-                <div class="p-4">
-                    <h3 class="font-bold text-slate-900 text-base">Police Simulator Car Game</h3>
-                    <p class="text-xs text-blue-600 font-semibold mt-1"><i class="fab fa-google-play"></i> Twins Inc.</p>
-                </div>
-            </a>
-        </div>
-    </section>
-
-    <!-- Login Modal -->
-    <div id="loginModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
-        <div class="bg-white rounded-3xl max-w-md w-full p-8 shadow-2xl border border-slate-200 relative">
-            <button onclick="closeLoginModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 text-xl font-bold cursor-pointer bg-transparent border-none">
-                <i class="fas fa-times"></i>
-            </button>
-            <div class="text-center mb-6">
-                <div class="w-14 h-14 mx-auto mb-3 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-xl font-bold"><i class="fas fa-user-lock"></i></div>
-                <h3 class="text-2xl font-black text-slate-900">Developer Login</h3>
-                <p class="text-slate-500 text-xs mt-1">Access your GameVerse developer dashboard</p>
-            </div>
-            <form onsubmit="event.preventDefault(); alert('Login successful! Welcome back, Ahmad Imtiaz.'); closeLoginModal();" class="space-y-4">
-                <div>
-                    <label class="block text-xs font-bold text-slate-700 mb-1">Email Address *</label>
-                    <input type="email" required placeholder="hrgameverse@gmail.com" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-blue-600">
-                </div>
-                <div>
-                    <label class="block text-xs font-bold text-slate-700 mb-1">Password *</label>
-                    <input type="password" required placeholder="••••••••" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-blue-600">
-                </div>
-                <button type="submit" class="w-full gv-btn-primary text-white font-bold py-3 rounded-xl text-sm shadow-md transition cursor-pointer mt-2">
-                    Sign In
-                </button>
-            </form>
-        </div>
+        </section>
     </div>
 
-    <!-- Footer -->
-    <footer id="about" class="bg-slate-900 text-slate-400 py-12 mt-auto border-t border-slate-800">
-        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 text-sm">
-            <div>
-                <h4 class="text-white font-bold mb-3 text-base">GAMEVERSE</h4>
-                <p class="mb-3 text-slate-400">Professional mobile game publishing led by CEO Ahmad Imtiaz.</p>
-                <p class="text-xs text-slate-500">Pace plaza, Modal Town A, Near Dubai chowk, Bahawalpur City</p>
-            </div>
-            <div>
-                <h4 class="text-white font-bold mb-3 text-base">Contact Us</h4>
-                <p class="mb-2"><i class="fas fa-phone-alt text-blue-500 mr-2"></i> 03090503003</p>
-                <p><i class="fas fa-envelope text-blue-500 mr-2"></i> hrgameverse@gmail.com</p>
-            </div>
-            <div>
-                <h4 class="text-white font-bold mb-3 text-base">Play Console Portals</h4>
-                <div class="flex flex-col gap-1.5 text-xs">
-                    <a href="https://play.google.com/store/apps/developer?id=Aerie+Solutions+2022" target="_blank" class="text-blue-400 hover:text-blue-300 transition hover:underline">Aerie Solutions 2022</a>
-                    <a href="https://play.google.com/store/apps/developer?id=CoreOne+Games" target="_blank" class="text-blue-400 hover:text-blue-300 transition hover:underline">CoreOne Games</a>
-                    <a href="https://play.google.com/store/apps/developer?id=Bluewire+Tech" target="_blank" class="text-blue-400 hover:text-blue-300 transition hover:underline">Bluewire Tech</a>
+    <!-- PAGE 2: DIRECT GAME INTEGRATION -->
+    <div id="page-direct-integration" class="page-view pt-28">
+        <section class="py-12 px-6 bg-white border-b border-slate-200">
+            <div class="container mx-auto">
+                <button onclick="switchPage('home')" class="text-blue-600 font-bold text-xs uppercase mb-6 inline-flex items-center gap-2 cursor-pointer">
+                    <i class="fas fa-arrow-left"></i> Back to Home
+                </button>
+                <div class="bg-gradient-to-r from-blue-950 to-indigo-900 rounded-3xl p-8 md:p-12 text-white shadow-xl">
+                    <span class="bg-white/10 text-blue-300 text-xs px-3 py-1 rounded-full font-bold uppercase">Direct Integration Portal</span>
+                    <h1 class="text-3xl md:text-4xl font-black mt-3 mb-4">Experience the simple efficiency of Direct Game Integration</h1>
+                    <p class="text-slate-300 text-sm max-w-xl">Embed game URLs or iframes instantly with zero hosting requirements.</p>
                 </div>
             </div>
-        </div>
-        <div class="container mx-auto px-6 border-t border-slate-800 pt-6 text-center text-xs text-slate-500">
-            <p>© 2026 GameVerse. All Rights Reserved. CEO: Ahmad Imtiaz</p>
-        </div>
-    </footer>
+        </section>
 
-    <!-- JavaScript -->
-    <script>
-        function openLoginModal() {
-            document.getElementById('loginModal').classList.remove('hidden');
-        }
-        function closeLoginModal() {
-            document.getElementById('loginModal').classList.add('hidden');
-        }
-    </script>
-</body>
-</html>
+        <!-- Direct Integration Form -->
+        <section class="py-20 bg-slate-50">
+            <div class="container mx-auto px-6 max-w-4xl">
+                <div class="bg-white p-8 md:p-12 rounded-3xl border border-slate-200 shadow-xl">
+                    <h2 class="text-2xl font-black text-slate-900 mb-2">Publisher Integration Form</h2>
+                    <p class="text-slate-500 text-xs mb-8">Set up your direct game integration account.</p>
+                    <form onsubmit="event.preventDefault(); alert('Integration request submitted successfully!');" class="space-y-4">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 mb-1">First name *</label>
+                                <input type="text" required placeholder="Ahmad" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-blue-600">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 mb-1">Last name *</label>
+                                <input type="text" required placeholder="Imtiaz" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-blue-600">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Email *</label>
+                            <input type="email" required placeholder="hrgameverse@gmail.com" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-blue-600">
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 mb-1">Country *</label>
+                                <select required class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-blue-600 bg-white">
+                                    <option value="Pakistan">Pakistan</option>
+                                    <option value="United States">United States</option>
+                                    <option value="United Kingdom">United Kingdom</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 mb-1">Company/Account Name *</label>
+                                <input type="text" required placeholder="GameVerse Studio" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-blue-600">
+                            </div>
+                        </div>
+                        <button type="submit" class="w-full gv-btn-primary text-white font-bold py-3.5 rounded-xl text-sm shadow-md transition cursor-pointer mt-4">
+                            Submit Integration Request
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- PAGE 3: DEVELOPER PARTNERSHIP -->
+    <div id="page-dev-partnership" class="page-view pt-28">
+        <section class="py-12 px-6 bg-white border-b border-slate-200">
+            <div class="container mx-auto">
+                <button onclick="switchPage('home')" class="text-blue-600 font-bold text-xs uppercase mb-6 inline-flex items-center gap-2 cursor-pointer">
+                    <i class="fas fa-arrow-left"></i> Back to Home
+                </button>
+                <div class="bg-gradient-to-r from-blue-900 to-indigo-950 rounded-3xl p-8 md:p-12 text-white shadow-xl">
+                    <span class="bg-white/10 text-blue-300 text-xs px-3 py-1 rounded-full font-bold uppercase">Developer Portal</span>
+                    <h1 class="text-3xl md:text-4xl font-black mt-3 mb-4">Find out how GameVerse helps game developers expand their reach</h1>
+                    <p class="text-slate-300 text-sm max-w-xl">Access millions of users organically
