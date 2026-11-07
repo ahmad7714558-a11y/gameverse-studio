@@ -17,8 +17,19 @@
         .gv-btn-primary:hover { background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%); }
         .game-card { transition: all 0.3s ease; }
         .game-card:hover { transform: translateY(-6px); box-shadow: 0 20px 25px -5px rgba(59, 130, 246, 0.15); }
-        .dropdown-menu { display: none; }
-        .group:hover .dropdown-menu { display: block; }
+        
+        /* Fixed Dropdown Menu Hover Logic */
+        .dropdown-menu { 
+            opacity: 0; 
+            visibility: hidden; 
+            transform: translateY(10px);
+            transition: all 0.25s ease-in-out;
+        }
+        .group:hover .dropdown-menu { 
+            opacity: 1; 
+            visibility: visible; 
+            transform: translateY(0);
+        }
     </style>
 </head>
 <body class="flex flex-col min-h-screen selection:bg-blue-600 selection:text-white">
@@ -35,7 +46,7 @@
             <div class="hidden lg:flex space-x-8 text-slate-600 font-semibold text-sm items-center">
                 <a href="#games" class="hover:text-blue-600 transition">Games</a>
                 
-                <!-- For Business Dropdown -->
+                <!-- For Business Dropdown (Fixed Hover) -->
                 <div class="relative group py-2">
                     <button class="hover:text-blue-600 transition flex items-center gap-1 cursor-pointer bg-transparent border-none font-semibold text-slate-600">
                         For Business <i class="fas fa-chevron-down text-xs"></i>
@@ -99,7 +110,7 @@
         </div>
     </section>
 
-    <!-- Developer FAQ Hub Section (Exact Reference Match to Screenshots 40 & 41) -->
+    <!-- Developer FAQ Hub Section -->
     <section id="dev-faq" class="py-20 bg-slate-50 border-b border-slate-200">
         <div class="container mx-auto px-6">
             <div class="flex items-center gap-3 mb-10">
@@ -111,7 +122,6 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- First Steps -->
                 <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm">
                     <div class="flex items-center gap-3 mb-6">
                         <div class="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold"><i class="fas fa-shoe-prints"></i></div>
@@ -123,7 +133,6 @@
                     </ul>
                 </div>
 
-                <!-- Getting Started -->
                 <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm">
                     <div class="flex items-center gap-3 mb-6">
                         <div class="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold"><i class="fas fa-rocket"></i></div>
@@ -135,54 +144,11 @@
                         <li class="flex items-center gap-2"><i class="fas fa-circle text-xs text-blue-600"></i> <a href="#" onclick="openFaqDetail('Submitting your game', 'Upload builds, configure APK/AAB packages, and submit games for QA approval[cite: 40].')" class="hover:text-blue-600 transition font-medium">Submitting your game[cite: 40]</a></li>
                     </ul>
                 </div>
-
-                <!-- Reporting and Payments -->
-                <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm">
-                    <div class="flex items-center gap-3 mb-6">
-                        <div class="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold"><i class="fas fa-chart-line"></i></div>
-                        <h3 class="text-xl font-bold text-slate-900">Reporting and Payments[cite: 40]</h3>
-                    </div>
-                    <ul class="space-y-3 text-sm text-slate-700">
-                        <li class="flex items-center gap-2"><i class="fas fa-circle text-xs text-blue-600"></i> <a href="#" onclick="openFaqDetail('When will I receive my payments?', 'Payouts are processed automatically on a monthly net-30 schedule for verified publisher accounts[cite: 40].')" class="hover:text-blue-600 transition font-medium">When will I receive my payments?[cite: 40]</a></li>
-                        <li class="flex items-center gap-2"><i class="fas fa-circle text-xs text-blue-600"></i> <a href="#" onclick="openFaqDetail('Viewing Analytics', 'Access real-time impressions, active users, and ad revenue metrics via the developer dashboard[cite: 40].')" class="hover:text-blue-600 transition font-medium">Viewing Analytics[cite: 40]</a></li>
-                    </ul>
-                </div>
-
-                <!-- General Questions -->
-                <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm">
-                    <div class="flex items-center gap-3 mb-6">
-                        <div class="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold"><i class="fas fa-question"></i></div>
-                        <h3 class="text-xl font-bold text-slate-900">General Questions[cite: 40]</h3>
-                    </div>
-                    <ul class="space-y-3 text-sm text-slate-700">
-                        <li class="flex items-center gap-2"><i class="fas fa-circle text-xs text-blue-600"></i> <a href="#" onclick="openFaqDetail('How many publishers does GameVerse work with?', 'GameVerse collaborates with over 100+ global publishing partners and mobile studios[cite: 40].')" class="hover:text-blue-600 transition font-medium">How many publishers does GameVerse work with?[cite: 40]</a></li>
-                        <li class="flex items-center gap-2"><i class="fas fa-circle text-xs text-blue-600"></i> <a href="#" onclick="openFaqDetail('Why should I upload my games on GameVerse?', 'Gain instant global distribution, optimized ad monetization, and dedicated support from CEO Ahmad Imtiaz[cite: 40].')" class="hover:text-blue-600 transition font-medium">Why should I upload my games on GameVerse?[cite: 40]</a></li>
-                        <li class="flex items-center gap-2"><i class="fas fa-circle text-xs text-blue-600"></i> <a href="#" onclick="openFaqDetail('The features of our SDK', 'Lightweight Unity and HTML5 SDKs with built-in telemetry, interstitial ads, and rewarded video support[cite: 40].')" class="hover:text-blue-600 transition font-medium">The features of our SDK[cite: 40]</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- SDK Integration Sub-Section (Screenshot 41) -->
-            <div class="mt-12 bg-white p-8 rounded-3xl border border-slate-200 shadow-sm">
-                <h3 class="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
-                    <span class="text-blue-600 font-mono text-sm bg-blue-50 px-3 py-1 rounded-lg">src</span> GameVerse SDK Integration[cite: 41]
-                </h3>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
-                    <a href="#" onclick="openFaqDetail('Getting Started (Html5/JS)', 'Integrate the base GameVerse initialization script into your web or mobile build[cite: 41].')" class="p-4 rounded-xl bg-slate-50 hover:bg-blue-50 border border-slate-200 transition block font-bold text-slate-800">
-                        <i class="fas fa-file-code text-blue-600 mr-2"></i> Getting Started (Html5/JS)[cite: 41]
-                    </a>
-                    <a href="#" onclick="openFaqDetail('Interstitial Ads (Html5/JS)', 'Trigger full-screen interstitial video ads smoothly between game levels[cite: 41].')" class="p-4 rounded-xl bg-slate-50 hover:bg-blue-50 border border-slate-200 transition block font-bold text-slate-800">
-                        <i class="fas fa-ad text-blue-600 mr-2"></i> Interstitial Ads (Html5/JS)[cite: 41]
-                    </a>
-                    <a href="#" onclick="openFaqDetail('Rewarded Ads (Html5/JS)', 'Reward players with in-game currency upon successful video ad completion[cite: 41].')" class="p-4 rounded-xl bg-slate-50 hover:bg-blue-50 border border-slate-200 transition block font-bold text-slate-800">
-                        <i class="fas fa-coins text-blue-600 mr-2"></i> Rewarded Ads (Html5/JS)[cite: 41]
-                    </a>
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- Publisher FAQ Hub Section (Exact Reference Match to Screenshots 42 & 43) -->
+    <!-- Publisher FAQ Hub Section -->
     <section id="publisher-faq" class="py-20 bg-white border-b border-slate-200">
         <div class="container mx-auto px-6">
             <div class="flex items-center gap-3 mb-10">
@@ -194,7 +160,6 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- First Steps -->
                 <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200 shadow-sm">
                     <div class="flex items-center gap-3 mb-6">
                         <div class="w-10 h-10 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center font-bold"><i class="fas fa-shoe-prints"></i></div>
@@ -206,7 +171,6 @@
                     </ul>
                 </div>
 
-                <!-- Getting Started -->
                 <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200 shadow-sm">
                     <div class="flex items-center gap-3 mb-6">
                         <div class="w-10 h-10 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center font-bold"><i class="fas fa-rocket"></i></div>
@@ -216,31 +180,6 @@
                         <li class="flex items-center gap-2"><i class="fas fa-circle text-xs text-indigo-600"></i> <a href="#" onclick="openFaqDetail('Onboarding process for Publishers', 'Step-by-step verification and legal agreement setup for publishers[cite: 42].')" class="hover:text-indigo-600 transition font-medium">What is GameVerse\'s onboarding process for Publishers?[cite: 42]</a></li>
                         <li class="flex items-center gap-2"><i class="fas fa-circle text-xs text-indigo-600"></i> <a href="#" onclick="openFaqDetail('Why was my domain rejected?', 'Ensure DNS records and branding guidelines match our compliance rules[cite: 42].')" class="hover:text-indigo-600 transition font-medium">Why was my domain rejected?[cite: 42]</a></li>
                         <li class="flex items-center gap-2"><i class="fas fa-circle text-xs text-indigo-600"></i> <a href="#" onclick="openFaqDetail('Adding ads.txt', 'Host app-ads.txt on your root domain to authenticate ad inventory partners[cite: 42].')" class="hover:text-indigo-600 transition font-medium">Adding ads.txt[cite: 42]</a></li>
-                    </ul>
-                </div>
-
-                <!-- Reporting and Payments -->
-                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200 shadow-sm">
-                    <div class="flex items-center gap-3 mb-6">
-                        <div class="w-10 h-10 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center font-bold"><i class="fas fa-chart-bar"></i></div>
-                        <h3 class="text-xl font-bold text-slate-900">Reporting and Payments[cite: 42]</h3>
-                    </div>
-                    <ul class="space-y-3 text-sm text-slate-700">
-                        <li class="flex items-center gap-2"><i class="fas fa-circle text-xs text-indigo-600"></i> <a href="#" onclick="openFaqDetail('Setting up revenue payments', 'Connect bank accounts or electronic wallets for secure monthly earnings[cite: 42].')" class="hover:text-indigo-600 transition font-medium">Setting up and receiving your revenue payments[cite: 42]</a></li>
-                        <li class="flex items-center gap-2"><i class="fas fa-circle text-xs text-indigo-600"></i> <a href="#" onclick="openFaqDetail('Viewing analytics', 'Track gameplay duration, impressions, and eCPM metrics in real-time[cite: 42].')" class="hover:text-indigo-600 transition font-medium">Viewing analytics[cite: 42]</a></li>
-                    </ul>
-                </div>
-
-                <!-- General Questions -->
-                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200 shadow-sm">
-                    <div class="flex items-center gap-3 mb-6">
-                        <div class="w-10 h-10 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center font-bold"><i class="fas fa-question-circle"></i></div>
-                        <h3 class="text-xl font-bold text-slate-900">General Questions[cite: 42]</h3>
-                    </div>
-                    <ul class="space-y-3 text-sm text-slate-700">
-                        <li class="flex items-center gap-2"><i class="fas fa-circle text-xs text-indigo-600"></i> <a href="#" onclick="openFaqDetail('GameVerse Newsletter', 'Subscribe to our monthly developer newsletter for industry trends and updates[cite: 42].')" class="hover:text-indigo-600 transition font-medium">GameVerse Newsletter[cite: 42]</a></li>
-                        <li class="flex items-center gap-2"><i class="fas fa-circle text-xs text-indigo-600"></i> <a href="#" onclick="openFaqDetail('Publisher benefits', 'Increase user retention and earn passive ad revenue at zero setup cost[cite: 42].')" class="hover:text-indigo-600 transition font-medium">How do publishers benefit from publishing games?[cite: 42]</a></li>
-                        <li class="flex items-center gap-2"><i class="fas fa-circle text-xs text-indigo-600"></i> <a href="#" onclick="openFaqDetail('Catalog size', 'Access over 21,000+ games across 26 different genres instantly[cite: 43].')" class="hover:text-indigo-600 transition font-medium">How many games do you have available in your catalog?[cite: 43]</a></li>
                     </ul>
                 </div>
             </div>
@@ -357,7 +296,7 @@
                 <div class="flex flex-col gap-1.5 text-xs">
                     <a href="https://play.google.com/store/apps/developer?id=Aerie+Solutions+2022" target="_blank" class="text-blue-400 hover:text-blue-300 transition hover:underline">Aerie Solutions 2022</a>
                     <a href="https://play.google.com/store/apps/developer?id=CoreOne+Games" target="_blank" class="text-blue-400 hover:text-blue-300 transition hover:underline">CoreOne Games</a>
-                    <a href="https://play.org/store/apps/developer?id=Bluewire+Tech" target="_blank" class="text-blue-400 hover:text-blue-300 transition hover:underline">Bluewire Tech</a>
+                    <a href="https://play.google.com/store/apps/developer?id=Bluewire+Tech" target="_blank" class="text-blue-400 hover:text-blue-300 transition hover:underline">Bluewire Tech</a>
                 </div>
             </div>
         </div>
