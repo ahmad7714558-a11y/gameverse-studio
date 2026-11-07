@@ -16,6 +16,7 @@
             background-color: #f8fafc; 
             color: #1e293b; 
             font-family: 'Inter', system-ui, sans-serif; 
+            overflow-x: hidden;
         }
         .hero-banner {
             background: linear-gradient(135deg, #1e1b4b 0%, #7f1d1d 50%, #312e81 100%);
@@ -27,22 +28,22 @@
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
-        /* Entry Animations */
-        @keyframes slideInLeft {
-            from { opacity: 0; transform: translateX(-50px); }
-            to { opacity: 1; transform: translateX(0); }
+        /* Heavy entry animations from outside screen */
+        @keyframes slideFromFarLeft {
+            0% { opacity: 0; transform: translateX(-150px); }
+            100% { opacity: 1; transform: translateX(0); }
         }
-        @keyframes slideInRight {
-            from { opacity: 0; transform: translateX(50px); }
-            to { opacity: 1; transform: translateX(0); }
+        @keyframes slideFromFarRight {
+            0% { opacity: 0; transform: translateX(150px); }
+            100% { opacity: 1; transform: translateX(0); }
         }
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
+        @keyframes slideFromBottom {
+            0% { opacity: 0; transform: translateY(100px); }
+            100% { opacity: 1; transform: translateY(0); }
         }
-        .animate-left { animation: slideInLeft 1s ease-out forwards; }
-        .animate-right { animation: slideInRight 1s ease-out forwards; }
-        .animate-up { animation: fadeInUp 1s ease-out forwards; }
+        .animate-from-left { animation: slideFromFarLeft 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+        .animate-from-right { animation: slideFromFarRight 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+        .animate-from-bottom { animation: slideFromBottom 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
 
         .game-card { transition: all 0.3s ease; }
         .game-card:hover { transform: translateY(-6px); box-shadow: 0 20px 25px -5px rgba(239, 68, 68, 0.2); }
@@ -75,10 +76,10 @@
         </div>
     </nav>
 
-    <!-- Hero Section with Entry Animations -->
+    <!-- Hero Section with Outside-Screen Entry Animations -->
     <section class="pt-28 pb-16 px-6 hero-banner text-white relative overflow-hidden">
         <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative z-10">
-            <div class="animate-left">
+            <div class="animate-from-left">
                 <span class="bg-black/30 text-red-300 border border-red-400/40 text-xs px-3.5 py-1.5 rounded-full font-bold uppercase tracking-widest inline-block mb-4 shadow-sm">
                     Leading Mobile Game Publisher
                 </span>
@@ -97,8 +98,8 @@
                     </a>
                 </div>
             </div>
-            <!-- Video Container with Right Animation -->
-            <div class="relative bg-black/40 p-3 rounded-3xl border border-white/20 shadow-2xl backdrop-blur-sm animate-right">
+            <!-- Video Container coming from far right outside screen -->
+            <div class="relative bg-black/40 p-3 rounded-3xl border border-white/20 shadow-2xl backdrop-blur-sm animate-from-right">
                 <div class="aspect-video rounded-2xl overflow-hidden bg-black flex items-center justify-center relative">
                     <iframe class="w-full h-full" src="https://www.youtube.com/embed/l7EynldIeHg" title="Real Racing Car Trailer" frameborder="0" allowfullscreen></iframe>
                 </div>
@@ -251,12 +252,12 @@
                 <h4 class="font-bold text-lg mb-2 text-slate-900">Office Timings <i class="fas fa-arrow-right text-xs text-red-500 ml-1"></i></h4>
                 <p class="text-slate-600 text-sm">09:00 AM to 06:00 PM available for professional coordination and development support.</p>
             </div>
-            <!-- 50 Persons Team Box (Interactive Random Employee Showcase) -->
+            <!-- 50 Persons Team Box (Interactive 50 Pakistani Employees Showcase) -->
             <div onclick="showRandomEmployee()" 
                  class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 cursor-pointer hover:border-red-500 transition group">
                 <div class="text-red-600 text-2xl mb-4 group-hover:scale-110 transition"><i class="fas fa-users"></i></div>
                 <h4 class="font-bold text-lg mb-2 text-slate-900">50 Persons Team <i class="fas fa-sparkles text-xs text-red-500 ml-1"></i></h4>
-                <p class="text-slate-600 text-sm">Click here to view live random profiles from our expert 50+ development team members.</p>
+                <p class="text-slate-600 text-sm">Click here to view live random profiles from our expert 50+ Pakistani development team.</p>
             </div>
             <!-- High Quality Standards Box -->
             <div onclick="showFeatureAlert('High Quality Standards', 'All games built by GameVerse undergo strict ISO standard graphics review, Unity optimization, and automated testing under CEO Ahmad Imtiaz.')" 
@@ -270,7 +271,7 @@
 
     <!-- Interactive Modal Popup for Team & Features -->
     <div id="interactiveModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
-        <div class="bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl border border-slate-200 relative animate-up">
+        <div class="bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl border border-slate-200 relative animate-from-bottom">
             <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 text-xl font-bold cursor-pointer">
                 <i class="fas fa-times"></i>
             </button>
@@ -313,7 +314,7 @@
         </div>
     </footer>
 
-    <!-- JavaScript for Tabs & Interactive Features -->
+    <!-- JavaScript for Tabs & Interactive 50 Pakistani Employees -->
     <script>
         function switchTab(tabNum) {
             document.getElementById('panel-1').classList.add('hidden');
@@ -328,29 +329,78 @@
             document.getElementById('btn-' + tabNum).className = 'w-8 h-8 rounded-full red-gradient-btn text-white flex items-center justify-center font-bold text-sm cursor-pointer shadow-md';
         }
 
-        // Random Employee Profiles Array for 50 Team Members
-        const employees = [
-            { name: "Umar Anjum", role: "Lead Unity Developer", exp: "5 Years Experience", avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300&auto=format&fit=crop&q=80" },
-            { name: "Bilal Ahmed", role: "Senior 3D Modeler", exp: "4 Years Experience", avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&auto=format&fit=crop&q=80" },
-            { name: "Usman Tariq", role: "UI/UX Game Designer", exp: "3 Years Experience", avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=300&auto=format&fit=crop&q=80" },
-            { name: "Zainab Malik", role: "Monetization & Ads Expert", exp: "4 Years Experience", avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=300&auto=format&fit=crop&q=80" },
-            { name: "Hamza Ali", role: "Physics & Car Handling Programmer", exp: "6 Years Experience", avatar: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=300&auto=format&fit=crop&q=80" }
+        // 50 Unique Pakistani Team Members Database
+        const pakistaniEmployees = [
+            { name: "Ali Raza", role: "Senior Unity Developer", exp: "6 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Muhammad Usman", role: "Lead 3D Environment Artist", exp: "5 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Bilal Ahmed", role: "Car Physics Programmer", exp: "4 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Zainab Malik", role: "UI/UX Game Designer", exp: "4 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Hamza Tariq", role: "Gameplay Scripter", exp: "3 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Awais Qarni", role: "Monetization & Ads Expert", exp: "5 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Talha Mehmood", role: "Android SDK Integrator", exp: "4 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Saad Farooq", role: "3D Vehicle Modeler", exp: "6 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Fahad Mustafa", role: "Level Designer", exp: "3 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Shoaib Akhtar", role: "QA & Bug Hunter", exp: "4 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Abdullah Khan", role: "Junior Unity Developer", exp: "2 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Danish Ali", role: "Animator & Rigger", exp: "5 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Kashif Riaz", role: "Sound FX Designer", exp: "4 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Usman Ghani", role: "App Store Optimization Expert", exp: "5 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Rehan Butt", role: "Server & Firebase Manager", exp: "4 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Nabeel Ahmed", role: "C# Scripting Expert", exp: "5 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Waqas Latif", role: "Environment Lighting Artist", exp: "3 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Shahzaib Khan", role: "UI/UX Developer", exp: "3 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Muzammil Hussain", role: "Physics Engine Tuner", exp: "4 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Ahsan Iqbal", role: "Multiplayer Integration Engineer", exp: "5 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Zubair Shah", role: "Rigging Specialist", exp: "4 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Imran Khan", role: "AI Pathfinding Developer", exp: "6 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Haris Rauf", role: "Game Tester", exp: "2 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Junaid Jamshed", role: "Shader Graph Artist", exp: "4 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Salman Butt", role: "Optimization Engineer", exp: "5 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Yasir Shah", role: "Cinematic Director", exp: "5 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Rizwan Ahmed", role: "Particle FX Specialist", exp: "3 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Farhan Saeed", role: "UI Animator", exp: "3 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Adnan Siddique", role: "Gameplay Developer", exp: "4 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Shoaib Malik", role: "Build Pipeline Engineer", exp: "5 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Babars Azam", role: "Technical Artist", exp: "4 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Shaheen Afridi", role: "Vehicle Dynamics Scripter", exp: "3 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Hassan Ali", role: "Prop Modeler", exp: "3 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Fawad Alam", role: "Junior Developer", exp: "2 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Sohail Tanvir", role: "Audio Engineer", exp: "4 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Mohammad Amir", role: "Network Scripter", exp: "5 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Sarfaraz Ahmed", role: "Project Coordinator", exp: "6 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Asad Shafiq", role: "Level Scripter", exp: "3 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Azhar Ali", role: "Material Artist", exp: "4 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Shan Masood", role: "Prop Texturing Expert", exp: "3 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Imad Wasim", role: "Database Manager", exp: "4 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Shadab Khan", role: "Game Mechanics Designer", exp: "3 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Faheem Ashraf", role: "Mobile Optimization Expert", exp: "4 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Usama Mir", role: "UI Scripter", exp: "2 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Zaman Khan", role: "QA Automation Tester", exp: "3 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Ihsanullah", role: "Physics Scripter", exp: "2 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Abrar Ahmed", role: "Lighting Tech Artist", exp: "3 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Mohammad Wasim", role: "Gameplay Programmer", exp: "3 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Saim Ayub", role: "Junior 3D Artist", exp: "2 Years Exp", city: "Bahawalpur Studio" },
+            { name: "Sahibzada Farhan", role: "Assistant Game Designer", exp: "2 Years Exp", city: "Bahawalpur Studio" }
         ];
 
         function showRandomEmployee() {
-            const randomEmp = employees[Math.floor(Math.random() * employees.length)];
+            // Pick a random employee out of 50
+            const randomEmp = pakistaniEmployees[Math.floor(Math.random() * pakistaniEmployees.length)];
             const modal = document.getElementById('interactiveModal');
             const content = document.getElementById('modalContent');
             
+            // Generate deterministic avatar based on name hash or placeholder
+            const avatarUrl = `https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=300&auto=format&fit=crop&q=80`;
+            
             content.innerHTML = `
-                <div class="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-4 border-red-500 shadow-lg">
-                    <img src="${randomEmp.avatar}" alt="${randomEmp.name}" class="w-full h-full object-cover">
+                <div class="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-4 border-red-500 shadow-lg bg-slate-100 flex items-center justify-center text-red-600 font-bold text-2xl">
+                    <i class="fas fa-user-tie"></i>
                 </div>
-                <span class="bg-red-100 text-red-600 text-xs px-3 py-1 rounded-full font-bold uppercase tracking-wider">GameVerse Team (Active)</span>
+                <span class="bg-red-100 text-red-600 text-xs px-3 py-1 rounded-full font-bold uppercase tracking-wider">GameVerse 50+ Team Member</span>
                 <h3 class="text-2xl font-black text-slate-900 mt-3">${randomEmp.name}</h3>
                 <p class="text-red-600 font-semibold text-sm mt-1">${randomEmp.role}</p>
-                <p class="text-slate-500 text-xs mt-1 mb-6">${randomEmp.exp} | Bahawalpur Studio</p>
-                <button onclick="showRandomEmployee()" class="red-gradient-btn text-white font-bold px-6 py-2.5 rounded-xl text-sm shadow-md transition">
+                <p class="text-slate-500 text-xs mt-1 mb-6">${randomEmp.exp} | ${randomEmp.city}</p>
+                <button onclick="showRandomEmployee()" class="red-gradient-btn text-white font-bold px-6 py-2.5 rounded-xl text-sm shadow-md transition cursor-pointer">
                     <i class="fas fa-random mr-1"></i> Show Another Employee
                 </button>
             `;
@@ -367,7 +417,7 @@
                 </div>
                 <h3 class="text-2xl font-black text-slate-900 mb-2">${title}</h3>
                 <p class="text-slate-600 text-sm leading-relaxed mb-6">${desc}</p>
-                <button onclick="closeModal()" class="bg-slate-900 text-white font-bold px-6 py-2.5 rounded-xl text-sm shadow-md transition">
+                <button onclick="closeModal()" class="bg-slate-900 text-white font-bold px-6 py-2.5 rounded-xl text-sm shadow-md transition cursor-pointer">
                     Got It
                 </button>
             `;
